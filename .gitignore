@@ -33,6 +33,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# uploads (keep structure, ignore files)
-/public/uploads/*
-!/public/uploads/.gitkeep
+# uploads
