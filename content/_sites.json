@@ -1,0 +1,14 @@
+{
+  "sites": [
+    {
+      "id": "dr-huang-clinic",
+      "name": "Dr Huang Clinic",
+      "domain": "localhost:3000",
+      "enabled": true,
+      "defaultLocale": "en",
+      "supportedLocales": ["en", "zh"],
+      "createdAt": "2025-01-15T00:00:00Z",
+      "updatedAt": "2025-01-15T00:00:00Z"
+    }
+  ]
+}

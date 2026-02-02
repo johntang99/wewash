@@ -1,0 +1,146 @@
+// ============================================
+// CONTENT LOADING UTILITIES
+// ============================================
+
+import { Locale } from './types';
+import fs from 'fs';
+import path from 'path';
+
+const CONTENT_DIR = path.join(process.cwd(), 'content');
+
+/**
+ * Generic function to load JSON content
+ */
+export async function loadContent<T>(
+  siteId: string,
+  locale: Locale,
+  contentPath: string
+): Promise<T | null> {
+  try {
+    const filePath = path.join(CONTENT_DIR, siteId, locale, contentPath);
+    
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+      console.warn(`Content file not found: ${filePath}`);
+      return null;
+    }
+    
+    const data = await fs.promises.readFile(filePath, 'utf-8');
+    return JSON.parse(data) as T;
+  } catch (error) {
+    console.error(`Error loading content from ${contentPath}:`, error);
+    return null;
+  }
+}
+
+/**
+ * Load page content
+ */
+export async function loadPageContent<T>(
+  pageName: string,
+  locale: Locale,
+  siteId: string = 'dr-huang-clinic'
+): Promise<T | null> {
+  return loadContent<T>(siteId, locale, `pages/${pageName}.json`);
+}
+
+/**
+ * Load site info
+ */
+export async function loadSiteInfo(siteId: string, locale: Locale) {
+  return loadContent(siteId, locale, 'site.json');
+}
+
+/**
+ * Load navigation
+ */
+export async function loadNavigation(siteId: string, locale: Locale) {
+  return loadContent(siteId, locale, 'navigation.json');
+}
+
+/**
+ * Load theme config
+ */
+export async function loadTheme(siteId: string) {
+  try {
+    const filePath = path.join(CONTENT_DIR, siteId, 'theme.json');
+    
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+    
+    const data = await fs.promises.readFile(filePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error loading theme:', error);
+    return null;
+  }
+}
+
+/**
+ * Load all items from a directory (e.g., blog posts, services)
+ */
+export async function loadAllItems<T>(
+  siteId: string,
+  locale: Locale,
+  directory: string
+): Promise<T[]> {
+  try {
+    const dirPath = path.join(CONTENT_DIR, siteId, locale, directory);
+    
+    if (!fs.existsSync(dirPath)) {
+      return [];
+    }
+    
+    const files = await fs.promises.readdir(dirPath);
+    const jsonFiles = files.filter(file => file.endsWith('.json'));
+    
+    const items = await Promise.all(
+      jsonFiles.map(async (file) => {
+        const filePath = path.join(dirPath, file);
+        const data = await fs.promises.readFile(filePath, 'utf-8');
+        return JSON.parse(data) as T;
+      })
+    );
+    
+    return items;
+  } catch (error) {
+    console.error(`Error loading items from ${directory}:`, error);
+    return [];
+  }
+}
+
+/**
+ * Load single item by slug
+ */
+export async function loadItemBySlug<T>(
+  siteId: string,
+  locale: Locale,
+  directory: string,
+  slug: string
+): Promise<T | null> {
+  return loadContent<T>(siteId, locale, `${directory}/${slug}.json`);
+}
+
+/**
+ * Check if content exists
+ */
+export function contentExists(
+  siteId: string,
+  locale: Locale,
+  contentPath: string
+): boolean {
+  const filePath = path.join(CONTENT_DIR, siteId, locale, contentPath);
+  return fs.existsSync(filePath);
+}
+
+/**
+ * Get content file path (for admin use)
+ */
+export function getContentFilePath(
+  siteId: string,
+  locale: Locale,
+  contentPath: string
+): string {
+  return path.join(CONTENT_DIR, siteId, locale, contentPath);
+}

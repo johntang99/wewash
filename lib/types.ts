@@ -1,0 +1,435 @@
+// ============================================
+// TYPE DEFINITIONS FOR TCM SYSTEM
+// ============================================
+
+export type Locale = 'en' | 'zh';
+
+export interface SiteConfig {
+  id: string;
+  name: string;
+  domain?: string;
+  enabled: boolean;
+  defaultLocale: Locale;
+  supportedLocales: Locale[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ThemeConfig {
+  typography: {
+    display: string;
+    heading: string;
+    subheading: string;
+    body: string;
+    small: string;
+  };
+  colors: {
+    primary: {
+      DEFAULT: string;
+      dark: string;
+      light: string;
+      50: string;
+      100: string;
+    };
+    secondary: {
+      DEFAULT: string;
+      dark: string;
+      light: string;
+      50: string;
+    };
+    backdrop: {
+      primary: string;
+      secondary: string;
+    };
+  };
+}
+
+export interface NavigationLink {
+  text: string;
+  url: string;
+  external?: boolean;
+}
+
+export interface SiteInfo {
+  clinicName: string;
+  tagline: string;
+  description: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+  phone: string;
+  email: string;
+  addressMapUrl?: string;
+  social?: SocialMedia;
+}
+
+export interface BusinessHours {
+  day: string;
+  time: string;
+  isOpen: boolean;
+}
+
+export interface SocialMedia {
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+  wechat?: string;
+}
+
+export interface SEOConfig {
+  siteTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  googleAnalyticsId?: string;
+  googleMapsApiKey?: string;
+}
+
+// ============================================
+// HOMEPAGE SECTION TYPES
+// ============================================
+
+export interface Stat {
+  icon: string;
+  number: string;
+  label: string;
+}
+
+export interface HeroSection {
+  variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'overlap' | 'photo-background' | 'video-background' | 'gallery-background';
+  clinicName: string;
+  tagline: string;
+  description: string;
+  primaryCta: {
+    text: string;
+    link: string;
+  };
+  secondaryCta: {
+    text: string;
+    link: string;
+  };
+  image?: string;
+  video?: string;
+  gallery?: string[];
+  floatingTags: string[];
+  stats: Stat[];
+  trustBadges: string[];
+}
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  condition: string;
+  image?: string;
+  featured?: boolean;
+}
+
+export interface TestimonialsSection {
+  badge: string;
+  title: string;
+  subtitle: string;
+  testimonials: Testimonial[];
+  moreLink: {
+    text: string;
+    url: string;
+  };
+}
+
+export interface Step {
+  number: number;
+  icon?: string;
+  title: string;
+  description: string;
+  duration?: string;
+}
+
+export interface HowItWorksSection {
+  title: string;
+  subtitle: string;
+  steps: Step[];
+}
+
+export interface Condition {
+  id: string;
+  icon: string;
+  image?: string;
+  title: string;
+  category: string;
+  description: string;
+  symptoms: string[];
+  tcmApproach?: string;
+  treatmentMethods?: string[];
+  link?: string;
+  featured?: boolean;
+}
+
+export interface ConditionsSection {
+  title: string;
+  subtitle: string;
+  conditions: Condition[];
+  moreLink: {
+    text: string;
+    url: string;
+  };
+}
+
+export interface Service {
+  id: string;
+  icon: string;
+  title: string;
+  subtitle?: string;
+  shortDescription: string;
+  fullDescription?: string;
+  benefits?: string[];
+  whatToExpect?: string;
+  image?: string;
+  link?: string;
+  order?: number;
+}
+
+export interface ServicesSection {
+  badge: string;
+  title: string;
+  subtitle: string;
+  featured?: Service;
+  services: Service[];
+  moreLink: {
+    text: string;
+    url: string;
+  };
+}
+
+export interface BlogPost {
+  slug: string;
+  type: 'article' | 'video';
+  image: string;
+  category: string;
+  readTime?: string;
+  title: string;
+  excerpt: string;
+  content?: string;
+  author?: string;
+  publishDate?: string;
+  tags?: string[];
+  featured?: boolean;
+  published?: boolean;
+  videoUrl?: string;
+}
+
+export interface BlogSection {
+  badge: string;
+  title: string;
+  subtitle: string;
+  posts: BlogPost[];
+  moreLink: {
+    text: string;
+    url: string;
+  };
+}
+
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  label: string;
+  category?: string;
+  featured?: boolean;
+  order?: number;
+}
+
+export interface GallerySection {
+  badge: string;
+  title: string;
+  subtitle: string;
+  images: GalleryImage[];
+  moreLink: {
+    text: string;
+    url: string;
+  };
+}
+
+export interface FirstVisitSection {
+  badge: string;
+  title: string;
+  subtitle: string;
+  steps: Step[];
+  cta: {
+    title: string;
+    description: string;
+    link: {
+      text: string;
+      url: string;
+    };
+  };
+}
+
+export interface Feature {
+  icon: string;
+  image?: string;
+  title: string;
+  description: string;
+}
+
+export interface WhyChooseUsSection {
+  badge: string;
+  title: string;
+  subtitle: string;
+  features: Feature[];
+}
+
+export interface CTASection {
+  title: string;
+  subtitle: string;
+  primaryCta: {
+    text: string;
+    link: string;
+  };
+  secondaryCta: {
+    text: string;
+    link: string;
+  };
+  contactInfo?: string;
+}
+
+export interface FooterSection {
+  logo: {
+    image?: string;
+    text: string;
+  };
+  description: string;
+  quickLinks: NavigationLink[];
+  services: NavigationLink[];
+  contact: {
+    address: string;
+    phone: string;
+    email: string;
+  };
+  hours: BusinessHours[];
+  social?: SocialMedia;
+  copyright: string;
+}
+
+// ============================================
+// PAGE CONTENT TYPES
+// ============================================
+
+export interface HomePage {
+  topBar: {
+    address: string;
+    addressMapUrl?: string;
+    phone: string;
+    email: string;
+    badge: {
+      text: string;
+      visible: boolean;
+    };
+  };
+  hero: HeroSection;
+  testimonials: TestimonialsSection;
+  howItWorks: HowItWorksSection;
+  conditions: ConditionsSection;
+  services: ServicesSection;
+  blog: BlogSection;
+  gallery: GallerySection;
+  firstVisit: FirstVisitSection;
+  whyChooseUs: WhyChooseUsSection;
+  cta: CTASection;
+}
+
+export interface ServicesPage {
+  hero: {
+    title: string;
+    subtitle: string;
+    backgroundImage?: string;
+  };
+  overview: {
+    introduction: string;
+    benefits: string[];
+  };
+  services: Service[];
+  faq: {
+    title: string;
+    faqs: Array<{
+      question: string;
+      answer: string;
+    }>;
+  };
+  cta: {
+    title: string;
+    subtitle?: string;
+    primaryCta: {
+      text: string;
+      link: string;
+    };
+    secondaryCta?: {
+      text: string;
+      link: string;
+    };
+  };
+}
+
+export interface PricingItem {
+  name: string;
+  description?: string;
+  price: string;
+  duration: string;
+  notes?: string;
+}
+
+export interface PricingPackage {
+  name: string;
+  description: string;
+  sessions: number;
+  totalPrice: string;
+  perSessionPrice: string;
+  savings: string;
+  popular?: boolean;
+  includes: string[];
+}
+
+export interface ContactPage {
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  location: {
+    title: string;
+    address: string;
+    city: string;
+    mapUrl: string;
+    directions?: string;
+  };
+  phone: {
+    title: string;
+    number: string;
+    secondaryNumber?: string;
+  };
+  email: {
+    title: string;
+    address: string;
+  };
+  hours: {
+    title: string;
+    schedule: BusinessHours[];
+    note?: string;
+  };
+  form: {
+    title: string;
+    subtitle: string;
+    reasonOptions: string[];
+    submitButton: {
+      text: string;
+    };
+    successMessage: string;
+    errorMessage: string;
+  };
+  map: {
+    embedUrl: string;
+    showMap: boolean;
+  };
+  emergency?: {
+    title: string;
+    message: string;
+    phone: string;
+    visible: boolean;
+  };
+}
