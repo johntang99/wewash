@@ -25,6 +25,8 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname.startsWith('/uploads') ||
+    pathname === '/robots.txt' ||
+    pathname === '/sitemap.xml' ||
     pathname.match(/\.(ico|png|jpg|jpeg|svg|css|js)$/)
   ) {
     return NextResponse.next();

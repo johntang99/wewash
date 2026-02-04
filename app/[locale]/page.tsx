@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
-import { loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
+import type { SiteInfo } from '@/lib/types';
 import HeroSection, { CredentialsSection } from '@/components/sections/HeroSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
@@ -54,6 +56,38 @@ interface HomePageContent {
   firstVisit?: any;
   whyChooseUs?: any;
   cta?: any;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = params;
+  const siteId = await getRequestSiteId();
+  const [content, siteInfo] = await Promise.all([
+    loadPageContent<HomePageContent>('home', locale, siteId),
+    loadSiteInfo(siteId, locale as Locale) as Promise<SiteInfo | null>,
+  ]);
+
+  const clinicName = siteInfo?.clinicName || 'Clinic';
+  const location = siteInfo?.city && siteInfo?.state
+    ? `${siteInfo.city}, ${siteInfo.state}`
+    : '';
+  const heroTagline = content?.hero?.tagline || '';
+  const title = [heroTagline, location, clinicName]
+    .filter(Boolean)
+    .join(' | ')
+    .trim();
+
+  const description =
+    content?.hero?.description ||
+    siteInfo?.description ||
+    'Traditional Chinese medicine and acupuncture services.';
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'home',
+    title: title || clinicName,
+    description,
+  });
 }
 
 export default async function HomePage({ params }: PageProps) {

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getRequestSiteId, loadAllItems, loadPageContent } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon } from '@/components/ui';
 
@@ -59,13 +60,16 @@ interface BlogPageProps {
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { locale } = params;
-  
-  return {
-    title: locale === 'en' ? 'TCM Blog & Resources - Dr. Huang Clinic' : '中医博客与资源 - 黄医生诊所',
-    description: locale === 'en' 
-      ? 'Read articles and watch videos about Traditional Chinese Medicine, acupuncture, herbal medicine, and natural health.'
-      : '阅读有关传统中医、针灸、中药和自然健康的文章和视频。',
-  };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<BlogPageData>('blog', locale, siteId);
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'blog',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.introduction?.text,
+  });
 }
 
 export default async function BlogPage({ params, searchParams }: BlogPageProps) {

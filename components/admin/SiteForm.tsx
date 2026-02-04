@@ -8,45 +8,70 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import type { SiteConfig } from '@/lib/types';
 import { Button, Input } from '@/components/ui';
  
- const siteSchema = z.object({
-   name: z.string().min(2, 'Name is required'),
-   domain: z.string().optional(),
-   enabled: z.boolean(),
-   defaultLocale: z.enum(['en', 'zh']),
-   supportedLocales: z.array(z.enum(['en', 'zh'])).min(1, 'Select at least one locale'),
- });
+const siteSchemaBase = z.object({
+  name: z.string().min(2, 'Name is required'),
+  domain: z.string().optional(),
+  enabled: z.boolean(),
+  defaultLocale: z.enum(['en', 'zh']),
+  supportedLocales: z.array(z.enum(['en', 'zh'])).min(1, 'Select at least one locale'),
+});
+
+const createSchema = siteSchemaBase.extend({
+  id: z
+    .string()
+    .min(2, 'ID is required')
+    .regex(/^[a-z0-9-]+$/, 'Use lowercase letters, numbers, and hyphens'),
+  cloneFrom: z.string().optional(),
+});
+
+type SiteFormData = z.infer<typeof siteSchemaBase>;
+type SiteCreateFormData = z.infer<typeof createSchema>;
  
- type SiteFormData = z.infer<typeof siteSchema>;
- 
- interface SiteFormProps {
-   site: SiteConfig;
- }
- 
- export function SiteForm({ site }: SiteFormProps) {
+interface SiteFormProps {
+  site: SiteConfig;
+  mode?: 'edit' | 'create';
+  sites?: SiteConfig[];
+}
+
+export function SiteForm({ site, mode = 'edit', sites = [] }: SiteFormProps) {
    const router = useRouter();
    const [status, setStatus] = useState<string | null>(null);
+  const isCreate = mode === 'create';
  
-   const form = useForm<SiteFormData>({
-     resolver: zodResolver(siteSchema),
+  const form = useForm<SiteFormData | SiteCreateFormData>({
+    resolver: zodResolver(isCreate ? createSchema : siteSchemaBase),
      defaultValues: {
+      id: site.id,
        name: site.name,
        domain: site.domain || '',
        enabled: site.enabled,
        defaultLocale: site.defaultLocale,
        supportedLocales: site.supportedLocales,
+      cloneFrom: '',
      },
    });
  
-   const onSubmit = async (data: SiteFormData) => {
+  const onSubmit = async (data: SiteFormData | SiteCreateFormData) => {
      setStatus(null);
-     const response = await fetch(`/api/admin/sites/${site.id}`, {
-       method: 'PUT',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({
-         ...data,
-         domain: data.domain ? data.domain : undefined,
-       }),
-     });
+    const request = isCreate
+      ? fetch('/api/admin/sites', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...(data as SiteCreateFormData),
+            domain: data.domain ? data.domain : undefined,
+          }),
+        })
+      : fetch(`/api/admin/sites/${site.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...data,
+            domain: data.domain ? data.domain : undefined,
+          }),
+        });
+
+    const response = await request;
  
      if (!response.ok) {
        const payload = await response.json();
@@ -54,8 +79,15 @@ import { Button, Input } from '@/components/ui';
        return;
      }
  
-     setStatus('Saved');
-     router.refresh();
+    if (isCreate) {
+      const payload = await response.json();
+      router.push(`/admin/sites/${payload.id}`);
+      router.refresh();
+      return;
+    }
+
+    setStatus('Saved');
+    router.refresh();
    };
  
    const supported = form.watch('supportedLocales');
@@ -68,7 +100,42 @@ import { Button, Input } from '@/components/ui';
          </div>
        )}
  
-       <div>
+      {isCreate && (
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Site ID</label>
+          <Input className="mt-1" {...form.register('id' as const)} placeholder="dr-huang-clinic" />
+          <p className="text-xs text-gray-500 mt-1">
+            Used for folder name and URLs. Lowercase letters, numbers, and hyphens only.
+          </p>
+          {(form.formState.errors as any)?.id && (
+            <p className="text-sm text-red-600 mt-1">
+              {(form.formState.errors as any).id?.message}
+            </p>
+          )}
+        </div>
+      )}
+
+      {isCreate && sites.length > 0 && (
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Clone from</label>
+          <select
+            className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+            {...form.register('cloneFrom' as const)}
+          >
+            <option value="">No clone (empty site)</option>
+            {sites.map((existing) => (
+              <option key={existing.id} value={existing.id}>
+                {existing.name} ({existing.id})
+              </option>
+            ))}
+          </select>
+          <p className="text-xs text-gray-500 mt-1">
+            Copies the content folder from the selected site.
+          </p>
+        </div>
+      )}
+
+      <div>
          <label className="block text-sm font-medium text-gray-700">Site Name</label>
          <Input className="mt-1" {...form.register('name')} />
          {form.formState.errors.name && (

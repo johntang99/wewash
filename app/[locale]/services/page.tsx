@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { ServicesPage, Locale } from '@/lib/types';
 import { Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon, Accordion } from '@/components/ui';
 import { Award, Users, Shield } from 'lucide-react';
@@ -14,20 +15,24 @@ interface ServicesPageProps {
 
 export async function generateMetadata({ params }: ServicesPageProps): Promise<Metadata> {
   const { locale } = params;
-  
-  return {
-    title: locale === 'en' ? 'Our Services - Dr. Huang Clinic' : '我们的服务 - 黄医生诊所',
-    description: locale === 'en' 
-      ? 'Comprehensive Traditional Chinese Medicine services including acupuncture, herbal medicine, cupping, and more.'
-      : '全面的中医服务，包括针灸、中药、拔罐等。',
-  };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<ServicesPage>('services', locale, siteId);
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'services',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.overview?.introduction,
+  });
 }
 
 export default async function ServicesPageComponent({ params }: ServicesPageProps) {
   const { locale } = params;
   
   // Load page content
-  const content = await loadPageContent<ServicesPage>('services', locale);
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<ServicesPage>('services', locale, siteId);
   
   if (!content) {
     notFound();

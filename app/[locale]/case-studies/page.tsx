@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Badge, Card, Icon, Tabs, Button } from '@/components/ui';
 
@@ -62,18 +63,22 @@ interface CaseStudiesPageProps {
 
 export async function generateMetadata({ params }: CaseStudiesPageProps): Promise<Metadata> {
   const { locale } = params;
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<CaseStudiesPageData>('case-studies', locale, siteId);
 
-  return {
-    title: locale === 'en' ? 'Case Studies - Dr. Huang Clinic' : '成功案例 - 黄医生诊所',
-    description: locale === 'en'
-      ? 'Real patient success stories with Traditional Chinese Medicine at Dr. Huang Clinic.'
-      : '黄医生诊所的真实中医成功案例。',
-  };
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'case-studies',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.introduction?.text,
+  });
 }
 
 export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) {
   const { locale } = params;
-  const content = await loadPageContent<CaseStudiesPageData>('case-studies', locale);
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<CaseStudiesPageData>('case-studies', locale, siteId);
 
   if (!content) {
     return (

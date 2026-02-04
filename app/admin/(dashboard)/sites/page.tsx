@@ -13,12 +13,12 @@ export default async function AdminSitesPage() {
             Manage all clinic sites and their locales
           </p>
         </div>
-        <button
-          type="button"
+        <Link
+          href="/admin/sites/new"
           className="px-4 py-2 rounded-lg bg-[var(--primary)] text-white text-sm font-medium hover:opacity-90"
         >
           Add Site
-        </button>
+        </Link>
       </div>
 
       <div className="grid gap-4">

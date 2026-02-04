@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon, Tabs } from '@/components/ui';
 import { Shield, Heart, Sparkles } from 'lucide-react';
@@ -57,20 +58,24 @@ interface ConditionsPageProps {
 
 export async function generateMetadata({ params }: ConditionsPageProps): Promise<Metadata> {
   const { locale } = params;
-  
-  return {
-    title: locale === 'en' ? 'Conditions We Treat - Dr. Huang Clinic' : '治疗病症 - 黄医生诊所',
-    description: locale === 'en' 
-      ? 'Learn about the wide range of conditions we treat with Traditional Chinese Medicine, from pain management to digestive health.'
-      : '了解我们用传统中医治疗的各种病症，从疼痛管理到消化健康。',
-  };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<ConditionsPageData>('conditions', locale, siteId);
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'conditions',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.introduction?.text,
+  });
 }
 
 export default async function ConditionsPage({ params }: ConditionsPageProps) {
   const { locale } = params;
   
   // Load page content
-  const content = await loadPageContent<ConditionsPageData>('conditions', locale);
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<ConditionsPageData>('conditions', locale, siteId);
   
   if (!content) {
     notFound();

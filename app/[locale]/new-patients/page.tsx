@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon, Accordion } from '@/components/ui';
 
@@ -103,20 +104,24 @@ interface NewPatientsPageProps {
 
 export async function generateMetadata({ params }: NewPatientsPageProps): Promise<Metadata> {
   const { locale } = params;
-  
-  return {
-    title: locale === 'en' ? 'New Patient Information - Dr. Huang Clinic' : '新患者信息 - 黄医生诊所',
-    description: locale === 'en' 
-      ? 'Everything you need to know before your first acupuncture visit. What to expect, how to prepare, and what to bring.'
-      : '您第一次针灸就诊前需要知道的一切。期待什么、如何准备以及带什么。',
-  };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<NewPatientsPageData>('new-patients', locale, siteId);
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'new-patients',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.introduction?.text,
+  });
 }
 
 export default async function NewPatientsPage({ params }: NewPatientsPageProps) {
   const { locale } = params;
   
   // Load page content
-  const content = await loadPageContent<NewPatientsPageData>('new-patients', locale);
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<NewPatientsPageData>('new-patients', locale, siteId);
   
   if (!content) {
     notFound();

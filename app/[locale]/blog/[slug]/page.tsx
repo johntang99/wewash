@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { Locale } from '@/lib/types';
 import { getRequestSiteId } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Button, Badge, Icon, Card, CardHeader, CardTitle, CardDescription } from '@/components/ui';
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -72,19 +73,26 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   const { locale, slug } = params;
   const siteId = await getRequestSiteId();
   const post = await loadBlogPost(siteId, slug, locale);
-  
+
   if (!post) {
-    return {
+    return buildPageMetadata({
+      siteId,
+      locale,
+      slug: 'blog',
       title: 'Post Not Found',
-    };
+    });
   }
-  
-  return {
-    title: `${post.title} - Dr. Huang Clinic Blog`,
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'blog',
+    title: post.title,
     description:
       post.excerpt ||
       (post.contentMarkdown ? post.contentMarkdown.slice(0, 160) : ''),
-  };
+    canonicalPath: `/${locale}/blog/${slug}`,
+  });
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {

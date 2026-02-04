@@ -2,7 +2,7 @@
 // CONTENT LOADING UTILITIES
 // ============================================
 
-import { Locale } from './types';
+import { Locale, SeoConfig } from './types';
 import { headers } from 'next/headers';
 import { getSiteByHost } from './sites';
 import fs from 'fs';
@@ -93,6 +93,13 @@ export async function loadTheme(siteId: string) {
     console.error('Error loading theme:', error);
     return null;
   }
+}
+
+/**
+ * Load SEO config
+ */
+export async function loadSeo(siteId: string, locale: Locale): Promise<SeoConfig | null> {
+  return loadContent(siteId, locale, 'seo.json');
 }
 
 /**

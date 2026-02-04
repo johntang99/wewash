@@ -2,13 +2,62 @@ import { notFound } from 'next/navigation';
 import { headers } from 'next/headers';
 import { locales, type Locale } from '@/lib/i18n';
 import { getDefaultSite, getSiteByHost } from '@/lib/sites';
-import { loadPageContent, loadTheme, loadSiteInfo } from '@/lib/content';
-import type { HomePage, SiteInfo } from '@/lib/types';
+import { loadPageContent, loadSeo, loadTheme, loadSiteInfo } from '@/lib/content';
+import type { HomePage, SeoConfig, SiteInfo } from '@/lib/types';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { getBaseUrlFromHost } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const host = headers().get('host');
+  const baseUrl = getBaseUrlFromHost(host);
+  const site = (await getSiteByHost(host)) || (await getDefaultSite());
+  const locale = params.locale as Locale;
+
+  if (!site) {
+    return {
+      metadataBase: baseUrl,
+      title: 'Clinic Website',
+      description: 'Healthcare services',
+    };
+  }
+
+  const [siteInfo, seo] = await Promise.all([
+    loadSiteInfo(site.id, locale) as Promise<SiteInfo | null>,
+    loadSeo(site.id, locale) as Promise<SeoConfig | null>,
+  ]);
+  const titleBase = siteInfo?.clinicName || site.name;
+  const description =
+    seo?.description ||
+    siteInfo?.description ||
+    'Traditional Chinese medicine and acupuncture services.';
+  const titleDefault = seo?.title || titleBase;
+
+  return {
+    metadataBase: baseUrl,
+    title: {
+      default: titleDefault,
+      template: `%s | ${titleBase}`,
+    },
+    description,
+    openGraph: {
+      title: titleDefault,
+      description,
+      url: new URL(`/${locale}`, baseUrl).toString(),
+      siteName: titleBase,
+      locale,
+      type: 'website',
+      images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+    },
+  };
 }
 
 export default async function LocaleLayout({
@@ -36,9 +85,13 @@ export default async function LocaleLayout({
   const theme = await loadTheme(site.id);
   
   // Load site info for header/footer
-  const siteInfo = await loadSiteInfo(site.id, locale as Locale) as SiteInfo | null;
+  const [siteInfo, seo] = await Promise.all([
+    loadSiteInfo(site.id, locale as Locale) as Promise<SiteInfo | null>,
+    loadSeo(site.id, locale as Locale) as Promise<SeoConfig | null>,
+  ]);
   const homeContent = await loadPageContent<HomePage>('home', locale as Locale);
   const menuConfig = homeContent?.menu;
+  const baseUrl = getBaseUrlFromHost(host);
   
   // Generate inline style for theme variables
   const themeStyle = theme ? `
@@ -74,6 +127,31 @@ export default async function LocaleLayout({
       {/* Inject theme CSS variables */}
       {theme && (
         <style dangerouslySetInnerHTML={{ __html: themeStyle }} />
+      )}
+
+      {siteInfo && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'MedicalBusiness',
+              name: siteInfo.clinicName,
+              url: new URL(`/${locale}`, baseUrl).toString(),
+              description: siteInfo.description,
+              telephone: siteInfo.phone,
+              email: siteInfo.email,
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: siteInfo.address,
+                addressLocality: siteInfo.city,
+                addressRegion: siteInfo.state,
+                postalCode: siteInfo.zip,
+                addressCountry: 'US',
+              },
+            }),
+          }}
+        />
       )}
       
       <div className="min-h-screen flex flex-col relative">

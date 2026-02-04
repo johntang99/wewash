@@ -3,6 +3,7 @@
  import Link from 'next/link';
  import { notFound } from 'next/navigation';
 import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale, SiteInfo } from '@/lib/types';
  
  import GalleryGrid, { GalleryCategory, GalleryImage } from '@/components/gallery/GalleryGrid';
@@ -56,12 +57,16 @@ import { Locale, SiteInfo } from '@/lib/types';
  
  export async function generateMetadata({ params }: GalleryPageProps): Promise<Metadata> {
    const { locale } = params;
-   return {
-     title: locale === 'en' ? 'Gallery - Dr. Huang Clinic' : '图库 - 黄医生诊所',
-     description: locale === 'en'
-       ? 'Photos of our clinic, treatment rooms, and facilities.'
-       : '诊所、治疗室和设施的照片展示。',
-   };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<GalleryPageData>('gallery', locale, siteId);
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'gallery',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.introduction?.text,
+  });
  }
  
  export default async function GalleryPage({ params }: GalleryPageProps) {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale, SiteInfo } from '@/lib/types';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon } from '@/components/ui';
 import { CheckCircle2, MapPin, Clock } from 'lucide-react';
@@ -113,13 +114,18 @@ interface ContactPageData {
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
   const { locale } = params;
-  
-  return {
-    title: locale === 'en' ? 'About Dr. Huang - Traditional Chinese Medicine Expert' : '关于黄医生 - 传统中医专家',
-    description: locale === 'en' 
-      ? 'Meet Dr. Michael Huang, L.Ac., MSTCM - Licensed acupuncturist with over 15 years of experience in Traditional Chinese Medicine.'
-      : '认识黄迈克医生，L.Ac., MSTCM - 持牌针灸师，拥有超过15年的传统中医经验。',
-  };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<AboutPageData>('about', locale, siteId);
+  const title = content?.hero?.title;
+  const description = content?.hero?.description || content?.hero?.subtitle;
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'about',
+    title,
+    description,
+  });
 }
 
 export default async function AboutPage({ params }: AboutPageProps) {

@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Icon, Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui';
 import ContactForm from '@/components/ContactForm';
@@ -62,20 +63,24 @@ interface ContactPageProps {
 
 export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
   const { locale } = params;
-  
-  return {
-    title: locale === 'en' ? 'Contact Us - Dr. Huang Clinic' : '联系我们 - 黄医生诊所',
-    description: locale === 'en' 
-      ? 'Contact Dr. Huang\'s Traditional Chinese Medicine Clinic in Middletown, NY. Call (845) 381-1106 or use our contact form.'
-      : '联系位于纽约州米德尔敦的黄医生中医诊所。致电 (845) 381-1106 或使用我们的联系表格。',
-  };
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<ContactPageContent>('contact', locale, siteId);
+
+  return buildPageMetadata({
+    siteId,
+    locale,
+    slug: 'contact',
+    title: content?.hero?.title,
+    description: content?.hero?.subtitle || content?.introduction?.text,
+  });
 }
 
 export default async function ContactPage({ params }: ContactPageProps) {
   const { locale } = params;
   
   // Load page content
-  const content = await loadPageContent<ContactPageContent>('contact', locale);
+  const siteId = await getRequestSiteId();
+  const content = await loadPageContent<ContactPageContent>('contact', locale, siteId);
   
   if (!content) {
     notFound();

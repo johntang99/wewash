@@ -15,6 +15,17 @@ export interface SiteConfig {
   updatedAt: string;
 }
 
+export interface SeoConfig {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  home?: {
+    title?: string;
+    description?: string;
+  };
+  pages?: Record<string, { title?: string; description?: string }>;
+}
+
 export interface ThemeConfig {
   typography: {
     display: string;

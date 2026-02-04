@@ -86,6 +86,26 @@ export async function updateSite(
   return updated;
 }
 
+export async function createSite(
+  input: Omit<SiteConfig, 'createdAt' | 'updatedAt'>
+): Promise<SiteConfig> {
+  const sites = await getSites();
+  if (sites.some((site) => site.id === input.id)) {
+    throw new Error('Site ID already exists');
+  }
+
+  const now = new Date().toISOString();
+  const newSite: SiteConfig = {
+    ...input,
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  sites.push(newSite);
+  await saveSites(sites);
+  return newSite;
+}
+
 /**
  * Get site content directory path
  */

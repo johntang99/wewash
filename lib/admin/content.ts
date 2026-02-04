@@ -17,11 +17,42 @@ function titleCase(value: string) {
     .replace(/\b\w/g, (match) => match.toUpperCase());
 }
 
+async function ensureSeoFile(siteId: string, locale: string) {
+  const seoPath = path.join(CONTENT_DIR, siteId, locale, 'seo.json');
+  try {
+    await fs.access(seoPath);
+  } catch (error) {
+    try {
+      await fs.mkdir(path.dirname(seoPath), { recursive: true });
+      await fs.writeFile(
+        seoPath,
+        JSON.stringify(
+          {
+            title: '',
+            description: '',
+            ogImage: '',
+            home: {
+              title: '',
+              description: '',
+            },
+            pages: {},
+          },
+          null,
+          2
+        )
+      );
+    } catch (writeError) {
+      // ignore write failures (read-only environments)
+    }
+  }
+}
+
 export async function listContentFiles(
   siteId: string,
   locale: string
 ): Promise<ContentFileItem[]> {
   const items: ContentFileItem[] = [];
+  await ensureSeoFile(siteId, locale);
 
   const pagesDir = path.join(CONTENT_DIR, siteId, locale, 'pages');
   try {
@@ -80,6 +111,12 @@ export async function listContentFiles(
     scope: 'locale',
   });
   items.push({
+    id: 'seo',
+    label: 'SEO',
+    path: 'seo.json',
+    scope: 'locale',
+  });
+  items.push({
     id: 'site',
     label: 'Site Info',
     path: 'site.json',
@@ -106,6 +143,10 @@ export function resolveContentPath(siteId: string, locale: string, filePath: str
 
   if (filePath === 'site.json') {
     return path.join(CONTENT_DIR, siteId, locale, 'site.json');
+  }
+
+  if (filePath === 'seo.json') {
+    return path.join(CONTENT_DIR, siteId, locale, 'seo.json');
   }
 
   if (filePath.startsWith('pages/')) {
