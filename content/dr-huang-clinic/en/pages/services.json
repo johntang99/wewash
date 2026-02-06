@@ -3,7 +3,7 @@
     "variant": "centered",
     "title": "Traditional Chinese Medicine Modalities",
     "subtitle": "Comprehensive healing therapies tailored to your unique needs",
-    "backgroundImage": "/uploads/dr-huang-clinic/services/hero-bg.jpg"
+    "backgroundImage": "/uploads/dr-huang-clinic/general/Acupuncture-15.webp"
   },
   "overview": {
     "introduction": "At Dr. Huang Clinic, we offer a complete range of Traditional Chinese Medicine treatments. Each modality is carefully selected and customized to address your specific health concerns and wellness goals. Our holistic approach combines ancient wisdom with modern understanding to provide effective, natural healing.",
@@ -36,7 +36,7 @@
         "Increased energy levels"
       ],
       "whatToExpect": "During your acupuncture session, you'll relax comfortably while hair-thin needles are gently inserted at specific points. Most patients feel minimal to no discomfort. You'll rest for 20-30 minutes while the needles work, often experiencing deep relaxation. Many people fall asleep during treatment!",
-      "image": "/uploads/dr-huang-clinic/services/acupuncture.jpg",
+      "image": "/uploads/dr-huang-clinic/general/acupuncture-16.webp",
       "order": 1
     },
     {
@@ -56,7 +56,7 @@
         "Promotes long-term wellness"
       ],
       "whatToExpect": "After a thorough consultation and diagnosis, we'll create a custom herbal formula specifically for you. You'll receive detailed instructions on how to prepare and take your herbs. We monitor your progress and adjust the formula as needed for optimal results.",
-      "image": "/uploads/dr-huang-clinic/services/herbs.jpg",
+      "image": "/uploads/dr-huang-clinic/general/chinese-herb-10.webp",
       "order": 2
     },
     {
@@ -76,7 +76,7 @@
         "Immune system boost"
       ],
       "whatToExpect": "Glass or silicone cups are placed on areas of tension or pain. You'll feel a strong pulling sensation that most people find relieving rather than painful. The cups may be left in place for 5-15 minutes, or moved across the skin. Temporary circular marks are normal and fade within a few days.",
-      "image": "/uploads/dr-huang-clinic/services/cupping.jpg",
+      "image": "/uploads/dr-huang-clinic/general/cupping-10.jpg",
       "order": 3
     },
     {
@@ -96,7 +96,7 @@
         "Tonifies deficiency"
       ],
       "whatToExpect": "During moxibustion, you'll feel pleasant warmth as the burning moxa is held near specific points on your body. The treatment is deeply relaxing and warming. Some people describe it as feeling like gentle sunshine on the skin. The herb has a distinctive, earthy aroma.",
-      "image": "/uploads/dr-huang-clinic/services/moxibustion.jpg",
+      "image": "/uploads/dr-huang-clinic/blog/moxibustion-2.jpeg",
       "order": 4
     },
     {
@@ -116,7 +116,7 @@
         "Digestive improvement"
       ],
       "whatToExpect": "Tui Na can range from gentle to quite vigorous depending on your condition and constitution. The practitioner uses hands, fingers, elbows, and sometimes feet to apply various techniques. You'll remain clothed during treatment, which typically lasts 30-60 minutes.",
-      "image": "/uploads/dr-huang-clinic/services/tuina.jpg",
+      "image": "/uploads/dr-huang-clinic/blog/acupuncture-pain.jpg",
       "order": 5
     },
     {
@@ -136,7 +136,7 @@
         "Neck and shoulder tension release"
       ],
       "whatToExpect": "Oil is applied to your skin, then a smooth tool is used to scrape areas of tension or pain in downward strokes. You'll feel pressure and scraping, which can be intense but not unbearable. Red or purple marks appear during treatment and typically fade within 2-7 days.",
-      "image": "/uploads/dr-huang-clinic/services/gua-sha.jpg",
+      "image": "/uploads/dr-huang-clinic/blog/gua-sha-22.png",
       "order": 6
     },
     {
@@ -156,7 +156,7 @@
         "Easy to implement at home"
       ],
       "whatToExpect": "During your consultation, we'll discuss your diet and provide specific recommendations about foods to emphasize or avoid based on your condition. You'll receive practical, achievable guidance that fits into your lifestyle. We'll adjust recommendations as your health improves.",
-      "image": "/uploads/dr-huang-clinic/services/dietary.jpg",
+      "image": "/uploads/dr-huang-clinic/general/chinese-dietary-10.jpg",
       "order": 7
     },
     {

@@ -3,7 +3,7 @@
     "variant": "centered",
     "title": "Visit Our Clinic",
     "subtitle": "Take a virtual tour of our peaceful, welcoming healing space",
-    "backgroundImage": "/uploads/dr-huang-clinic/gallery/hero-bg.jpg"
+    "backgroundImage": "/uploads/dr-huang-clinic/gallery/gallery-0.jpg"
   },
   "introduction": {
     "text": "Our clinic is designed to be a sanctuary for healing - a peaceful, comfortable environment where you can relax and focus on your wellness. Browse our gallery to get a feel for our space before your first visit."
@@ -16,12 +16,6 @@
       "description": "View all clinic photos"
     },
     {
-      "id": "exterior",
-      "name": "Exterior & Entrance",
-      "icon": "Home",
-      "description": "Our building and welcoming entrance"
-    },
-    {
       "id": "reception",
       "name": "Reception Area",
       "icon": "Sofa",
@@ -32,12 +26,6 @@
       "name": "Treatment Rooms",
       "icon": "Bed",
       "description": "Peaceful spaces for your treatments"
-    },
-    {
-      "id": "herbal-pharmacy",
-      "name": "Herbal Pharmacy",
-      "icon": "Leaf",
-      "description": "Our extensive herbal medicine collection"
     },
     {
       "id": "equipment",
@@ -173,15 +161,6 @@
       "description": "Over 200 traditional Chinese herbs in stock",
       "featured": true,
       "order": 13
-    },
-    {
-      "id": "herbs-2",
-      "src": "/uploads/dr-huang-clinic/gallery/herbal-jars.jpg",
-      "alt": "Glass jars of herbs",
-      "title": "Premium Quality Herbs",
-      "category": "herbal-pharmacy",
-      "description": "Only the highest quality, tested herbs",
-      "order": 14
     },
     {
       "id": "herbs-3",

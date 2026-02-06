@@ -26,8 +26,9 @@ export default function HowItWorksSection({
   return (
     <section className={cn('section-padding bg-white', className)}>
       <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="bg-white shadow-lg rounded-3xl p-8 md:p-12">
+          {/* Section Header */}
+          <div className="text-center mb-12">
           {badge && (
             <Badge variant="primary" className="mb-4">
               {badge}
@@ -37,24 +38,25 @@ export default function HowItWorksSection({
           {subtitle && (
             <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
           )}
+          </div>
+
+          {/* Render based on variant */}
+          {variant === 'horizontal' && (
+            <HowItWorksHorizontal steps={steps} />
+          )}
+          
+          {variant === 'vertical' && (
+            <HowItWorksVertical steps={steps} />
+          )}
+          
+          {variant === 'cards' && (
+            <HowItWorksCards steps={steps} />
+          )}
+
+          {variant === 'vertical-image-right' && (
+            <HowItWorksVerticalImage steps={steps} image={image} imageAlt={imageAlt} />
+          )}
         </div>
-
-        {/* Render based on variant */}
-        {variant === 'horizontal' && (
-          <HowItWorksHorizontal steps={steps} />
-        )}
-        
-        {variant === 'vertical' && (
-          <HowItWorksVertical steps={steps} />
-        )}
-        
-        {variant === 'cards' && (
-          <HowItWorksCards steps={steps} />
-        )}
-
-        {variant === 'vertical-image-right' && (
-          <HowItWorksVerticalImage steps={steps} image={image} imageAlt={imageAlt} />
-        )}
       </div>
     </section>
   );
@@ -172,9 +174,13 @@ function HowItWorksVerticalImage({
       <div>
         <HowItWorksVertical steps={steps} />
       </div>
-      <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
+      <div className="relative aspect-square rounded-2xl overflow-hidden bg-transparent">
         {image ? (
-          <img src={image} alt={imageAlt || 'How it works'} className="h-full w-full object-cover" />
+          <img
+            src={image}
+            alt={imageAlt || 'How it works'}
+            className="h-full w-full object-contain object-top"
+          />
         ) : (
           <div className="h-full w-full bg-gradient-to-br from-primary/10 to-primary/5" />
         )}

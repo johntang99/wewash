@@ -146,7 +146,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] py-16 md:py-20 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] pt-20 md:pt-24 pb-16 md:pb-20 px-4 overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
@@ -171,18 +171,19 @@ export default async function AboutPage({ params }: AboutPageProps) {
             </div>
 
             {/* Right Column - Hero Image */}
-            <div className="relative lg:h-[500px] h-[350px] hidden md:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="hidden md:block w-full">
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
                 {hero.backgroundImage ? (
                   <Image
                     src={hero.backgroundImage}
                     alt={hero.title}
-                    fill
-                    className="object-cover"
+                    width={1200}
+                    height={1200}
+                    className="w-full h-auto object-contain"
                     priority
                   />
                 ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 relative p-8">
+                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 relative p-8">
                     <div className="absolute top-10 left-10 w-24 h-24 bg-primary-50/20 rounded-full"></div>
                     <div className="absolute bottom-10 right-10 w-32 h-32 bg-secondary-50/20 rounded-full"></div>
 
@@ -198,8 +199,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary rounded-3xl opacity-10 -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-secondary rounded-3xl opacity-10 -z-10"></div>
             </div>
           </div>
         </div>
@@ -213,11 +212,19 @@ export default async function AboutPage({ params }: AboutPageProps) {
               {/* Photo */}
               <div className="lg:col-span-2">
                 <div className="sticky top-8">
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mb-6">
-                    {/* Placeholder - replace with actual image */}
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                      <Icon name="User" size="xl" className="text-primary/30" />
-                    </div>
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mb-6 bg-gray-100">
+                    {profile.image ? (
+                      <Image
+                        src={profile.image}
+                        alt={profile.name}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                        <Icon name="User" size="xl" className="text-primary/30" />
+                      </div>
+                    )}
                   </div>
                   <div className="text-center">
                     <h2 className="text-heading font-bold text-gray-900 mb-2">

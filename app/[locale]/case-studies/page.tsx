@@ -117,7 +117,7 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] py-16 md:py-20 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] pt-20 md:pt-24 pb-16 md:pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
@@ -134,24 +134,23 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
               </p>
             </div>
 
-            <div className="relative lg:h-[500px] h-[350px] hidden md:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="hidden md:block w-full">
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
                 {hero.backgroundImage ? (
                   <Image
                     src={hero.backgroundImage}
                     alt={hero.title}
-                    fill
-                    className="object-cover"
+                    width={1200}
+                    height={1200}
+                    className="w-full h-auto object-contain"
                     priority
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
+                  <div className="w-full aspect-square flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
                     <Icon name="Sparkles" className="text-primary/40" size="xl" />
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary rounded-3xl opacity-10 -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-secondary rounded-3xl opacity-10 -z-10"></div>
             </div>
           </div>
         </div>

@@ -146,7 +146,7 @@ export default async function HomePage({ params }: PageProps) {
       
       {/* Blog Preview Section */}
       {content.blog && (
-        <BlogPreviewSection {...content.blog} />
+        <BlogPreviewSection locale={locale} {...content.blog} />
       )}
       
       {/* Gallery Preview Section */}

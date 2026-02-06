@@ -78,12 +78,12 @@
     "stats": [
       {
         "icon": "Award",
-        "number": "15+",
+        "number": "16+",
         "label": "Years Experience"
       },
       {
         "icon": "Heart",
-        "number": "1000+",
+        "number": "20,000+",
         "label": "Patients Helped"
       },
       {
@@ -100,7 +100,7 @@
     "trustBadges": [
       "Licensed Acupuncturist",
       "Board Certified",
-      "20+ Years Experience"
+      "16+ Years Experience"
     ],
     "credentials": [
       {
@@ -155,7 +155,7 @@
     "title": "How Chinese Medicine Works",
     "subtitle": "A holistic approach to healing",
     "variant": "vertical-image-right",
-    "image": "/uploads/dr-huang-clinic/home/welcome-section.jpg",
+    "image": "/uploads/dr-huang-clinic/general/tcm-emotion-1.webp",
     "imageAlt": "Patient care at Dr. Huang Clinic",
     "steps": [
       {
@@ -186,7 +186,7 @@
       {
         "id": "back-pain",
         "icon": "Activity",
-        "image": "https://images.unsplash.com/photo-1768507423533-b87b62769758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/uploads/dr-huang-clinic/general/back-pain-2.jpeg",
         "title": "Back Pain",
         "category": "Pain Management",
         "description": "Whether acute or chronic, acupuncture and TCM therapies provide effective relief without drugs or surgery",
@@ -201,7 +201,7 @@
       {
         "id": "headaches-migraines",
         "icon": "Activity",
-        "image": "https://images.unsplash.com/photo-1554574004-b5ed96682e9b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/uploads/dr-huang-clinic/general/headache-2.jpeg",
         "title": "Headaches & Migraines",
         "category": "Pain Management",
         "description": "Effective treatment for tension headaches, migraines, and chronic head pain without medication",
@@ -216,7 +216,7 @@
       {
         "id": "anxiety",
         "icon": "Brain",
-        "image": "https://images.unsplash.com/photo-1513097847644-f00cfe868607?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/uploads/dr-huang-clinic/general/anxiate-3.jpeg",
         "title": "Anxiety & Panic Disorders",
         "category": "Mental & Emotional Health",
         "description": "Natural, drug-free support for anxiety, panic attacks, and general nervousness",
@@ -249,6 +249,7 @@
       "url": "/en/conditions"
     }
   },
+
   "services": {
     "variant": "featured-large",
     "badge": "TREATMENT OPTIONS",
@@ -261,7 +262,7 @@
       "subtitle": "Restore balance and stimulate healing",
       "shortDescription": "Our primary treatment modality using fine needles to restore balance and promote healing",
       "fullDescription": "Acupuncture involves the insertion of fine, sterile needles at specific points to restore the flow of Qi. This ancient practice stimulates natural healing, reduces pain, and promotes overall wellness.",
-      "image": "/uploads/dr-huang-clinic/services/acupuncture.jpg",
+      "image": "/uploads/dr-huang-clinic/general/acupuncture-10.jpeg",
       "link": "/en/services#acupuncture"
     },
     "services": [
@@ -323,27 +324,27 @@
     "subtitle": "Educational resources about TCM and wellness",
     "posts": [
       {
-        "slug": "acupuncture-science",
+        "slug": "acupuncture-pain-relief-science",
         "type": "article",
-        "image": "/uploads/dr-huang-clinic/blog/acupuncture-pain.jpg",
+        "image": "/uploads/dr-huang-clinic/general/acupuncture-11.jpeg",
         "category": "Acupuncture",
         "readTime": "8 min read",
         "title": "The Science Behind Acupuncture: How It Works",
         "excerpt": "Discover how acupuncture stimulates your body's natural healing mechanisms based on modern research."
       },
       {
-        "slug": "herbal-medicine-101",
+        "slug": "chinese-herbal-formulas",
         "type": "article",
-        "image": "/uploads/dr-huang-clinic/blog/herbal-medicine.jpg",
+        "image": "/uploads/dr-huang-clinic/general/chinese-herb-10.webp",
         "category": "Herbal Medicine",
         "readTime": "6 min read",
         "title": "Chinese Herbal Medicine 101",
         "excerpt": "Learn about the fundamentals of Chinese herbal medicine and how custom formulas are created."
       },
       {
-        "slug": "first-visit-video",
+        "slug": "first-visit-acupuncture-guide",
         "type": "video",
-        "image": "/uploads/dr-huang-clinic/blog/digestive-health.jpg",
+        "image": "/uploads/dr-huang-clinic/general/Acupuncture-14.webp",
         "category": "Patient Education",
         "readTime": "5 min watch",
         "title": "What to Expect at Your First Acupuncture Visit",

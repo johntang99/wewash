@@ -1,12 +1,12 @@
 {
   "hero": {
     "variant": "centered",
-    "title": "参观我们的诊所",
-    "subtitle": "虚拟参观我们宁静、温馨的治疗空间",
+    "title": "我们的诊所与历史照片",
+    "subtitle": "了解我们的治疗空间与中医传承",
     "backgroundImage": "/uploads/dr-huang-clinic/gallery/hero-bg.jpg"
   },
   "introduction": {
-    "text": "我们的诊所被设计成治疗的圣地——一个宁静、舒适的环境，您可以在这里放松并专注于您的健康。浏览我们的图库，在您首次访问之前了解我们的空间。"
+    "text": "浏览诊所的空间与环境照片，同时欣赏精选历史照片，感受传统中医的文化与根源。这里呈现我们的现在与传承的起点。"
   },
   "categories": [
     {

@@ -1,9 +1,9 @@
 {
   "hero": {
     "variant": "centered",
-    "title": "认识黄医生",
-    "subtitle": "致力于通过传统中医为您的健康和保健服务",
-    "description": "以历久弥新的智慧与个性化关怀，陪伴您的康复之路。",
+    "title": "认识黄医生（针灸师，中医硕士）",
+    "subtitle": "纽约米德尔敦值得信赖的中医与针灸诊所",
+    "description": "拥有15年以上临床经验，黄医生融合传统中医与现代临床理念，为您定制个性化方案，调和身心，促进长期健康。",
     "backgroundImage": "/uploads/dr-huang-clinic/about/hero-bg.jpg"
   },
   "profile": {

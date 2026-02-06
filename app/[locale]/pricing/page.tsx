@@ -152,17 +152,18 @@ export default async function NewPatientsPage({ params }: NewPatientsPageProps) 
               </p>
             </div>
 
-            <div className="relative lg:h-[420px] h-[320px] hidden md:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="hidden md:block w-full">
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
                 {hero.backgroundImage ? (
                   <Image
                     src={hero.backgroundImage}
                     alt={hero.title}
-                    fill
-                    className="object-cover"
+                    width={1200}
+                    height={1200}
+                    className="w-full h-auto object-contain"
                   />
                 ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10">
+                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10">
                     <div className="text-8xl mb-6">🏛️</div>
                     <p className="text-gray-700 font-semibold text-subheading mb-2">
                       {locale === 'en' ? 'Your First Visit' : '首次就诊'}
@@ -173,8 +174,6 @@ export default async function NewPatientsPage({ params }: NewPatientsPageProps) 
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[var(--primary)] rounded-3xl opacity-10 -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-amber-600 rounded-3xl opacity-10 -z-10"></div>
             </div>
           </div>
         </div>

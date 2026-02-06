@@ -106,7 +106,7 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] py-16 md:py-20 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] pt-20 md:pt-24 pb-16 md:pb-20 px-4 overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
@@ -146,18 +146,19 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
             </div>
 
             {/* Right Column - Hero Image */}
-            <div className="relative lg:h-[500px] h-[350px] hidden md:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="hidden md:block w-full">
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
                 {hero.backgroundImage ? (
                   <Image
                     src={hero.backgroundImage}
                     alt={hero.title}
-                    fill
-                    className="object-cover"
+                    width={1200}
+                    height={1200}
+                    className="w-full h-auto object-contain"
                     priority
                   />
                 ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 relative p-8">
+                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 relative p-8">
                     <div className="absolute top-10 left-10 w-24 h-24 bg-primary-50/20 rounded-full"></div>
                     <div className="absolute bottom-10 right-10 w-32 h-32 bg-secondary-50/20 rounded-full"></div>
                     <div className="absolute top-1/2 right-16 w-20 h-20 bg-primary-100/20 rounded-full"></div>
@@ -174,8 +175,6 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary rounded-3xl opacity-10 -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-secondary rounded-3xl opacity-10 -z-10"></div>
             </div>
           </div>
         </div>

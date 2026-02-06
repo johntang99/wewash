@@ -900,6 +900,119 @@ export function ContentEditor({
                 </div>
               )}
 
+              {Array.isArray(formData?.images) && (
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <div className="text-xs font-semibold text-gray-500 uppercase mb-3">
+                    Gallery Photos
+                  </div>
+                  <div className="space-y-4">
+                    {formData.images.map((image: any, index: number) => (
+                      <div
+                        key={image.id || index}
+                        className="border border-gray-100 rounded-lg p-4"
+                      >
+                        <div className="grid gap-3 md:grid-cols-2">
+                          <div>
+                            <label className="block text-xs text-gray-500">Title</label>
+                            <input
+                              className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              value={image.title || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'title'] as string[],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs text-gray-500">Category</label>
+                            <input
+                              className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              value={image.category || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'category'] as string[],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs text-gray-500">Source</label>
+                            <input
+                              className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              value={image.src || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'src'] as string[],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs text-gray-500">Alt</label>
+                            <input
+                              className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              value={image.alt || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'alt'] as string[],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs text-gray-500">Order</label>
+                            <input
+                              type="number"
+                              className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              value={image.order ?? ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'order'] as string[],
+                                  event.target.value === '' ? '' : Number(event.target.value)
+                                )
+                              }
+                            />
+                          </div>
+                          <div className="flex items-center gap-2 mt-6">
+                            <input
+                              type="checkbox"
+                              checked={Boolean(image.featured)}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'featured'] as string[],
+                                  event.target.checked
+                                )
+                              }
+                            />
+                            <span className="text-xs text-gray-600">Featured</span>
+                          </div>
+                          <div className="md:col-span-2">
+                            <label className="block text-xs text-gray-500">
+                              Description
+                            </label>
+                            <textarea
+                              className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              value={image.description || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['images', index, 'description'] as string[],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {formData?.cta && (
                 <div className="border border-gray-200 rounded-lg p-4">
                   <div className="text-xs font-semibold text-gray-500 uppercase mb-3">

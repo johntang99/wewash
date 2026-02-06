@@ -2,10 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardContent, Badge, Carousel } from '@/components/ui';
 import { cn } from '@/lib/utils';
-import { BlogPost } from '@/lib/types';
+import { BlogPost, Locale } from '@/lib/types';
 import { Calendar, Clock, Video } from 'lucide-react';
 
 export interface BlogPreviewSectionProps {
+  locale: Locale;
   badge?: string;
   title: string;
   subtitle?: string;
@@ -19,6 +20,7 @@ export interface BlogPreviewSectionProps {
 }
 
 export default function BlogPreviewSection({
+  locale,
   badge,
   title,
   subtitle,
@@ -27,6 +29,12 @@ export default function BlogPreviewSection({
   variant = 'cards-grid',
   className,
 }: BlogPreviewSectionProps) {
+  const getLocalizedUrl = (url: string) => {
+    if (!url.startsWith('/')) return url;
+    if (url.startsWith(`/${locale}/`) || url === `/${locale}`) return url;
+    return `/${locale}${url}`;
+  };
+
   return (
     <section className={cn('section-padding bg-white', className)}>
       <div className="container-custom">
@@ -45,26 +53,26 @@ export default function BlogPreviewSection({
 
         {/* Render based on variant */}
         {variant === 'cards-grid' && (
-          <BlogCardsGrid posts={posts} />
+          <BlogCardsGrid posts={posts} locale={locale} />
         )}
         
         {variant === 'featured-side' && (
-          <BlogFeaturedSide posts={posts} />
+          <BlogFeaturedSide posts={posts} locale={locale} />
         )}
         
         {variant === 'list-detailed' && (
-          <BlogListDetailed posts={posts} />
+          <BlogListDetailed posts={posts} locale={locale} />
         )}
         
         {variant === 'carousel' && (
-          <BlogCarousel posts={posts} />
+          <BlogCarousel posts={posts} locale={locale} />
         )}
 
         {/* More Link */}
         {moreLink && (
           <div className="text-center mt-12">
             <Link
-              href={moreLink.url}
+              href={getLocalizedUrl(moreLink.url)}
               className="text-primary hover:text-primary-dark font-semibold inline-flex items-center gap-2 group"
             >
               {moreLink.text}
@@ -83,52 +91,52 @@ export default function BlogPreviewSection({
 // VARIANT COMPONENTS
 // ============================================
 
-function BlogCardsGrid({ posts }: { posts: BlogPost[] }) {
+function BlogCardsGrid({ posts, locale }: { posts: BlogPost[]; locale: Locale }) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => (
-        <BlogCard key={post.slug} post={post} />
+        <BlogCard key={post.slug} post={post} locale={locale} />
       ))}
     </div>
   );
 }
 
-function BlogFeaturedSide({ posts }: { posts: BlogPost[] }) {
+function BlogFeaturedSide({ posts, locale }: { posts: BlogPost[]; locale: Locale }) {
   const [featured, ...others] = posts;
   
   return (
     <div className="grid lg:grid-cols-2 gap-8">
       {/* Featured Post */}
       {featured && (
-        <BlogCard post={featured} featured />
+        <BlogCard post={featured} featured locale={locale} />
       )}
       
       {/* Other Posts */}
       <div className="space-y-4">
         {others.map((post) => (
-          <BlogCard key={post.slug} post={post} compact />
+          <BlogCard key={post.slug} post={post} compact locale={locale} />
         ))}
       </div>
     </div>
   );
 }
 
-function BlogListDetailed({ posts }: { posts: BlogPost[] }) {
+function BlogListDetailed({ posts, locale }: { posts: BlogPost[]; locale: Locale }) {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       {posts.map((post) => (
-        <BlogCard key={post.slug} post={post} horizontal />
+        <BlogCard key={post.slug} post={post} horizontal locale={locale} />
       ))}
     </div>
   );
 }
 
-function BlogCarousel({ posts }: { posts: BlogPost[] }) {
+function BlogCarousel({ posts, locale }: { posts: BlogPost[]; locale: Locale }) {
   return (
     <Carousel autoPlay={false} showDots showArrows>
       {posts.map((post) => (
         <div key={post.slug} className="px-4">
-          <BlogCard post={post} />
+          <BlogCard post={post} locale={locale} />
         </div>
       ))}
     </Carousel>
@@ -141,17 +149,19 @@ function BlogCarousel({ posts }: { posts: BlogPost[] }) {
 
 interface BlogCardProps {
   post: BlogPost;
+  locale: Locale;
   featured?: boolean;
   compact?: boolean;
   horizontal?: boolean;
 }
 
-function BlogCard({ post, featured, compact, horizontal }: BlogCardProps) {
+function BlogCard({ post, locale, featured, compact, horizontal }: BlogCardProps) {
   const isVideo = post.type === 'video';
+  const href = `/${locale}/blog/${post.slug}`;
   
   if (horizontal) {
     return (
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={href}>
         <Card variant="default" hover>
           <CardContent className="md:flex gap-6 items-start">
             {/* Image */}
@@ -199,7 +209,7 @@ function BlogCard({ post, featured, compact, horizontal }: BlogCardProps) {
   
   if (compact) {
     return (
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={href}>
         <Card variant="default" hover>
           <CardContent className="flex gap-4 items-start">
             {/* Small Image */}
@@ -236,7 +246,7 @@ function BlogCard({ post, featured, compact, horizontal }: BlogCardProps) {
   }
   
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={href}>
       <Card variant="default" hover className={cn('h-full', featured && 'lg:row-span-2')}>
         {/* Image */}
         {post.image && (

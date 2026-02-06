@@ -1,7 +1,9 @@
- import type { Metadata } from 'next';
+import type { Metadata } from 'next';
  import Image from 'next/image';
  import Link from 'next/link';
  import { notFound } from 'next/navigation';
+import fs from 'fs/promises';
+import path from 'path';
 import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale, SiteInfo } from '@/lib/types';
@@ -55,6 +57,40 @@ import { Locale, SiteInfo } from '@/lib/types';
    };
  }
  
+const GALLERY_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.svg']);
+
+function titleCaseFromFilename(filename: string) {
+  const base = filename.replace(/\.[^/.]+$/, '');
+  return base
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (match) => match.toUpperCase());
+}
+
+async function loadGalleryFolderImages(siteId: string): Promise<GalleryImage[]> {
+  try {
+    const folder = path.join(process.cwd(), 'public', 'uploads', siteId, 'gallery');
+    const files = await fs.readdir(folder);
+    const images = files.filter((file) =>
+      GALLERY_EXTENSIONS.has(path.extname(file).toLowerCase())
+    );
+
+    return images.map((file, index) => {
+      const title = titleCaseFromFilename(file);
+      return {
+        id: `${siteId}-gallery-${index + 1}`,
+        src: `/uploads/${siteId}/gallery/${file}`,
+        alt: title,
+        title,
+        category: 'details',
+        description: '',
+        order: index + 1,
+      };
+    });
+  } catch (error) {
+    return [];
+  }
+}
+
  export async function generateMetadata({ params }: GalleryPageProps): Promise<Metadata> {
    const { locale } = params;
   const siteId = await getRequestSiteId();
@@ -81,7 +117,16 @@ import { Locale, SiteInfo } from '@/lib/types';
      notFound();
    }
  
-   const { hero, introduction, categories, images, cta } = content;
+  const { hero, introduction, categories, images, cta } = content;
+  const folderImages = await loadGalleryFolderImages(siteId);
+  const displayImages = folderImages.length ? folderImages : images;
+  const displayCategories = folderImages.length
+    ? categories.filter(
+        (category) =>
+          category.id === 'all' ||
+          folderImages.some((image) => image.category === category.id)
+      )
+    : categories;
    const heroFeatures = [
      { icon: Camera, text: locale === 'en' ? 'Virtual tour' : '虚拟参观' },
      { icon: Sparkles, text: locale === 'en' ? 'Clean & modern' : '干净现代' },
@@ -91,7 +136,7 @@ import { Locale, SiteInfo } from '@/lib/types';
    return (
      <main>
        {/* Hero Section */}
-       <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] py-16 md:py-20 px-4 overflow-hidden">
+       <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] pt-20 md:pt-24 pb-16 md:pb-20 px-4 overflow-hidden">
          <div className="absolute inset-0 opacity-10">
            <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
            <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
@@ -132,30 +177,29 @@ import { Locale, SiteInfo } from '@/lib/types';
                </div>
              </div>
  
-             <div className="relative lg:h-[420px] h-[320px] hidden md:block">
-               <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
-                 {hero.backgroundImage ? (
-                   <Image
-                     src={hero.backgroundImage}
-                     alt={hero.title}
-                     fill
-                     className="object-cover"
-                   />
-                 ) : (
-                   <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10">
-                     <div className="text-8xl mb-6">🏛️</div>
-                     <p className="text-gray-700 font-semibold text-subheading mb-2">
-                       {locale === 'en' ? 'Our Healing Space' : '我们的治疗空间'}
-                     </p>
-                     <p className="text-gray-600 text-small">
-                       {locale === 'en' ? 'Designed for your comfort and wellness' : '为您的舒适与健康而设计'}
-                     </p>
-                   </div>
-                 )}
-               </div>
-               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[var(--primary)] rounded-3xl opacity-10 -z-10"></div>
-               <div className="absolute -top-6 -left-6 w-48 h-48 bg-amber-600 rounded-3xl opacity-10 -z-10"></div>
-             </div>
+            <div className="hidden md:block w-full">
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                {hero.backgroundImage ? (
+                  <Image
+                    src={hero.backgroundImage}
+                    alt={hero.title}
+                    width={1200}
+                    height={1200}
+                    className="w-full h-auto object-contain"
+                  />
+                ) : (
+                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10">
+                    <div className="text-8xl mb-6">🏛️</div>
+                    <p className="text-gray-700 font-semibold text-subheading mb-2">
+                      {locale === 'en' ? 'Our Healing Space' : '我们的治疗空间'}
+                    </p>
+                    <p className="text-gray-600 text-small">
+                      {locale === 'en' ? 'Designed for your comfort and wellness' : '为您的舒适与健康而设计'}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
            </div>
          </div>
        </section>
@@ -166,11 +210,11 @@ import { Locale, SiteInfo } from '@/lib/types';
            <div className="text-center mb-8">
              <p className="text-small text-gray-600">
                {locale === 'en' ? 'Showing' : '当前显示'}{' '}
-               <span className="font-semibold text-gray-900">{images.length}</span>{' '}
+              <span className="font-semibold text-gray-900">{displayImages.length}</span>{' '}
                {locale === 'en' ? 'photos of our clinic and facilities' : '张诊所与设施照片'}
              </p>
            </div>
-           <GalleryGrid images={images} categories={categories} />
+          <GalleryGrid images={displayImages} categories={displayCategories} />
          </div>
        </section>
  

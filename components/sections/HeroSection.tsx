@@ -82,14 +82,13 @@ export default function HeroSection({
                 {image && (
                   <div className="relative w-full max-w-xl mx-auto lg:mx-0">
                     <div className="rounded-2xl bg-white/80 shadow-2xl overflow-hidden">
-                      <div className="relative aspect-square">
-                        <Image
-                          src={image}
-                          alt={clinicName}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
+                      <Image
+                        src={image}
+                        alt={clinicName}
+                        width={1200}
+                        height={1200}
+                        className="w-full h-auto object-contain"
+                      />
                     </div>
                   </div>
                 )}
