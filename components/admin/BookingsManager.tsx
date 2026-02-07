@@ -1,8 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import type { BookingRecord, BookingStatus, SiteConfig } from '@/lib/types';
+import { useEffect, useMemo, useState } from 'react';
+import type { BookingRecord, BookingService, BookingStatus, SiteConfig } from '@/lib/types';
 import { Button } from '@/components/ui';
+import Modal from '@/components/ui/Modal';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
 interface BookingsManagerProps {
   sites: SiteConfig[];
@@ -22,9 +27,42 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
   const [from, setFrom] = useState(getDateOffset(0));
   const [to, setTo] = useState(getDateOffset(30));
   const [bookings, setBookings] = useState<BookingRecord[]>([]);
+  const [services, setServices] = useState<BookingService[]>([]);
   const [drafts, setDrafts] = useState<Record<string, BookingRecord>>({});
   const [status, setStatus] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [selectedCustomerKey, setSelectedCustomerKey] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'calendar' | 'list' | 'customers'>('calendar');
+  const [hoverCard, setHoverCard] = useState<{
+    x: number;
+    y: number;
+    title: string;
+    serviceName: string;
+    status: string;
+    email: string;
+    phone: string;
+    note?: string;
+  } | null>(null);
+
+  const serviceNameById = useMemo(() => {
+    const map = new Map<string, string>();
+    services.forEach((service) => {
+      map.set(service.id, service.name);
+    });
+    return map;
+  }, [services]);
+
+  const loadServices = async () => {
+    if (!siteId) return;
+    try {
+      const response = await fetch(`/api/admin/booking/services?siteId=${siteId}`);
+      if (!response.ok) return;
+      const payload = await response.json();
+      setServices(payload.services || []);
+    } catch (error) {
+      // ignore load failures
+    }
+  };
 
   const loadBookings = async () => {
     if (!siteId) return;
@@ -49,6 +87,7 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
 
   useEffect(() => {
     loadBookings();
+    loadServices();
   }, [siteId, from, to]);
 
   useEffect(() => {
@@ -58,6 +97,36 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
     });
     setDrafts(nextDrafts);
   }, [bookings]);
+
+  const customers = useMemo(() => {
+    const map = new Map<string, { key: string; name: string; email: string; phone: string; bookings: BookingRecord[] }>();
+    bookings.forEach((booking) => {
+      const key = `${booking.email.toLowerCase()}|${booking.phone}`;
+      if (!map.has(key)) {
+        map.set(key, {
+          key,
+          name: booking.name,
+          email: booking.email,
+          phone: booking.phone,
+          bookings: [],
+        });
+      }
+      map.get(key)?.bookings.push(booking);
+    });
+    return Array.from(map.values())
+      .map((customer) => ({
+        ...customer,
+        bookings: [...customer.bookings].sort((a, b) =>
+          `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`)
+        ),
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [bookings]);
+
+  const selectedCustomer = useMemo(
+    () => customers.find((customer) => customer.key === selectedCustomerKey) || null,
+    [customers, selectedCustomerKey]
+  );
 
   const updateDraft = (id: string, updates: Partial<BookingRecord>) => {
     setDrafts((current) => ({
@@ -86,6 +155,37 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
     setStatus('Saved');
     await loadBookings();
   };
+
+  const calendarEvents = useMemo(() => {
+    return bookings.map((booking) => {
+      const start = `${booking.date}T${booking.time}`;
+      const duration = booking.durationMinutes || 60;
+      const startDate = new Date(start);
+      const endDate = new Date(startDate.getTime() + duration * 60000);
+      const statusColor =
+        booking.status === 'cancelled'
+          ? '#9CA3AF'
+          : booking.status === 'rescheduled'
+            ? '#F59E0B'
+            : '#16A34A';
+      const serviceName = serviceNameById.get(booking.serviceId) || booking.serviceId;
+      return {
+        id: booking.id,
+        title: `${booking.name} · ${serviceName}`,
+        start,
+        end: endDate.toISOString(),
+        backgroundColor: statusColor,
+        borderColor: statusColor,
+        extendedProps: {
+          serviceName,
+          status: booking.status,
+          email: booking.email,
+          phone: booking.phone,
+          note: booking.note || '',
+        },
+      };
+    });
+  }, [bookings, serviceNameById]);
 
   return (
     <div className="space-y-6">
@@ -130,6 +230,30 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
         </div>
       </div>
 
+      <div className="flex flex-wrap items-center gap-2">
+        <Button
+          type="button"
+          variant={viewMode === 'calendar' ? 'primary' : 'outline'}
+          onClick={() => setViewMode('calendar')}
+        >
+          Calendar View
+        </Button>
+        <Button
+          type="button"
+          variant={viewMode === 'list' ? 'primary' : 'outline'}
+          onClick={() => setViewMode('list')}
+        >
+          List View
+        </Button>
+        <Button
+          type="button"
+          variant={viewMode === 'customers' ? 'primary' : 'outline'}
+          onClick={() => setViewMode('customers')}
+        >
+          Customers
+        </Button>
+      </div>
+
       {status && (
         <div className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700">
           {status}
@@ -141,7 +265,37 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
         {!loading && bookings.length === 0 && (
           <div className="text-sm text-gray-500">No bookings found.</div>
         )}
-        {!loading && bookings.length > 0 && (
+        {!loading && bookings.length > 0 && viewMode === 'calendar' && (
+          <div className="h-[720px]">
+            <FullCalendar
+              plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+              initialView="dayGridMonth"
+              headerToolbar={{
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay',
+              }}
+              nowIndicator
+              height="100%"
+              events={calendarEvents}
+              eventMouseEnter={(info) => {
+                const native = info.jsEvent as MouseEvent;
+                setHoverCard({
+                  x: native.clientX,
+                  y: native.clientY,
+                  title: info.event.title,
+                  serviceName: info.event.extendedProps.serviceName,
+                  status: info.event.extendedProps.status,
+                  email: info.event.extendedProps.email,
+                  phone: info.event.extendedProps.phone,
+                  note: info.event.extendedProps.note || undefined,
+                });
+              }}
+              eventMouseLeave={() => setHoverCard(null)}
+            />
+          </div>
+        )}
+        {!loading && bookings.length > 0 && viewMode === 'list' && (
           <div className="space-y-4">
             {bookings.map((booking) => {
               const draft = drafts[booking.id];
@@ -151,7 +305,7 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
                   <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                     <div>
                       <div className="text-sm font-semibold text-gray-900">
-                        {draft.name} · {draft.serviceId}
+                        {draft.name} · {serviceNameById.get(draft.serviceId) || draft.serviceId}
                       </div>
                       <div className="text-xs text-gray-500">
                         {draft.email} · {draft.phone}
@@ -210,7 +364,88 @@ export function BookingsManager({ sites, selectedSiteId }: BookingsManagerProps)
             })}
           </div>
         )}
+        {!loading && viewMode === 'customers' && (
+          <div className="space-y-2">
+            {customers.length === 0 && (
+              <div className="text-sm text-gray-500">No customers found.</div>
+            )}
+            {customers.map((customer) => (
+              <button
+                key={customer.key}
+                type="button"
+                onClick={() => setSelectedCustomerKey(customer.key)}
+                className="w-full text-left rounded-lg border border-gray-100 px-3 py-3 hover:bg-gray-50"
+              >
+                <div className="text-sm font-semibold text-gray-900">
+                  {customer.name}
+                </div>
+                <div className="text-xs text-gray-500">
+                  {customer.email} · {customer.phone}
+                </div>
+                <div className="text-xs text-gray-400 mt-1">
+                  {customer.bookings.length} booking{customer.bookings.length === 1 ? '' : 's'}
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
+
+      {hoverCard && (
+        <div
+          className="fixed z-50 pointer-events-none"
+          style={{ left: hoverCard.x + 12, top: hoverCard.y + 12 }}
+        >
+          <div className="rounded-xl border border-gray-200 bg-white shadow-lg p-4 w-72">
+            <div className="text-sm font-semibold text-gray-900">{hoverCard.title}</div>
+            <div className="text-xs text-gray-500 mt-1">{hoverCard.serviceName}</div>
+            <div className="mt-2 space-y-1 text-xs text-gray-600">
+              <div>
+                <span className="font-semibold text-gray-700">Status:</span> {hoverCard.status}
+              </div>
+              <div>
+                <span className="font-semibold text-gray-700">Email:</span> {hoverCard.email}
+              </div>
+              <div>
+                <span className="font-semibold text-gray-700">Phone:</span> {hoverCard.phone}
+              </div>
+              {hoverCard.note && (
+                <div>
+                  <span className="font-semibold text-gray-700">Note:</span> {hoverCard.note}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <Modal
+        open={Boolean(selectedCustomer)}
+        onClose={() => setSelectedCustomerKey(null)}
+        title={selectedCustomer?.name}
+        description={selectedCustomer ? `${selectedCustomer.email} · ${selectedCustomer.phone}` : undefined}
+        size="lg"
+      >
+        {selectedCustomer && (
+          <div className="space-y-3">
+            {selectedCustomer.bookings.map((booking) => (
+              <div key={booking.id} className="border border-gray-100 rounded-lg p-4">
+                <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                  <div className="text-sm font-semibold text-gray-900">
+                    {serviceNameById.get(booking.serviceId) || booking.serviceId} · {booking.date} {booking.time}
+                  </div>
+                  <div className="text-xs text-gray-500">{booking.status}</div>
+                </div>
+                {booking.note && (
+                  <div className="mt-2 text-sm text-gray-600">
+                    <span className="font-semibold text-gray-700">Note:</span> {booking.note}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }

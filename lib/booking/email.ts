@@ -34,24 +34,35 @@ export async function sendBookingEmails({
   message: string;
   adminRecipients?: string[];
 }) {
-  if (!resend || !resendFrom) return;
+  if (!resend || !resendFrom) {
+    console.warn('Resend not configured. Missing RESEND_API_KEY or RESEND_FROM.');
+    return;
+  }
 
   const detailText = formatBookingDetails(booking, service);
   const body = `${message}\n\n${detailText}`;
 
-  await resend.emails.send({
-    from: resendFrom,
-    to: booking.email,
-    subject,
-    text: body,
-  });
-
-  if (adminRecipients && adminRecipients.length > 0) {
+  try {
     await resend.emails.send({
       from: resendFrom,
-      to: adminRecipients,
-      subject: `[Admin] ${subject}`,
+      to: booking.email,
+      subject,
       text: body,
     });
+  } catch (error) {
+    console.warn('Client email failed:', error);
+  }
+
+  if (adminRecipients && adminRecipients.length > 0) {
+    try {
+      await resend.emails.send({
+        from: resendFrom,
+        to: adminRecipients,
+        subject: `[Admin] ${subject}`,
+        text: body,
+      });
+    } catch (error) {
+      console.warn('Admin email failed:', error);
+    }
   }
 }

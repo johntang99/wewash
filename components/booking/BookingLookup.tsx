@@ -116,12 +116,15 @@ export function BookingLookup({ locale }: BookingLookupProps) {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6 shadow-sm">
+    <div className="bg-white/95 border border-gray-200/80 rounded-3xl p-8 space-y-6 shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
       <div>
-        <h2 className="text-heading font-semibold text-gray-900">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+          {locale === 'en' ? 'Manage' : '管理'}
+        </div>
+        <h2 className="text-heading font-semibold text-gray-900 mt-2">
           {locale === 'en' ? 'Manage Your Booking' : '管理预约'}
         </h2>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 mt-1">
           {locale === 'en'
             ? 'Enter the email and phone used for booking.'
             : '输入预约时使用的邮箱和电话。'}
@@ -130,13 +133,13 @@ export function BookingLookup({ locale }: BookingLookupProps) {
 
       <div className="grid gap-4 md:grid-cols-2">
         <input
-          className="rounded-md border border-gray-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
           placeholder={locale === 'en' ? 'Email' : '邮箱'}
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
         <input
-          className="rounded-md border border-gray-200 px-3 py-2 text-sm"
+          className="rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
           placeholder={locale === 'en' ? 'Phone' : '电话'}
           value={phone}
           onChange={(event) => setPhone(event.target.value)}
@@ -154,14 +157,14 @@ export function BookingLookup({ locale }: BookingLookupProps) {
 
       <div className="space-y-4">
         {bookings.length === 0 && !loading && (
-          <div className="text-sm text-gray-500">
+          <div className="rounded-xl border border-dashed border-gray-200 px-4 py-6 text-sm text-gray-500 text-center">
             {locale === 'en' ? 'No bookings found.' : '未找到预约。'}
           </div>
         )}
         {bookings.map((booking) => {
           const draft = rescheduleDraft[booking.id];
           return (
-            <div key={booking.id} className="border border-gray-100 rounded-lg p-4">
+            <div key={booking.id} className="border border-gray-100 rounded-2xl p-5 shadow-sm">
               <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                 <div>
                   <div className="text-sm font-semibold text-gray-900">
@@ -190,7 +193,7 @@ export function BookingLookup({ locale }: BookingLookupProps) {
               <div className="mt-4 grid gap-3 md:grid-cols-3">
                 <input
                   type="date"
-                  className="rounded-md border border-gray-200 px-3 py-2 text-sm"
+                  className="rounded-xl border border-gray-200 px-3 py-2 text-sm"
                   value={draft?.date || ''}
                   onChange={async (event) => {
                     const date = event.target.value;
@@ -204,7 +207,7 @@ export function BookingLookup({ locale }: BookingLookupProps) {
                   }}
                 />
                 <select
-                  className="rounded-md border border-gray-200 px-3 py-2 text-sm"
+                  className="rounded-xl border border-gray-200 px-3 py-2 text-sm"
                   value={draft?.time || ''}
                   onChange={(event) =>
                     setRescheduleDraft((current) => ({

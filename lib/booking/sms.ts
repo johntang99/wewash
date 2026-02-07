@@ -33,7 +33,10 @@ export async function sendBookingSms({
   message: string;
   adminRecipients?: string[];
 }) {
-  if (!client || !smsFrom) return;
+  if (!client || !smsFrom) {
+    console.warn('Twilio not configured. Missing TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, or TWILIO_FROM.');
+    return;
+  }
 
   const body = `${message}\n${formatBookingSms(booking, service)}`;
 

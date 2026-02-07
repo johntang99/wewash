@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CalendarCheck } from 'lucide-react';
 import { BookingWidget } from '@/components/booking/BookingWidget';
 import { BookingLookup } from '@/components/booking/BookingLookup';
 import { getRequestSiteId } from '@/lib/content';
@@ -30,9 +31,12 @@ export default function BookingPage({ params }: BookingPageProps) {
 
   return (
     <main className="bg-gray-50">
-      <section className="pt-20 md:pt-24 pb-10 px-4">
+      <section className="pt-28 md:pt-32 pb-10 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[color-mix(in_srgb,var(--primary)_12%,white)] text-[var(--primary)] mb-4">
+              <CalendarCheck className="w-6 h-6" />
+            </div>
             <h1 className="text-display font-bold text-gray-900">
               {locale === 'en' ? 'Book an Appointment' : '预约就诊'}
             </h1>

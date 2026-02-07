@@ -106,18 +106,26 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
   };
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[2fr,1fr]">
-      <div className="space-y-6">
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6 shadow-sm">
-          <div>
-            <div className="text-xs font-semibold text-gray-500 uppercase">
-              {locale === 'en' ? 'Step 1' : '第1步'}
+    <div className="grid gap-10 lg:grid-cols-[2.2fr,1fr]">
+      <div className="space-y-8">
+        <div className="bg-white/95 border border-gray-200/80 rounded-3xl p-8 space-y-6 shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                <span className="w-6 h-6 rounded-full bg-[color-mix(in_srgb,var(--primary)_12%,white)] text-[var(--primary)] flex items-center justify-center text-xs font-bold">
+                  1
+                </span>
+                {locale === 'en' ? 'Step 1' : '第1步'}
+              </div>
+              <h2 className="text-heading font-semibold text-gray-900 mt-2">
+                {locale === 'en' ? 'Choose a Service' : '选择服务'}
+              </h2>
             </div>
-            <h2 className="text-heading font-semibold text-gray-900">
-              {locale === 'en' ? 'Choose a Service' : '选择服务'}
-            </h2>
+            <div className="text-xs text-gray-500">
+              {locale === 'en' ? 'Select treatment type' : '选择服务类型'}
+            </div>
           </div>
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             {services.map((service) => (
               <button
                 key={service.id}
@@ -126,14 +134,16 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                   setSelectedService(service);
                   setStep(2);
                 }}
-                className={`rounded-xl border px-4 py-3 text-left transition ${
+                className={`rounded-2xl border px-4 py-4 text-left transition group ${
                   selectedService?.id === service.id
-                    ? 'border-[var(--primary)] bg-[color-mix(in_srgb,var(--primary)_10%,white)]'
-                    : 'border-gray-200 hover:border-gray-300'
+                    ? 'border-[var(--primary)] bg-[color-mix(in_srgb,var(--primary)_8%,white)] shadow-[0_6px_20px_rgba(15,23,42,0.08)]'
+                    : 'border-gray-200 hover:border-gray-300 hover:shadow-sm'
                 }`}
               >
-                <div className="text-sm font-semibold text-gray-900">{service.name}</div>
-                <div className="text-xs text-gray-500">
+                <div className="text-sm font-semibold text-gray-900 group-hover:text-gray-800">
+                  {service.name}
+                </div>
+                <div className="mt-1 text-xs text-gray-500">
                   {service.durationMinutes} min
                   {service.price ? ` · $${service.price}` : ''}
                 </div>
@@ -142,14 +152,22 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6 shadow-sm">
-          <div>
-            <div className="text-xs font-semibold text-gray-500 uppercase">
-              {locale === 'en' ? 'Step 2' : '第2步'}
+        <div className="bg-white/95 border border-gray-200/80 rounded-3xl p-8 space-y-6 shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                <span className="w-6 h-6 rounded-full bg-[color-mix(in_srgb,var(--primary)_12%,white)] text-[var(--primary)] flex items-center justify-center text-xs font-bold">
+                  2
+                </span>
+                {locale === 'en' ? 'Step 2' : '第2步'}
+              </div>
+              <h2 className="text-heading font-semibold text-gray-900 mt-2">
+                {locale === 'en' ? 'Select Date & Time' : '选择日期和时间'}
+              </h2>
             </div>
-            <h2 className="text-heading font-semibold text-gray-900">
-              {locale === 'en' ? 'Select Date & Time' : '选择日期和时间'}
-            </h2>
+            <div className="text-xs text-gray-500">
+              {locale === 'en' ? 'Pick an open slot' : '选择可用时段'}
+            </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
@@ -158,7 +176,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
               </label>
               <input
                 type="date"
-                className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={selectedDate}
                 onChange={(event) => {
                   setSelectedDate(event.target.value);
@@ -171,9 +189,9 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
               <label className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Time' : '时间'}
               </label>
-              <div className="mt-1 grid grid-cols-2 gap-2">
+              <div className="mt-1 grid grid-cols-2 gap-3">
                 {slots.length === 0 && selectedDate && (
-                  <div className="text-xs text-gray-500">
+                  <div className="col-span-2 rounded-xl border border-dashed border-gray-200 px-3 py-4 text-xs text-gray-500 text-center">
                     {locale === 'en' ? 'No slots available.' : '暂无可选时间。'}
                   </div>
                 )}
@@ -185,10 +203,10 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                       setSelectedTime(slot);
                       setStep(3);
                     }}
-                    className={`rounded-md border px-3 py-2 text-xs font-medium transition ${
+                    className={`rounded-xl border px-3 py-2 text-xs font-semibold transition ${
                       selectedTime === slot
-                        ? 'border-[var(--primary)] bg-[color-mix(in_srgb,var(--primary)_10%,white)]'
-                        : 'border-gray-200 hover:border-gray-300'
+                        ? 'border-[var(--primary)] bg-[color-mix(in_srgb,var(--primary)_10%,white)] shadow-sm'
+                        : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                     }`}
                   >
                     {slot}
@@ -202,14 +220,22 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
           )}
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6 shadow-sm">
-          <div>
-            <div className="text-xs font-semibold text-gray-500 uppercase">
-              {locale === 'en' ? 'Step 3' : '第3步'}
+        <div className="bg-white/95 border border-gray-200/80 rounded-3xl p-8 space-y-6 shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                <span className="w-6 h-6 rounded-full bg-[color-mix(in_srgb,var(--primary)_12%,white)] text-[var(--primary)] flex items-center justify-center text-xs font-bold">
+                  3
+                </span>
+                {locale === 'en' ? 'Step 3' : '第3步'}
+              </div>
+              <h2 className="text-heading font-semibold text-gray-900 mt-2">
+                {locale === 'en' ? 'Your Details' : '填写信息'}
+              </h2>
             </div>
-            <h2 className="text-heading font-semibold text-gray-900">
-              {locale === 'en' ? 'Your Details' : '填写信息'}
-            </h2>
+            <div className="text-xs text-gray-500">
+              {locale === 'en' ? 'Required fields' : '必填信息'}
+            </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
@@ -217,7 +243,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                 {locale === 'en' ? 'Full name' : '姓名'}
               </label>
               <input
-                className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
               />
@@ -227,7 +253,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                 {locale === 'en' ? 'Phone number' : '电话'}
               </label>
               <input
-                className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={form.phone}
                 onChange={(event) => setForm({ ...form, phone: event.target.value })}
               />
@@ -238,7 +264,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
               </label>
               <input
                 type="email"
-                className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={form.email}
                 onChange={(event) => setForm({ ...form, email: event.target.value })}
               />
@@ -248,7 +274,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                 {locale === 'en' ? 'Note (optional)' : '备注（可选）'}
               </label>
               <textarea
-                className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 rows={3}
                 value={form.note}
                 onChange={(event) => setForm({ ...form, note: event.target.value })}
@@ -260,13 +286,17 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
               />
             </div>
           </div>
-          <Button type="button" onClick={handleSubmit} disabled={!canProceedToDetails || !isFormComplete || loading}>
+          <Button
+            type="button"
+            onClick={handleSubmit}
+            disabled={!canProceedToDetails || !isFormComplete || loading}
+          >
             {locale === 'en' ? 'Confirm Booking' : '确认预约'}
           </Button>
         </div>
 
         {step === 4 && (
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-6">
             <div className="text-lg font-semibold text-emerald-900">
               {locale === 'en' ? 'Booking confirmed!' : '预约成功！'}
             </div>
@@ -279,7 +309,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
         )}
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-2xl p-6 h-fit shadow-sm">
+      <div className="bg-white/95 border border-gray-200/80 rounded-3xl p-6 h-fit shadow-[0_12px_30px_rgba(15,23,42,0.08)] lg:sticky lg:top-28">
         <div className="text-sm font-semibold text-gray-900 mb-4">
           {locale === 'en' ? 'Booking Summary' : '预约摘要'}
         </div>
