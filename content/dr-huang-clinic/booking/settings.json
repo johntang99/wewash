@@ -1,0 +1,47 @@
+{
+  "timezone": "America/New_York",
+  "bufferMinutes": 10,
+  "minNoticeHours": 12,
+  "maxDaysAhead": 60,
+  "businessHours": [
+    {
+      "day": "Mon",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Tue",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Wed",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Thu",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Fri",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Sat",
+      "open": "10:00",
+      "close": "14:00"
+    },
+    {
+      "day": "Sun",
+      "open": "00:00",
+      "close": "00:00",
+      "closed": true
+    }
+  ],
+  "blockedDates": [],
+  "notificationEmails": ["baamplatform@gmail.com"],
+  "notificationPhones": []
+}

@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import { BookOpen, Building2, FileText, Image, Layers, LayoutGrid, Settings, Users } from 'lucide-react';
+import { BookOpen, Building2, Calendar, FileText, Image, Layers, LayoutGrid, Settings, SlidersHorizontal, Users } from 'lucide-react';
 
 const navigation = [
   { name: 'Sites', href: '/admin/sites', icon: Building2 },
   { name: 'Content', href: '/admin/content', icon: FileText },
   { name: 'Blog Posts', href: '/admin/blog-posts', icon: BookOpen },
+  { name: 'Bookings', href: '/admin/bookings', icon: Calendar },
+  { name: 'Booking Settings', href: '/admin/booking-settings', icon: SlidersHorizontal },
   { name: 'Media', href: '/admin/media', icon: Image },
   { name: 'Components', href: '/admin/components', icon: LayoutGrid },
   { name: 'Variants', href: '/admin/variants', icon: Layers },

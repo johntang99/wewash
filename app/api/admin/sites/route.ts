@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createSite, getSiteById, getSites } from '@/lib/sites';
 import { getSessionFromRequest } from '@/lib/admin/auth';
 import { getDefaultFooter } from '@/lib/footer';
+import type { BookingSettings, BookingService } from '@/lib/types';
 import type { SiteConfig } from '@/lib/types';
 import fs from 'fs/promises';
 import path from 'path';
@@ -102,8 +103,47 @@ export async function POST(request: NextRequest) {
       );
     };
 
+    const ensureBookingFiles = async () => {
+      const bookingRoot = path.join(process.cwd(), 'content', created.id, 'booking');
+      const servicesPath = path.join(bookingRoot, 'services.json');
+      const settingsPath = path.join(bookingRoot, 'settings.json');
+      const defaultServices: BookingService[] = [
+        { id: 'acupuncture', name: 'Acupuncture', durationMinutes: 60, price: 120, active: true },
+      ];
+      const defaultSettings: BookingSettings = {
+        timezone: 'America/New_York',
+        bufferMinutes: 10,
+        minNoticeHours: 12,
+        maxDaysAhead: 60,
+        businessHours: [
+          { day: 'Mon', open: '09:00', close: '17:00' },
+          { day: 'Tue', open: '09:00', close: '17:00' },
+          { day: 'Wed', open: '09:00', close: '17:00' },
+          { day: 'Thu', open: '09:00', close: '17:00' },
+          { day: 'Fri', open: '09:00', close: '17:00' },
+          { day: 'Sat', open: '10:00', close: '14:00' },
+          { day: 'Sun', open: '00:00', close: '00:00', closed: true },
+        ],
+        blockedDates: [],
+        notificationEmails: [],
+        notificationPhones: [],
+      };
+      try {
+        await fs.mkdir(bookingRoot, { recursive: true });
+        await fs.access(servicesPath);
+      } catch (error) {
+        await fs.writeFile(servicesPath, JSON.stringify(defaultServices, null, 2));
+      }
+      try {
+        await fs.access(settingsPath);
+      } catch (error) {
+        await fs.writeFile(settingsPath, JSON.stringify(defaultSettings, null, 2));
+      }
+    };
+
     await ensureSeoFiles();
     await ensureFooterFiles();
+    await ensureBookingFiles();
 
     return NextResponse.json(created);
   } catch (error: any) {

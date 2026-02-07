@@ -1,0 +1,51 @@
+[
+  {
+    "id": "initial-consultation",
+    "name": "Initial Consultation & Treatment",
+    "durationMinutes": 30,
+    "price": 120,
+    "active": true
+  },
+  {
+    "id": "follow-up-acupuncture",
+    "name": "Follow-up Acupuncture Session",
+    "durationMinutes": 30,
+    "price": 85,
+    "active": true
+  },
+  {
+    "id": "extended-acupuncture",
+    "name": "Extended Acupuncture Session",
+    "durationMinutes": 30,
+    "price": 105,
+    "active": true
+  },
+  {
+    "id": "cupping-standalone",
+    "name": "Cupping Therapy (Standalone)",
+    "durationMinutes": 30,
+    "price": 65,
+    "active": true
+  },
+  {
+    "id": "tuina-massage",
+    "name": "Tui Na Medical Massage",
+    "durationMinutes": 30,
+    "price": 95,
+    "active": true
+  },
+  {
+    "id": "herbal-consultation",
+    "name": "Chinese Herbal Consultation",
+    "durationMinutes": 30,
+    "price": 75,
+    "active": true
+  },
+  {
+    "id": "service-others",
+    "name": "Others",
+    "durationMinutes": 30,
+    "price": 0,
+    "active": true
+  }
+]

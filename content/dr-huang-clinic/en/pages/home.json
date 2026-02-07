@@ -45,13 +45,17 @@
         "url": "/en/blog"
       },
       {
+        "text": "Book Now",
+        "url": "/en/book"
+      },
+      {
         "text": "Contact",
         "url": "/en/contact"
       }
     ],
     "cta": {
       "text": "Book Online",
-      "link": "/en/contact"
+      "link": "/en/book"
     }
   },
   "hero": {
@@ -62,7 +66,7 @@
     "description": "Experience the healing power of Traditional Chinese Medicine in Middletown, NY. Our holistic approach combines acupuncture, herbal medicine, and time-tested therapies to restore balance, relieve pain, and support natural healing.",
     "primaryCta": {
       "text": "Book Appointment",
-      "link": "/en/contact"
+      "link": "/en/book"
     },
     "secondaryCta": {
       "text": "Call Now",
@@ -78,7 +82,7 @@
     "stats": [
       {
         "icon": "Award",
-        "number": "16+",
+        "number": "20",
         "label": "Years Experience"
       },
       {

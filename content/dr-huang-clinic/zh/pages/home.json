@@ -20,11 +20,12 @@
       { "text": "图库", "url": "/zh/gallery" },
       { "text": "首次就诊", "url": "/zh/new-patients" },
       { "text": "博客", "url": "/zh/blog" },
+      { "text": "立即预约", "url": "/zh/book" },
       { "text": "联系我们", "url": "/zh/contact" }
     ],
     "cta": {
       "text": "在线预约",
-      "link": "/zh/contact"
+      "link": "/zh/book"
     }
   },
   "hero": {
@@ -35,7 +36,7 @@
     "description": "体验传统中医的治疗力量。我们的整体方法结合针灸、中药和经过时间考验的疗法，恢复平衡并促进自然康复。",
     "primaryCta": {
       "text": "预约",
-      "link": "/zh/contact"
+      "link": "/zh/book"
     },
     "secondaryCta": {
       "text": "立即致电",

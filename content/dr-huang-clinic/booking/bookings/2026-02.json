@@ -1,0 +1,46 @@
+[
+  {
+    "id": "bk_51c2a4d7-a238-4dac-b2f1-328961e8ba99",
+    "siteId": "dr-huang-clinic",
+    "serviceId": "initial-consultation",
+    "date": "2026-02-10",
+    "time": "14:00",
+    "durationMinutes": 90,
+    "name": "Zhong Tang",
+    "phone": "8452381767",
+    "email": "john.tang2025@gmail.com",
+    "status": "cancelled",
+    "createdAt": "2026-02-07T03:50:33.628Z",
+    "updatedAt": "2026-02-07T05:18:17.194Z"
+  },
+  {
+    "id": "bk_5d26fd59-161e-4a48-8b96-eeb43ba85106",
+    "siteId": "dr-huang-clinic",
+    "serviceId": "service-",
+    "date": "2026-02-10",
+    "time": "13:00",
+    "durationMinutes": 30,
+    "name": "Zhong Tang",
+    "phone": "8452381767",
+    "email": "john.tang2025@gmail.com",
+    "note": "test",
+    "status": "cancelled",
+    "createdAt": "2026-02-07T04:49:17.360Z",
+    "updatedAt": "2026-02-07T05:04:20.920Z"
+  },
+  {
+    "id": "bk_bcf8ecc9-fdc2-4bb8-a326-22f3692ef410",
+    "siteId": "dr-huang-clinic",
+    "serviceId": "service-others",
+    "date": "2026-02-10",
+    "time": "13:00",
+    "durationMinutes": 30,
+    "name": "Zhong Tang",
+    "phone": "8452381767",
+    "email": "john.tang2025@gmail.com",
+    "note": "test booking",
+    "status": "confirmed",
+    "createdAt": "2026-02-07T05:10:21.253Z",
+    "updatedAt": "2026-02-07T05:18:22.363Z"
+  }
+]

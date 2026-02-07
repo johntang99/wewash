@@ -331,6 +331,51 @@ export interface FooterSection {
   copyright: string;
 }
 
+export type BookingStatus = 'confirmed' | 'cancelled' | 'rescheduled';
+
+export interface BookingService {
+  id: string;
+  name: string;
+  durationMinutes: number;
+  price?: number;
+  description?: string;
+  active?: boolean;
+}
+
+export interface BookingBusinessHour {
+  day: string;
+  open: string;
+  close: string;
+  closed?: boolean;
+}
+
+export interface BookingSettings {
+  timezone: string;
+  bufferMinutes: number;
+  minNoticeHours: number;
+  maxDaysAhead: number;
+  businessHours: BookingBusinessHour[];
+  blockedDates: string[];
+  notificationEmails?: string[];
+  notificationPhones?: string[];
+}
+
+export interface BookingRecord {
+  id: string;
+  siteId: string;
+  serviceId: string;
+  date: string;
+  time: string;
+  durationMinutes: number;
+  name: string;
+  phone: string;
+  email: string;
+  note?: string;
+  status: BookingStatus;
+  createdAt: string;
+  updatedAt: string;
+}
+
 // ============================================
 // PAGE CONTENT TYPES
 // ============================================
