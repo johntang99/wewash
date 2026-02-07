@@ -171,7 +171,7 @@ function createAutoReplyHTML(name: string): string {
                     </p>
 
                     <p style="margin: 16px 0 0; color: #111827; font-size: 16px;">
-                      <strong>Dr. Michael Huang, L.Ac., MSTCM</strong><br>
+                      <strong>Dr. Huang, L.Ac., MSTCM</strong><br>
                       <span style="color: #6b7280; font-size: 14px;">Licensed Acupuncturist & TCM Practitioner</span>
                     </p>
                   </td>

@@ -223,11 +223,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{map.title}</h3>
                     <div className="relative aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4">
-                      {/* Placeholder for Google Maps */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Icon name="MapPin" size="xl" className="text-gray-300" />
-                      </div>
-                      {/* In production: <iframe src={map.embedUrl} ... /> */}
+                      <iframe
+                        title="Clinic map"
+                        src={map.embedUrl}
+                        className="absolute inset-0 w-full h-full"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
                     </div>
                     <p className="text-sm text-gray-600">
                       {map.directions}

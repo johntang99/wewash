@@ -195,7 +195,7 @@ The contact form will work immediately in production.
 │  │ Mon-Fri: 9am-6pm            │   │
 │  └─────────────────────────────┘   │
 │                                     │
-│  Dr. Michael Huang, L.Ac., MSTCM   │
+│  Dr. Huang, L.Ac., MSTCM   │
 │  Licensed Acupuncturist             │
 ├─────────────────────────────────────┤
 │  Dr. Huang Clinic                  │ (Footer)
