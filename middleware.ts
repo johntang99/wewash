@@ -3,7 +3,10 @@
 // ============================================
 
 import { NextRequest, NextResponse } from 'next/server';
-import { locales, defaultLocale } from './lib/i18n';
+
+// Keep middleware self-contained for Edge runtime safety.
+const locales = ['en', 'es'] as const;
+const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
