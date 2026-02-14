@@ -1,0 +1,17 @@
+{
+  "zip": "10940",
+  "city": "Middletown",
+  "email": "northstreetlaundromat@gmail.com",
+  "phone": "(845) 394-0158",
+  "state": "NY",
+  "social": {
+    "facebook": "https://facebook.com/wewash99",
+    "instagram": "https://instagram.com/wewash99"
+  },
+  "address": "87 North Street",
+  "tagline": "Clean and Friendly Local Laundromat",
+  "clinicName": "WeWash Laundromat",
+  "description": "Modern laundromat with self-service and professional wash & fold. Open 7:30am - Last Wash 7:30pm daily in Middletown, NY.",
+  "addressMapUrl": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
+  "headerVariant": "stacked"
+}

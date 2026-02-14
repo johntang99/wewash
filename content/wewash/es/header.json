@@ -4,17 +4,17 @@
     "phoneHref": "tel:+18453940158",
     "address": "87 North Street, Middletown, NY 10940",
     "addressHref": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
-    "hours": "Recogida y entrega 7 dias",
-    "badge": "Servicio urgente el mismo dia"
+    "hours": "Abierto 7:30am - Ultimo lavado 7:30pm",
+    "badge": "Servicio el mismo dia disponible"
   },
   "menu": {
     "logo": {
       "emoji": "🧺",
       "text": "WeWash",
-      "subtext": "Lavanderia para hogar y negocios",
+      "subtext": "Lavanderia local limpia y amigable",
       "image": {
-        "src": "/uploads/wewash/home/drhuang-2.svg",
-        "alt": "Logo de WeWash"
+        "src": "",
+        "alt": ""
       }
     },
     "items": [

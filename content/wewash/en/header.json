@@ -4,17 +4,17 @@
     "phoneHref": "tel:+18453940158",
     "address": "87 North Street, Middletown, NY 10940",
     "addressHref": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
-    "hours": "Pickup & Delivery 7 Days",
-    "badge": "Same-Day Rush Available"
+    "hours": "Open 7:30am - Last Wash 7:30pm",
+    "badge": "Same-Day Service Available"
   },
   "menu": {
     "logo": {
       "emoji": "🧺",
       "text": "WeWash",
-      "subtext": "Laundry Pickup, Drop-off, and Commercial Care",
+      "subtext": "Clean and Friendly Local Laundromat",
       "image": {
-        "src": "/uploads/wewash/home/drhuang-2.svg",
-        "alt": "WeWash logo"
+        "src": "",
+        "alt": ""
       }
     },
     "items": [

@@ -1,0 +1,403 @@
+{
+  "cta": {
+    "title": "Launch your weekly laundry workflow",
+    "variant": "centered",
+    "subtitle": "Household and business programs available now.",
+    "primaryCta": {
+      "link": "/en/book",
+      "text": "Book Pickup"
+    },
+    "contactInfo": "Call (845) 394-0158 for support.",
+    "secondaryCta": {
+      "link": "/en/contact",
+      "text": "Talk to Sales"
+    }
+  },
+  "blog": {
+    "badge": "OPERATIONS & CARE",
+    "posts": [
+      {
+        "slug": "spring-seasonal-reset",
+        "type": "article",
+        "image": "/uploads/wewash/blog/spring-health.jpg",
+        "title": "How to Build a Weekly Laundry System That Actually Works",
+        "excerpt": "Practical cadence, sorting, and batching tips for household consistency.",
+        "category": "Laundry Tips",
+        "readTime": "5 min read"
+      },
+      {
+        "slug": "acupuncture-pain-relief-science",
+        "type": "article",
+        "image": "/uploads/wewash/blog/stress-management.jpg",
+        "title": "Route and Turnaround Planning for Small Laundry Teams",
+        "excerpt": "How service windows and SLA planning improve reliability at scale.",
+        "category": "Commercial Ops",
+        "readTime": "7 min read"
+      },
+      {
+        "slug": "chinese-herbal-formulas",
+        "type": "article",
+        "image": "/uploads/wewash/blog/herbal-medicine.jpg",
+        "title": "When to Use Dry Cleaning vs Wash & Fold",
+        "excerpt": "A simple decision guide for garment type and soil level.",
+        "category": "Garment Care",
+        "readTime": "6 min read"
+      }
+    ],
+    "title": "Laundry Guides and Best Practices",
+    "variant": "cards-grid",
+    "moreLink": {
+      "url": "/en/blog",
+      "text": "Read All Articles"
+    },
+    "subtitle": "Tips for garment care, turnaround planning, and laundry operations."
+  },
+  "hero": {
+    "image": "/uploads/wewash/general/home-hero-2.jpg",
+    "stats": [
+      {
+        "icon": "Truck",
+        "label": "Days Service",
+        "number": "7"
+      },
+      {
+        "icon": "Clock3",
+        "label": "Typical Turnaround",
+        "number": "24-48h"
+      },
+      {
+        "icon": "Building2",
+        "label": "Business Clients",
+        "number": "100+"
+      },
+      {
+        "icon": "MapPinned",
+        "label": "Primary ZIP Areas",
+        "number": "5"
+      }
+    ],
+    "tagline": "Pickup, Drop-off, Self-Service, and Commercial Laundry",
+    "variant": "split-photo-right",
+    "clinicName": "WeWash Laundry",
+    "primaryCta": {
+      "link": "/en/book",
+      "text": "Schedule Pickup"
+    },
+    "description": "A complete laundry platform for households and businesses. Schedule recurring pickup, reserve self-service windows, or launch a commercial linen program.",
+    "trustBadges": [
+      "Route-tracked deliveries",
+      "Quality checked orders",
+      "Commercial SLA options"
+    ],
+    "floatingTags": [
+      "Wash & Fold",
+      "Dry Cleaning",
+      "Pickup & Delivery",
+      "Self-Service"
+    ],
+    "secondaryCta": {
+      "link": "/en/contact",
+      "text": "Request Commercial Quote"
+    }
+  },
+  "menu": {
+    "cta": {
+      "link": "/en/book",
+      "text": "Book Pickup"
+    },
+    "items": [
+      {
+        "url": "/en",
+        "text": "Home"
+      },
+      {
+        "url": "/en/services",
+        "text": "Services"
+      },
+      {
+        "url": "/en/pricing",
+        "text": "Pricing"
+      },
+      {
+        "url": "/en/case-studies",
+        "text": "Commercial"
+      },
+      {
+        "url": "/en/about",
+        "text": "About"
+      },
+      {
+        "url": "/en/gallery",
+        "text": "Gallery"
+      },
+      {
+        "url": "/en/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/en/contact",
+        "text": "Contact"
+      }
+    ],
+    "variant": "transparent"
+  },
+  "topBar": {
+    "email": "hello@wewash99.com",
+    "phone": "(845) 394-0158",
+    "address": "87 North Street, Middletown, NY 10940",
+    "addressMapUrl": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940"
+  },
+  "gallery": {
+    "badge": "OPERATIONS TOUR",
+    "title": "Inside WeWash",
+    "images": [
+      {
+        "alt": "Reception",
+        "src": "/uploads/wewash/general/Judy-2.webp",
+        "label": "Reception"
+      },
+      {
+        "alt": "Processing area",
+        "src": "/uploads/wewash/general/home-hero-1.jpg",
+        "label": "Processing"
+      },
+      {
+        "alt": "Store exterior",
+        "src": "/uploads/wewash/general/streetfront-2.webp",
+        "label": "Storefront"
+      },
+      {
+        "alt": "Customer area",
+        "src": "/uploads/wewash/general/interior-3.webp",
+        "label": "Customer Area"
+      }
+    ],
+    "variant": "grid-uniform",
+    "moreLink": {
+      "url": "/en/gallery",
+      "text": "View Gallery"
+    },
+    "subtitle": "See where orders are processed and staged."
+  },
+  "services": {
+    "badge": "SERVICE TYPES",
+    "title": "Flexible Laundry Options",
+    "variant": "featured-large",
+    "featured": {
+      "id": "pickup-delivery",
+      "icon": "Truck",
+      "link": "/en/services#pickup-delivery",
+      "image": "/uploads/wewash/general/pick-up-3.jpg",
+      "title": "Pickup & Delivery",
+      "subtitle": "Door-to-door convenience",
+      "fullDescription": "Ideal for households and light commercial operations needing predictable weekly service.",
+      "shortDescription": "Book one-time or recurring laundry pickup with route-based delivery windows."
+    },
+    "moreLink": {
+      "url": "/en/services",
+      "text": "View Full Service Catalog"
+    },
+    "services": [
+      {
+        "id": "wash-fold",
+        "icon": "Shirt",
+        "link": "/en/services#wash-fold",
+        "title": "Wash & Fold",
+        "shortDescription": "By-weight processing with quality checks."
+      },
+      {
+        "id": "dry-cleaning",
+        "icon": "Sparkles",
+        "link": "/en/services#dry-cleaning",
+        "title": "Dry Cleaning",
+        "shortDescription": "By-item garment care for delicate and formal wear."
+      },
+      {
+        "id": "self-service",
+        "icon": "Timer",
+        "link": "/en/services#self-service",
+        "title": "Self-Service",
+        "shortDescription": "Reserve machine windows to reduce wait times."
+      }
+    ],
+    "subtitle": "Choose the operational mode that fits your schedule and volume."
+  },
+  "conditions": {
+    "title": "Laundry Solutions by Need",
+    "variant": "grid-cards",
+    "moreLink": {
+      "url": "/en/services",
+      "text": "Explore Services"
+    },
+    "subtitle": "Designed for recurring real-world laundry workloads.",
+    "conditions": [
+      {
+        "id": "family-weekly",
+        "icon": "Home",
+        "link": "/en/services#wash-fold",
+        "title": "Family Weekly Laundry",
+        "category": "Residential",
+        "symptoms": [
+          "Weekly volume",
+          "Time constraints",
+          "Mixed garments"
+        ],
+        "description": "Recurring wash-and-fold for busy households."
+      },
+      {
+        "id": "rush-orders",
+        "icon": "Zap",
+        "link": "/en/services#pickup-delivery",
+        "title": "Rush Turnaround",
+        "category": "Residential",
+        "symptoms": [
+          "Event prep",
+          "Travel returns",
+          "Unexpected load"
+        ],
+        "description": "Priority windows for urgent orders."
+      },
+      {
+        "id": "hospitality-linen",
+        "icon": "BedDouble",
+        "link": "/en/services#commercial",
+        "title": "Hospitality Linen",
+        "category": "Commercial",
+        "symptoms": [
+          "High turnover",
+          "Linen volume",
+          "Schedule pressure"
+        ],
+        "description": "Structured turnaround for rentals and small hotels."
+      },
+      {
+        "id": "restaurant-linen",
+        "icon": "UtensilsCrossed",
+        "link": "/en/services#commercial",
+        "title": "Restaurant Linen",
+        "category": "Commercial",
+        "symptoms": [
+          "Daily demand",
+          "Cleanliness standards",
+          "SLA need"
+        ],
+        "description": "Apron and towel cycles with delivery windows."
+      }
+    ]
+  },
+  "firstVisit": {
+    "cta": {
+      "link": {
+        "url": "/en/book",
+        "text": "Book Now"
+      },
+      "title": "Ready to start?",
+      "description": "Book your first laundry order in minutes."
+    },
+    "badge": "FIRST ORDER",
+    "steps": [
+      {
+        "title": "Choose service type",
+        "number": 1,
+        "duration": "1 min",
+        "description": "Pickup, drop-off, self-service, or commercial quote."
+      },
+      {
+        "title": "Set address and ZIP",
+        "number": 2,
+        "duration": "2 min",
+        "description": "Required for pickup and delivery routes."
+      },
+      {
+        "title": "Select window",
+        "number": 3,
+        "duration": "1 min",
+        "description": "Choose your preferred date and time slot."
+      },
+      {
+        "title": "Confirm order",
+        "number": 4,
+        "duration": "1 min",
+        "description": "Get confirmation and tracking updates."
+      }
+    ],
+    "title": "What to Prepare",
+    "subtitle": "Get faster onboarding for pickup and recurring service."
+  },
+  "howItWorks": {
+    "image": "/uploads/wewash/general/store-front-3.webp",
+    "steps": [
+      {
+        "icon": "CalendarDays",
+        "title": "Book Service",
+        "number": 1,
+        "description": "Choose pickup/delivery, drop-off, self-service, or commercial quote."
+      },
+      {
+        "icon": "PackageCheck",
+        "title": "Processing",
+        "number": 2,
+        "description": "Orders are sorted, cleaned, finished, and quality checked by service type."
+      },
+      {
+        "icon": "Truck",
+        "title": "Return and Track",
+        "number": 3,
+        "description": "Receive your order by ETA window with status visibility and support."
+      }
+    ],
+    "title": "How WeWash Works",
+    "variant": "vertical-image-right",
+    "imageAlt": "Laundry operations workflow",
+    "subtitle": "Simple flow from booking to delivery."
+  },
+  "whyChooseUs": {
+    "badge": "WHY WEWASH",
+    "title": "Built for Reliability",
+    "features": [
+      {
+        "icon": "ShieldCheck",
+        "title": "Quality Control",
+        "description": "Every order is checked before dispatch."
+      },
+      {
+        "icon": "Clock3",
+        "title": "Predictable Turnaround",
+        "description": "Route-based scheduling improves ETA consistency."
+      },
+      {
+        "icon": "Building2",
+        "title": "Commercial Ready",
+        "description": "SLA-focused plans for teams and business workflows."
+      }
+    ],
+    "subtitle": "Quality and operations standards for repeatable service."
+  },
+  "testimonials": {
+    "badge": "CUSTOMER FEEDBACK",
+    "title": "Trusted by Families and Local Businesses",
+    "variant": "grid",
+    "moreLink": {
+      "url": "/en/case-studies",
+      "text": "See Commercial Stories"
+    },
+    "subtitle": "Reliable operations and predictable quality every week.",
+    "testimonials": [
+      {
+        "name": "Marco R.",
+        "quote": "We switched our restaurant linen service to WeWash and reduced late deliveries immediately.",
+        "condition": "Restaurant Operations"
+      },
+      {
+        "name": "Angela T.",
+        "quote": "Pickup and delivery has saved our family several hours every week.",
+        "condition": "Household Plan"
+      },
+      {
+        "name": "Brian K.",
+        "quote": "The recurring schedule for our short-term rentals is very consistent and easy to manage.",
+        "condition": "Airbnb Host"
+      }
+    ]
+  }
+}

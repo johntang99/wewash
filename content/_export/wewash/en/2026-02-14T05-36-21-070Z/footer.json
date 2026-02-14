@@ -1,0 +1,80 @@
+{
+  "brand": {
+    "name": "WeWash",
+    "logoText": "WW",
+    "description": "Modern laundry care for busy households and businesses. Pickup, drop-off, and commercial service."
+  },
+  "hours": [
+    "Mon-Fri: 8:00 AM - 8:00 PM",
+    "Sat-Sun: 9:00 AM - 6:00 PM"
+  ],
+  "contact": {
+    "email": "hello@wewash99.com",
+    "phone": "(845) 394-0158",
+    "emailLink": "mailto:hello@wewash99.com",
+    "phoneLink": "tel:+18453940158",
+    "addressLines": [
+      "87 North Street",
+      "Middletown, NY 10940"
+    ]
+  },
+  "services": [
+    {
+      "url": "/en/services#wash-fold",
+      "text": "Wash & Fold"
+    },
+    {
+      "url": "/en/services#dry-cleaning",
+      "text": "Dry Cleaning"
+    },
+    {
+      "url": "/en/services#pickup-delivery",
+      "text": "Pickup & Delivery"
+    },
+    {
+      "url": "/en/services#commercial",
+      "text": "Commercial Laundry"
+    }
+  ],
+  "copyright": "© {year} WeWash. All rights reserved.",
+  "legalLinks": [
+    {
+      "url": "/en/privacy",
+      "text": "Privacy Policy"
+    },
+    {
+      "url": "/en/terms",
+      "text": "Terms of Service"
+    }
+  ],
+  "quickLinks": [
+    {
+      "url": "/en",
+      "text": "Home"
+    },
+    {
+      "url": "/en/services",
+      "text": "Services"
+    },
+    {
+      "url": "/en/pricing",
+      "text": "Pricing"
+    },
+    {
+      "url": "/en/case-studies",
+      "text": "Commercial"
+    },
+    {
+      "url": "/en/contact",
+      "text": "Service Areas"
+    },
+    {
+      "url": "/en/blog",
+      "text": "Blog"
+    },
+    {
+      "url": "/en/contact",
+      "text": "Contact"
+    }
+  ]
+}

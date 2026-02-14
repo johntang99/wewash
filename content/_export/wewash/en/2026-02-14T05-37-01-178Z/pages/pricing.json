@@ -1,0 +1,195 @@
+{
+  "cta": {
+    "note": "Commercial onboarding includes route planning and service-level review.",
+    "title": "Need a custom quote?",
+    "variant": "centered",
+    "primaryCta": {
+      "link": "/en/book",
+      "text": "Book Pickup"
+    },
+    "description": "Tell us your weekly volume and turnaround needs. We will propose a plan that fits your operation.",
+    "secondaryCta": {
+      "link": "/en/contact",
+      "text": "Request Quote"
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "answer": "Orders are weighed at intake. Final charges are based on service type (drop-off vs pickup/delivery) and any add-ons.",
+        "question": "How do you calculate wash-and-fold pricing?"
+      },
+      {
+        "answer": "Yes. We provide tiered pricing based on volume, frequency, and turnaround requirements.",
+        "question": "Do commercial clients get lower rates?"
+      },
+      {
+        "answer": "Yes. You can update cadence and pickup windows based on route capacity and notice requirements.",
+        "question": "Can I change my recurring schedule?"
+      },
+      {
+        "answer": "Pickup and delivery orders have a minimum service value. Drop-off orders use a minimum weight.",
+        "question": "Is there a minimum order?"
+      }
+    ],
+    "title": "Pricing FAQs"
+  },
+  "hero": {
+    "title": "Simple, Transparent Laundry Pricing",
+    "variant": "split-photo-right",
+    "subtitle": "Affordable self-service and professional wash & fold rates.",
+    "backgroundImage": "/uploads/wewash/general/Judy-2.webp"
+  },
+  "packages": {
+    "items": [
+      {
+        "name": "Wash & Fold Club Member",
+        "bestFor": "Regular wash & fold customers",
+        "popular": true,
+        "savings": "Earn rewards",
+        "includes": [
+          "Collect 1 stamp for every 25lb of laundry",
+          "Speed Drop Off service (stay in car, we pick up)",
+          "Spin the Wheel & Win after 3 stamps",
+          "Surprise gifts and special offers"
+        ],
+        "sessions": 1,
+        "totalPrice": "Free to join",
+        "description": "Earn stamps and unlock exclusive benefits.",
+        "regularPrice": "N/A",
+        "perSessionPrice": "Standard rates apply"
+      },
+      {
+        "name": "Kids Zone Membership",
+        "bestFor": "Parents with young children",
+        "popular": false,
+        "savings": "Fun rewards",
+        "includes": [
+          "Kids Creative Zone access",
+          "Collect stamps every visit",
+          "Spin the Wheel & Win after 3 stamps",
+          "Surprise gifts for kids"
+        ],
+        "sessions": 1,
+        "totalPrice": "Free to join",
+        "description": "Keep kids entertained while you do laundry.",
+        "regularPrice": "N/A",
+        "perSessionPrice": "N/A"
+      },
+      {
+        "name": "Bonus Promotions",
+        "bestFor": "All customers",
+        "popular": false,
+        "savings": "Up to $2 per $20",
+        "includes": [
+          "Free $2 credit on every $20 loaded (when active)",
+          "Holiday raffles and giveaways",
+          "Google Review rewards (spin wheel)",
+          "Community event discounts"
+        ],
+        "sessions": 1,
+        "totalPrice": "Various",
+        "description": "Regular bonuses and incentives throughout the year.",
+        "regularPrice": "N/A",
+        "perSessionPrice": "Varies"
+      }
+    ],
+    "title": "Wash & Fold Club Benefits",
+    "subtitle": "Join our loyalty program and enjoy exclusive perks."
+  },
+  "policies": {
+    "title": "Service Policies",
+    "packages": {
+      "title": "Recurring plan policy",
+      "policy": "Recurring plans are billed monthly and can be paused or adjusted based on route availability."
+    },
+    "lateArrival": {
+      "title": "Delivery timing",
+      "policy": "ETA windows are route-based. Delays are communicated proactively with updated delivery windows."
+    },
+    "newPatients": {
+      "title": "First-order requirements",
+      "policy": "New pickup customers must provide valid contact details, ZIP code, and complete address information."
+    },
+    "cancellation": {
+      "title": "Pickup cancellation",
+      "policy": "Please cancel at least 12 hours before pickup windows. Late cancellations may incur a route fee."
+    }
+  },
+  "insurance": {
+    "hsa": {
+      "title": "Business-friendly billing",
+      "description": "For commercial programs, we can structure billing around location, route, or service line."
+    },
+    "title": "Billing and Payments",
+    "insuranceInfo": {
+      "title": "How billing works",
+      "weProvide": [
+        "Order-level receipts",
+        "Recurring billing controls",
+        "Commercial quote support",
+        "Dedicated account contacts"
+      ],
+      "whatToAsk": [
+        "Do I need recurring service?",
+        "How fast is required turnaround?",
+        "Will my order include specialty items?",
+        "Do I need route-based pickup windows?"
+      ],
+      "description": "Household customers are billed per order. Commercial clients can choose weekly invoicing or monthly statements."
+    },
+    "paymentMethods": {
+      "title": "Accepted payment methods",
+      "methods": [
+        "Credit and debit cards",
+        "Apple Pay / Google Pay",
+        "ACH (commercial accounts)",
+        "Invoice terms (approved businesses)"
+      ]
+    },
+    "acceptedInsurance": [
+      "No insurance required",
+      "Household and business invoicing available",
+      "Card-on-file for recurring plans",
+      "Net terms available for approved commercial accounts"
+    ]
+  },
+  "introduction": {
+    "note": "Hours: Open 7:30am - Last Wash 7:30pm daily",
+    "text": "We believe in clear, honest pricing so you can plan your laundry budget. No hidden fees, no surprises."
+  },
+  "individualTreatments": {
+    "items": [
+      {
+        "name": "Self-Service Laundry",
+        "notes": "Load your card and choose your machines",
+        "price": "Pay as you go",
+        "duration": "Your time",
+        "description": "Use our large-capacity washers and efficient dryers."
+      },
+      {
+        "name": "Same-Day Wash & Fold",
+        "notes": "Drop off before noon for same-day pickup",
+        "price": "$1.50/lb",
+        "duration": "Same day",
+        "description": "Professional wash, dry, and fold - ready the same day."
+      },
+      {
+        "name": "Next-Day Wash & Fold",
+        "notes": "Best value for regular customers",
+        "price": "$1.35/lb",
+        "duration": "Next day",
+        "description": "Economy rate for next-day service."
+      },
+      {
+        "name": "Professional Alterations",
+        "notes": "Bring garment for quote",
+        "price": "Varies by item",
+        "duration": "1-3 days",
+        "description": "Expert tailoring and hemming services."
+      }
+    ],
+    "title": "Our Services & Rates",
+    "subtitle": "Flexible options for every laundry need."
+  }
+}

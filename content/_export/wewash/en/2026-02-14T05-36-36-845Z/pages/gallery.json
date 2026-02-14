@@ -1,0 +1,147 @@
+{
+  "cta": {
+    "title": "Ready to Visit in Person?",
+    "variant": "centered",
+    "primaryCta": {
+      "link": "/en/contact",
+      "text": "Book Your Visit"
+    },
+    "description": "Schedule your appointment and experience our welcoming environment firsthand",
+    "secondaryCta": {
+      "link": "https://maps.google.com/?q=71+East+Main+Street+Middletown+NY+10940",
+      "text": "Get Directions"
+    }
+  },
+  "hero": {
+    "title": "Our Clinic and Historic Photos",
+    "variant": "centered",
+    "subtitle": "Take a virtual tour of our peaceful, welcoming healing space",
+    "backgroundImage": "/uploads/wewash/gallery/gallery-0.jpg"
+  },
+  "images": [
+    {
+      "id": "exterior-1",
+      "alt": "Dr. Huang ",
+      "src": "/uploads/wewash/about/dr-huang-11.png",
+      "order": 1,
+      "title": "Doctor Huang",
+      "category": "doctors",
+      "featured": true,
+      "description": "Our welcoming entrance at 71 East Main Street, Middletown"
+    },
+    {
+      "id": "exterior-2",
+      "alt": "Doctor Huang is Lecturing",
+      "src": "/uploads/wewash/about/dr-huang-lecture-20.png",
+      "order": 2,
+      "title": "Doctor Huang is Lecturing",
+      "category": "doctors",
+      "description": "Doctor Huang is Lecturing"
+    },
+    {
+      "id": "exterior-3",
+      "alt": "Gua Sha",
+      "src": "/uploads/wewash/blog/gua-sha-22.png",
+      "order": 3,
+      "title": "Gua Sha",
+      "category": "equipment",
+      "description": "Gua Sha is a service"
+    },
+    {
+      "id": "reception-1",
+      "alt": "Reception desk area",
+      "src": "/uploads/wewash/gallery/gallery-0.jpg",
+      "order": 4,
+      "title": "Reception Desk",
+      "category": "clinic",
+      "featured": true,
+      "description": "Our friendly front desk where you'll be greeted"
+    },
+    {
+      "id": "reception-2",
+      "alt": "praises",
+      "src": "/uploads/wewash/about/dr-huang-14.jpg",
+      "order": 5,
+      "title": "Praises from patients when Doctor Huang was in China",
+      "category": "doctors",
+      "description": "Praises from patients when Doctor Huang was in China"
+    },
+    {
+      "id": "reception-3",
+      "alt": "Acupuncture",
+      "src": "/uploads/wewash/general/acupuncture-10.jpeg",
+      "order": 6,
+      "title": "Acupuncture ",
+      "category": "equipment",
+      "description": "Acupuncture"
+    },
+    {
+      "id": "reception-4",
+      "alt": "Acupuncture for headache",
+      "src": "/uploads/wewash/general/acupuncture-12.jpeg",
+      "order": 7,
+      "title": "Acupuncture for headache",
+      "category": "equipment",
+      "description": "Acupuncture for headache"
+    },
+    {
+      "id": "treatment-1",
+      "alt": "Acupuncture points",
+      "src": "/uploads/wewash/general/acupuncture-16.webp",
+      "order": 8,
+      "title": "Acupuncture points",
+      "category": "equipment",
+      "featured": true,
+      "description": "Acupuncture points"
+    },
+    {
+      "id": "treatment-2",
+      "alt": "Cupping",
+      "src": "/uploads/wewash/general/cupping-10.jpg",
+      "order": 9,
+      "title": "Cupping",
+      "category": "equipment",
+      "description": "Cupping"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "icon": "LayoutGrid",
+      "name": "All Photos",
+      "description": "View all clinic photos"
+    },
+    {
+      "id": "clinic",
+      "icon": "LayoutGrid",
+      "name": "Clinic",
+      "description": "Where your healing journey begins"
+    },
+    {
+      "id": "doctors",
+      "icon": "person",
+      "name": "Doctors",
+      "description": "Doctors treat patients, lecture, others"
+    },
+    {
+      "id": "equipment",
+      "icon": "Syringe",
+      "name": "Equipment & Tools",
+      "description": "The tools of our trade"
+    },
+    {
+      "id": "details",
+      "icon": "Sparkles",
+      "name": "Details",
+      "description": "The little touches that make our clinic special"
+    }
+  ],
+  "virtualTour": {
+    "title": "360° Virtual Tour Coming Soon",
+    "available": false,
+    "description": "We're working on a full virtual tour so you can explore our clinic from the comfort of your home."
+  },
+  "introduction": {
+    "text": "Our clinic is designed to be a sanctuary for healing - a peaceful, comfortable environment where you can relax and focus on your wellness. Browse our gallery to get a feel for our space before your first visit."
+  }
+}

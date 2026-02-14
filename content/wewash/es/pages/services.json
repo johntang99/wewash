@@ -1,99 +1,100 @@
 {
   "hero": {
     "variant": "centered",
-    "title": "Servicios de lavanderia para hogar y negocio",
-    "subtitle": "Recogida y entrega, drop-off, autoservicio y cuentas comerciales.",
+    "title": "Lavanderia moderna y profesional",
+    "subtitle": "Autoservicio, lavado y doblado profesional, y opciones convenientes.",
     "backgroundImage": "/uploads/wewash/home/hero-bg.jpg"
   },
   "overview": {
-    "introduction": "WeWash ayuda a familias ocupadas, alquileres temporales, restaurantes y equipos operativos con flujos de lavanderia confiables.",
+    "introduction": "WeWash ofrece un ambiente limpio y amigable para autoservicio y lavado profesional para clientes ocupados.",
     "benefits": [
-      "Opciones de entrega el mismo dia o al siguiente",
-      "Actualizaciones de estado y horario claro",
-      "Tratamiento de manchas y clasificacion profesional",
-      "Planes recurrentes para hogares y empresas",
-      "Precios transparentes por libra, por prenda o por contrato"
+      "Servicio de lavado y doblado el mismo dia o siguiente",
+      "Lavadoras de gran capacidad y secadoras eficientes",
+      "Estaciones amplias para doblar con asientos comodos",
+      "Club de lavado con beneficios exclusivos",
+      "Alteraciones profesionales en el local"
     ]
   },
   "services": [
     {
-      "id": "wash-fold",
-      "icon": "Shirt",
-      "title": "Lavado y doblado",
-      "shortDescription": "Lavanderia diaria por peso con entrega doblada y lista para guardar.",
-      "fullDescription": "Clasificamos por color y tipo de tela, usamos reglas de secado seguras y revisamos cada pedido antes de entrega.",
+      "id": "self-service",
+      "icon": "WashingMachine",
+      "title": "Autoservicio",
+      "shortDescription": "Lavadoras de gran capacidad y secadoras eficientes para tus necesidades.",
+      "fullDescription": "Nuestras maquinas de ultima generacion ofrecen lavados eficientes y secado rapido y completo. Disfruta de amplias estaciones para doblar con asientos comodos en un ambiente limpio y amigable.",
       "benefits": [
-        "Precio simple por libra",
-        "Manejo cuidadoso de prendas mixtas",
-        "Opcion sin fragancia",
-        "Tiempos rapidos de entrega"
+        "Lavadoras de gran capacidad para cargas grandes",
+        "Secadoras super eficientes",
+        "Estaciones amplias para doblar",
+        "Sistema de pago con tarjeta",
+        "TV y area de espera comoda"
       ],
-      "whatToExpect": "Programa recogida o trae tus bolsas. Procesamos, doblamos y entregamos con resumen del pedido.",
-      "image": "/uploads/wewash/home/welcome-section.jpg",
+      "whatToExpect": "Carga tu tarjeta, selecciona tus maquinas y disfruta de nuestras instalaciones limpias mientras esperas.",
+      "image": "/uploads/wewash/general/wash-machine-2.jpg",
       "order": 1
     },
     {
-      "id": "dry-cleaning",
-      "icon": "Sparkles",
-      "title": "Tintoreria",
-      "shortDescription": "Cuidado profesional para trajes, vestidos, abrigos y telas delicadas.",
-      "fullDescription": "Nuestro proceso incluye tratamiento previo de manchas, limpieza por tipo de tela, planchado y revision final.",
+      "id": "wash-fold-same-day",
+      "icon": "Clock",
+      "title": "Lavado y doblado el mismo dia",
+      "shortDescription": "Servicio profesional de lavado, secado y doblado completado el mismo dia.",
+      "fullDescription": "Deja tu ropa por la manana y recogela el mismo dia. Nuestro equipo clasifica, lava, seca y dobla cuidadosamente tu ropa con atencion al detalle.",
       "benefits": [
-        "Precio por prenda",
-        "Revision de etiquetas y material",
-        "Planchado incluido",
-        "Empaque listo para transporte"
+        "$1.50 por libra",
+        "Entrega el mismo dia",
+        "Clasificacion y doblado profesional",
+        "Detergente y cuidado de calidad"
       ],
-      "whatToExpect": "Etiqueta tus prendas, elige servicio normal o urgente y sigue el progreso.",
-      "image": "/uploads/wewash/gallery/treatment-room-1.jpg",
+      "whatToExpect": "Deja tu ropa antes del mediodia para servicio el mismo dia. Te enviaremos mensaje cuando este lista.",
+      "image": "/uploads/wewash/general/wash-fold.jpg",
       "order": 2
     },
     {
-      "id": "pickup-delivery",
-      "icon": "Truck",
-      "title": "Recogida y entrega",
-      "shortDescription": "Servicio puerta a puerta con ventanas por ruta y cobertura por codigo postal.",
-      "fullDescription": "Puedes reservar pedidos unicos o recurrentes. Organizamos rutas por zona para mejorar puntualidad y eficiencia.",
+      "id": "wash-fold-next-day",
+      "icon": "Shirt",
+      "title": "Lavado y doblado siguiente dia",
+      "shortDescription": "Servicio economico con recogida al dia siguiente.",
+      "fullDescription": "Ahorra $0.15/lb con nuestro servicio de siguiente dia. Perfecto para clientes que planean con anticipacion y quieren cuidado profesional a mejor precio.",
       "benefits": [
-        "Cobertura por ZIP configurada",
-        "Ventanas de manana y tarde",
-        "Pedidos unicos o recurrentes",
-        "Soporte urgente cuando se requiere"
+        "$1.35 por libra",
+        "Entrega siguiente dia",
+        "Misma calidad que servicio el mismo dia",
+        "Mejor valor para clientes regulares"
       ],
-      "whatToExpect": "Selecciona ventana de recogida, comparte direccion y recibe actualizaciones durante todo el proceso.",
-      "image": "/uploads/wewash/gallery/reception-area.jpg",
+      "whatToExpect": "Deja tu ropa cuando quieras, recoge al dia siguiente. Unete a nuestro Club para acceso a Speed Drop Off.",
+      "image": "/uploads/wewash/general/home-hero-1.jpg",
       "order": 3
     },
     {
-      "id": "self-service",
-      "icon": "Timer",
-      "title": "Reservas de autoservicio",
-      "shortDescription": "Reserva bloques de maquinas para reducir esperas en horas pico.",
-      "fullDescription": "Los clientes de autoservicio pueden reservar franjas horarias para mejorar flujo y tiempos de atencion.",
+      "id": "speed-drop-off",
+      "icon": "Zap",
+      "title": "Speed Drop Off",
+      "shortDescription": "Exclusivo del Club: quedate en tu auto y llamanos para recogida en la acera.",
+      "fullDescription": "Solo para miembros del Club de Lavado. No necesitas entrar—solo llamanos cuando llegues y recogeremos tu ropa en tu auto.",
       "benefits": [
-        "Control de capacidad por horario",
-        "Reservas en horarios de alta demanda",
-        "Operacion mas rapida en tienda",
-        "Ideal para cargas semanales"
+        "Servicio de recogida en la acera",
+        "No necesitas estacionar ni entrar",
+        "Misma calidad de lavado y doblado",
+        "Exclusivo para miembros del club"
       ],
-      "whatToExpect": "Elige fecha y horario, confirma tu reserva y registrate al llegar.",
-      "image": "/uploads/wewash/gallery/exterior.jpg",
+      "whatToExpect": "Gana sellos con servicio regular de lavado y doblado para unirte al club, luego disfruta esta opcion conveniente.",
+      "image": "/uploads/wewash/general/atm-1.jpg",
       "order": 4
     },
     {
-      "id": "commercial",
-      "icon": "Building2",
-      "title": "Programas comerciales",
-      "shortDescription": "Planes para restaurantes, salones, gimnasios, clinicas y alojamientos temporales.",
-      "fullDescription": "Las cuentas comerciales incluyen acuerdos de nivel de servicio, rutas fijas, precios por volumen y soporte dedicado.",
+      "id": "alterations",
+      "icon": "Scissors",
+      "title": "Alteraciones profesionales",
+      "shortDescription": "Costura y alteraciones expertas para el ajuste perfecto.",
+      "fullDescription": "Encuentra tu ajuste perfecto con nuestros servicios de alteracion en el local. Desde dobladillos hasta cambios de talla, nuestro equipo experimentado maneja todo tipo de modificaciones.",
       "benefits": [
-        "Precios por cotizacion",
-        "Recogidas programadas con objetivos SLA",
-        "Flujos personalizados de clasificacion",
-        "Reportes mensuales y gestion de cuenta"
+        "Servicio de alteracion en el local",
+        "Costura experimentada",
+        "Entrega rapida",
+        "Precios competitivos"
       ],
-      "whatToExpect": "Solicita cotizacion, define volumen y tiempos de entrega, y lanza un plan operativo personalizado.",
-      "image": "/uploads/wewash/gallery/herbal-pharmacy.jpg",
+      "whatToExpect": "Trae tus prendas para medicion y consulta. Te daremos cotizacion y tiempo de finalizacion.",
+      "image": "/uploads/wewash/general/alternation.jpg",
       "order": 5
     }
   ],

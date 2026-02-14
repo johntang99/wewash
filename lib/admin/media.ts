@@ -46,25 +46,18 @@ export async function listMedia(siteId: string): Promise<MediaItem[]> {
     .sort((a, b) => a.path.localeCompare(b.path));
 
   if (canUseMediaDb()) {
-    const dbItems = await listMediaDb(siteId);
-    const merged = new Map<string, MediaItem>();
-    for (const item of dbItems) {
-      merged.set(item.path, item);
-    }
-    for (const item of normalizedFilesystemItems) {
-      merged.set(item.path, item);
-    }
-    const mergedItems = Array.from(merged.values()).sort((a, b) =>
-      a.path.localeCompare(b.path)
-    );
-
-    // Ensure filesystem-discovered items are persisted for future queries.
+    // Filesystem is source of truth. Sync DB to match disk state.
+    const filesystemPaths = new Set(normalizedFilesystemItems.map((item) => item.path));
+    
+    // Upsert filesystem items to DB
     await Promise.all(
       normalizedFilesystemItems.map((item) =>
         upsertMediaDb({ siteId, path: item.path, url: item.url })
       )
     );
-    return mergedItems;
+
+    // Return only filesystem items (no stale DB entries)
+    return normalizedFilesystemItems;
   }
 
   return normalizedFilesystemItems;

@@ -1,99 +1,102 @@
 {
   "hero": {
     "variant": "centered",
-    "title": "Laundry Pricing Built for Real Usage",
-    "subtitle": "Clear rates for household orders and scalable plans for business accounts.",
+    "title": "Simple, Transparent Laundry Pricing",
+    "subtitle": "Affordable self-service and professional wash & fold rates.",
     "backgroundImage": "/uploads/wewash/home/hero-bg.jpg"
   },
   "introduction": {
-    "text": "We keep pricing transparent so customers can plan confidently. Choose per-order rates, recurring plans, or a custom commercial quote.",
-    "note": "Final price depends on service type, turnaround speed, and item mix."
+    "text": "We believe in clear, honest pricing so you can plan your laundry budget. No hidden fees, no surprises.",
+    "note": "Hours: Open 7:30am - Last Wash 7:30pm daily"
   },
   "individualTreatments": {
-    "title": "Standard Service Rates",
-    "subtitle": "Most customers start here before moving to recurring or volume plans.",
+    "title": "Our Services & Rates",
+    "subtitle": "Flexible options for every laundry need.",
     "items": [
       {
-        "name": "Wash & Fold (Drop-off)",
-        "description": "Sorted, washed, dried, and folded by weight.",
-        "price": "$1.75/lb",
-        "duration": "24-48 hours",
-        "notes": "10 lb minimum"
+        "name": "Self-Service Laundry",
+        "description": "Use our large-capacity washers and efficient dryers.",
+        "price": "Pay as you go",
+        "duration": "Your time",
+        "notes": "Load your card and choose your machines"
       },
       {
-        "name": "Wash & Fold (Pickup + Delivery)",
-        "description": "Door-to-door service with route scheduling.",
-        "price": "$1.95/lb",
-        "duration": "24-48 hours",
-        "notes": "Service minimum $35"
+        "name": "Same-Day Wash & Fold",
+        "description": "Professional wash, dry, and fold - ready the same day.",
+        "price": "$1.50/lb",
+        "duration": "Same day",
+        "notes": "Drop off before noon for same-day pickup"
       },
       {
-        "name": "Dry Cleaning",
-        "description": "By-item processing for garments and delicates.",
-        "price": "From $6.50/item",
-        "duration": "2-3 days",
-        "notes": "Rush available"
+        "name": "Next-Day Wash & Fold",
+        "description": "Economy rate for next-day service.",
+        "price": "$1.35/lb",
+        "duration": "Next day",
+        "notes": "Best value for regular customers"
       },
       {
-        "name": "Self-Service Reservation",
-        "description": "Reserve machine blocks in peak periods.",
-        "price": "$14/load",
-        "duration": "90 min block",
-        "notes": "Based on machine availability"
+        "name": "Professional Alterations",
+        "description": "Expert tailoring and hemming services.",
+        "price": "Varies by item",
+        "duration": "1-3 days",
+        "notes": "Bring garment for quote"
       }
     ]
   },
   "packages": {
-    "title": "Recurring and Volume Plans",
-    "subtitle": "Save with predictable weekly schedules.",
+    "title": "Wash & Fold Club Benefits",
+    "subtitle": "Join our loyalty program and enjoy exclusive perks.",
     "items": [
       {
-        "name": "Home Weekly Plan",
-        "description": "Best for families with steady laundry volume.",
-        "sessions": 4,
-        "totalPrice": "$220",
-        "perSessionPrice": "$55",
-        "regularPrice": "$240",
-        "savings": "$20",
+        "name": "Wash & Fold Club Member",
+        "description": "Earn stamps and unlock exclusive benefits.",
+        "sessions": 1,
+        "totalPrice": "Free to join",
+        "perSessionPrice": "Standard rates apply",
+        "regularPrice": "N/A",
+        "savings": "Earn rewards",
         "popular": true,
         "includes": [
-          "Weekly pickup window",
-          "Priority route assignment",
-          "Basic stain treatment"
+          "Collect 1 stamp for every 25lb of laundry",
+          "Speed Drop Off service (stay in car, we pick up)",
+          "Spin the Wheel & Win after 3 stamps",
+          "Surprise gifts and special offers"
         ],
-        "bestFor": "Household recurring orders"
+        "bestFor": "Regular wash & fold customers"
       },
       {
-        "name": "Airbnb Turnover Plan",
-        "description": "Linen and towel cycles for short-term rentals.",
-        "sessions": 8,
-        "totalPrice": "$480",
-        "perSessionPrice": "$60",
-        "regularPrice": "$560",
-        "savings": "$80",
-        "popular": false,
-        "includes": [
-          "Biweekly service windows",
-          "Linen prioritization",
-          "Account-level support"
-        ],
-        "bestFor": "Hosts and property managers"
-      },
-      {
-        "name": "Commercial Program",
-        "description": "Contract plan with SLA and route commitments.",
-        "sessions": 12,
-        "totalPrice": "Quote-based",
-        "perSessionPrice": "Volume tier",
+        "name": "Kids Zone Membership",
+        "description": "Keep kids entertained while you do laundry.",
+        "sessions": 1,
+        "totalPrice": "Free to join",
+        "perSessionPrice": "N/A",
         "regularPrice": "N/A",
-        "savings": "Custom",
+        "savings": "Fun rewards",
         "popular": false,
         "includes": [
-          "Dedicated account setup",
-          "Pickup and return SLA options",
-          "Monthly reporting"
+          "Kids Creative Zone access",
+          "Collect stamps every visit",
+          "Spin the Wheel & Win after 3 stamps",
+          "Surprise gifts for kids"
         ],
-        "bestFor": "Restaurants, salons, gyms, clinics"
+        "bestFor": "Parents with young children"
+      },
+      {
+        "name": "Bonus Promotions",
+        "description": "Regular bonuses and incentives throughout the year.",
+        "sessions": 1,
+        "totalPrice": "Various",
+        "perSessionPrice": "Varies",
+        "regularPrice": "N/A",
+        "savings": "Up to $2 per $20",
+        "popular": false,
+        "includes": [
+          "Free $2 credit on every $20 loaded (when active)",
+          "Holiday raffles and giveaways",
+          "Google Review rewards (spin wheel)",
+          "Community event discounts"
+        ],
+        "bestFor": "All customers"
       }
     ]
   },

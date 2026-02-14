@@ -1,0 +1,40 @@
+{
+  "cta": {
+    "link": "/en/contact",
+    "text": "Schedule Pickup"
+  },
+  "main": [
+    {
+      "url": "/en",
+      "text": "Home"
+    },
+    {
+      "url": "/en/services",
+      "text": "Services"
+    },
+    {
+      "url": "/en/pricing",
+      "text": "Pricing"
+    },
+    {
+      "url": "/en/about",
+      "text": "About"
+    },
+    {
+      "url": "/en/case-studies",
+      "text": "Commercial"
+    },
+    {
+      "url": "/en/gallery",
+      "text": "Gallery"
+    },
+    {
+      "url": "/en/blog",
+      "text": "Blog"
+    },
+    {
+      "url": "/en/contact",
+      "text": "Contact"
+    }
+  ]
+}

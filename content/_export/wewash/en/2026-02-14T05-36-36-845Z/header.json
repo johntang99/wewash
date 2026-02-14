@@ -1,0 +1,71 @@
+{
+  "cta": {
+    "link": "/en/contact",
+    "text": "Schedule Pickup"
+  },
+  "menu": {
+    "logo": {
+      "text": "WeWash",
+      "emoji": "🧺",
+      "image": {
+        "alt": "WeWash logo",
+        "src": ""
+      },
+      "subtext": "Laundry Pickup, Drop-off, and Commercial Care"
+    },
+    "items": [
+      {
+        "url": "/en",
+        "text": "Home"
+      },
+      {
+        "url": "/en/services",
+        "text": "Services"
+      },
+      {
+        "url": "/en/pricing",
+        "text": "Pricing"
+      },
+      {
+        "url": "/en/case-studies",
+        "text": "Commercial"
+      },
+      {
+        "url": "/en/about",
+        "text": "About"
+      },
+      {
+        "url": "/en/gallery",
+        "text": "Gallery"
+      },
+      {
+        "url": "/en/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/en/contact",
+        "text": "Contact"
+      }
+    ]
+  },
+  "topbar": {
+    "badge": "Same-Day Rush Available",
+    "hours": "Pickup & Delivery 7 Days",
+    "phone": "(845) 394-0158",
+    "address": "87 North Street, Middletown, NY 10940",
+    "phoneHref": "tel:+18453940158",
+    "addressHref": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940"
+  },
+  "languages": [
+    {
+      "url": "/en",
+      "label": "English",
+      "locale": "en"
+    },
+    {
+      "url": "/es",
+      "label": "Español",
+      "locale": "es"
+    }
+  ]
+}

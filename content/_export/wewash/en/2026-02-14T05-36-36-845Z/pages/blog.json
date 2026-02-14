@@ -1,0 +1,61 @@
+{
+  "cta": {
+    "title": "Need help now?",
+    "variant": "centered",
+    "primaryCta": {
+      "link": "/en/book",
+      "text": "Book Pickup"
+    },
+    "description": "Contact WeWash directly for service questions and booking support.",
+    "secondaryCta": {
+      "link": "/en/contact",
+      "text": "Contact Support"
+    }
+  },
+  "hero": {
+    "title": "Blog Under Development",
+    "variant": "centered",
+    "subtitle": "We are preparing laundry-focused articles and resources.",
+    "backgroundImage": "/uploads/wewash/blog/dr-huang-lecture-20.png"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Posts",
+      "slug": "all"
+    },
+    {
+      "id": "acupuncture",
+      "name": "Acupuncture",
+      "slug": "acupuncture"
+    },
+    {
+      "id": "herbal-medicine",
+      "name": "Herbal Medicine",
+      "slug": "herbal-medicine"
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness & Lifestyle",
+      "slug": "wellness"
+    },
+    {
+      "id": "conditions",
+      "name": "Treating Conditions",
+      "slug": "conditions"
+    },
+    {
+      "id": "patient-education",
+      "name": "Patient Education",
+      "slug": "patient-education"
+    },
+    {
+      "id": "seasonal",
+      "name": "Seasonal Health",
+      "slug": "seasonal"
+    }
+  ],
+  "introduction": {
+    "text": "Blog content is currently under development."
+  }
+}

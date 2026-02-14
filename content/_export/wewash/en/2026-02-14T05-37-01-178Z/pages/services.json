@@ -1,0 +1,135 @@
+{
+  "cta": {
+    "title": "Need a custom laundry workflow?",
+    "variant": "centered",
+    "subtitle": "Talk to our team about recurring schedules, service areas, and commercial account setup.",
+    "primaryCta": {
+      "link": "/en/book",
+      "text": "Book Pickup"
+    },
+    "secondaryCta": {
+      "link": "/en/contact",
+      "text": "Request Commercial Quote"
+    }
+  },
+  "faq": {
+    "faqs": [
+      {
+        "answer": "Most wash and fold orders are returned in 24-48 hours. Rush windows are available in select ZIP codes.",
+        "question": "What is your normal turnaround time?"
+      },
+      {
+        "answer": "Yes. We split and process each category independently, then return them together unless you request separate deliveries.",
+        "question": "Can I mix wash-and-fold and dry-cleaning in one order?"
+      },
+      {
+        "answer": "Yes. Weekly and biweekly recurring plans are available for household and commercial customers.",
+        "question": "Do you support recurring pickup schedules?"
+      },
+      {
+        "answer": "We evaluate weekly volume, textile types, pickup cadence, and turnaround requirements, then provide a tiered quote.",
+        "question": "How do commercial quotes work?"
+      }
+    ],
+    "title": "Service FAQs"
+  },
+  "hero": {
+    "title": "Clean, Modern Laundromat with Premium Services",
+    "variant": "split-photo-right",
+    "subtitle": "Self-service, professional wash & fold, and convenient drop-off options.",
+    "backgroundImage": "/uploads/wewash/general/store-front-3.webp"
+  },
+  "overview": {
+    "benefits": [
+      "Same-day and next-day wash & fold service",
+      "Large-capacity washers and efficient dryers",
+      "Wide folding stations with comfortable seating",
+      "Wash & Fold Club with exclusive perks",
+      "Professional alterations on-site"
+    ],
+    "introduction": "WeWash offers a clean, friendly environment for self-service laundry plus professional wash & fold for busy customers who want quality care."
+  },
+  "services": [
+    {
+      "id": "self-service",
+      "icon": "WashingMachine",
+      "image": "/uploads/wewash/general/self-service-3.webp",
+      "order": 1,
+      "title": "Self-Service Laundry",
+      "benefits": [
+        "Large-capacity washers for bigger loads",
+        "Super-efficient dryers",
+        "Wide folding stations throughout the store",
+        "Card-based payment system",
+        "TV and comfortable waiting area"
+      ],
+      "whatToExpect": "Load your laundry card, select your machines, and enjoy our clean facility while you wait or use our folding stations.",
+      "fullDescription": "Our state-of-the-art machines deliver efficient washes and thorough, fast drying. Enjoy spacious folding stations with comfortable seating and a clean, friendly environment.",
+      "shortDescription": "Large-capacity washers and efficient dryers for your laundry needs."
+    },
+    {
+      "id": "wash-fold-same-day",
+      "icon": "Clock",
+      "image": "/uploads/wewash/general/wash-fold.jpg",
+      "order": 2,
+      "title": "Same-Day Wash & Fold",
+      "benefits": [
+        "$1.50 per pound",
+        "Same-day turnaround",
+        "Professional sorting and folding",
+        "Quality detergent and care"
+      ],
+      "whatToExpect": "Drop off before noon for same-day service. We'll text you when it's ready for pickup.",
+      "fullDescription": "Drop off your laundry in the morning and pick it up the same day. Our team sorts, washes, dries, and carefully folds your clothes with attention to detail.",
+      "shortDescription": "Professional wash, dry, and fold service completed the same day."
+    },
+    {
+      "id": "wash-fold-next-day",
+      "icon": "Shirt",
+      "image": "/uploads/wewash/general/home-hero-1.jpg",
+      "order": 3,
+      "title": "Next-Day Wash & Fold",
+      "benefits": [
+        "$1.35 per pound",
+        "Next-day turnaround",
+        "Same quality as same-day service",
+        "Best value for regular customers"
+      ],
+      "whatToExpect": "Drop off anytime, pick up the next day. Join our Wash & Fold Club for exclusive Speed Drop Off access.",
+      "fullDescription": "Save $0.15/lb with our next-day service. Perfect for customers who can plan ahead and want professional care at a better rate.",
+      "shortDescription": "Economical wash & fold service with next-day pickup."
+    },
+    {
+      "id": "speed-drop-off",
+      "icon": "Zap",
+      "image": "/uploads/wewash/general/atm-1.jpg",
+      "order": 4,
+      "title": "Speed Drop Off",
+      "benefits": [
+        "Curbside pickup service",
+        "No need to park or come inside",
+        "Same wash & fold quality",
+        "Exclusive to club members"
+      ],
+      "whatToExpect": "Earn stamps with regular wash & fold service to join the club, then enjoy this convenient pickup option.",
+      "fullDescription": "For Wash & Fold Club members only. No need to come inside—just call us when you arrive and we'll come to your car to collect your laundry.",
+      "shortDescription": "Wash & Fold Club exclusive: stay in your car and call us for curbside pickup."
+    },
+    {
+      "id": "alterations",
+      "icon": "Scissors",
+      "image": "/uploads/wewash/general/alternation.jpg",
+      "order": 5,
+      "title": "Professional Alterations",
+      "benefits": [
+        "On-site alteration service",
+        "Experienced tailoring",
+        "Quick turnaround",
+        "Competitive pricing"
+      ],
+      "whatToExpect": "Bring your garments in for fitting and consultation. We'll provide a quote and completion timeline.",
+      "fullDescription": "Find your perfect fit with our on-site alteration services. From hemming to resizing, our experienced team handles all types of garment modifications.",
+      "shortDescription": "Expert tailoring and alterations for the perfect fit."
+    }
+  ]
+}

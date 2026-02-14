@@ -88,7 +88,7 @@ export default function Header({
   };
 
   const renderLogo = (sizeClass: string, width: number, height: number) => {
-    if (logoImage?.src) {
+    if (logoImage?.src && logoImage.src.trim()) {
       return (
         <Image
           src={logoImage.src}

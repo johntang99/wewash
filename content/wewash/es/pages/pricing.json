@@ -1,99 +1,102 @@
 {
   "hero": {
     "variant": "centered",
-    "title": "Precios de lavanderia claros",
-    "subtitle": "Tarifas transparentes para hogar y planes escalables para negocios.",
+    "title": "Precios simples y transparentes",
+    "subtitle": "Tarifas accesibles para autoservicio y lavado profesional.",
     "backgroundImage": "/uploads/wewash/home/hero-bg.jpg"
   },
   "introduction": {
-    "text": "Mantenemos precios simples para que puedas planificar sin sorpresas. Elige tarifa por pedido, plan recurrente o cotizacion comercial.",
-    "note": "El precio final depende del tipo de servicio, tiempo de entrega y mezcla de prendas."
+    "text": "Creemos en precios claros y honestos para que puedas planificar tu presupuesto de lavanderia. Sin cargos ocultos, sin sorpresas.",
+    "note": "Horario: Abierto 7:30am - Ultimo lavado 7:30pm diario"
   },
   "individualTreatments": {
-    "title": "Tarifas estandar",
-    "subtitle": "La mayoria de clientes inicia aqui antes de pasar a planes recurrentes.",
+    "title": "Nuestros servicios y tarifas",
+    "subtitle": "Opciones flexibles para cada necesidad.",
     "items": [
       {
-        "name": "Lavado y doblado (Drop-off)",
-        "description": "Clasificado, lavado, secado y doblado por peso.",
-        "price": "$1.75/lb",
-        "duration": "24-48 horas",
-        "notes": "Minimo 10 lb"
+        "name": "Autoservicio",
+        "description": "Usa nuestras lavadoras de gran capacidad y secadoras eficientes.",
+        "price": "Paga segun uso",
+        "duration": "Tu tiempo",
+        "notes": "Carga tu tarjeta y elige tus maquinas"
       },
       {
-        "name": "Lavado y doblado (Recogida + entrega)",
-        "description": "Servicio puerta a puerta con programacion por rutas.",
-        "price": "$1.95/lb",
-        "duration": "24-48 horas",
-        "notes": "Minimo de servicio $35"
+        "name": "Lavado y doblado el mismo dia",
+        "description": "Lavado, secado y doblado profesional - listo el mismo dia.",
+        "price": "$1.50/lb",
+        "duration": "Mismo dia",
+        "notes": "Deja antes del mediodia para recogida el mismo dia"
       },
       {
-        "name": "Tintoreria",
-        "description": "Proceso por prenda para ropa delicada y formal.",
-        "price": "Desde $6.50/prenda",
-        "duration": "2-3 dias",
-        "notes": "Urgente disponible"
+        "name": "Lavado y doblado siguiente dia",
+        "description": "Tarifa economica con servicio al dia siguiente.",
+        "price": "$1.35/lb",
+        "duration": "Siguiente dia",
+        "notes": "Mejor valor para clientes regulares"
       },
       {
-        "name": "Reserva autoservicio",
-        "description": "Reserva bloques de maquinas en horas de alta demanda.",
-        "price": "$14/carga",
-        "duration": "Bloque de 90 min",
-        "notes": "Sujeto a disponibilidad"
+        "name": "Alteraciones profesionales",
+        "description": "Servicios expertos de costura y ajustes.",
+        "price": "Varia por prenda",
+        "duration": "1-3 dias",
+        "notes": "Trae prenda para cotizacion"
       }
     ]
   },
   "packages": {
-    "title": "Planes recurrentes y por volumen",
-    "subtitle": "Ahorra con calendarios semanales previsibles.",
+    "title": "Beneficios del Club de Lavado",
+    "subtitle": "Unete a nuestro programa de lealtad y disfruta beneficios exclusivos.",
     "items": [
       {
-        "name": "Plan semanal hogar",
-        "description": "Ideal para familias con volumen estable.",
-        "sessions": 4,
-        "totalPrice": "$220",
-        "perSessionPrice": "$55",
-        "regularPrice": "$240",
-        "savings": "$20",
+        "name": "Miembro del Club de Lavado",
+        "description": "Gana sellos y desbloquea beneficios exclusivos.",
+        "sessions": 1,
+        "totalPrice": "Gratis unirse",
+        "perSessionPrice": "Tarifas estandar aplican",
+        "regularPrice": "N/A",
+        "savings": "Gana recompensas",
         "popular": true,
         "includes": [
-          "Ventana semanal de recogida",
-          "Prioridad de ruta",
-          "Tratamiento basico de manchas"
+          "Colecta 1 sello por cada 25lb de lavanderia",
+          "Servicio Speed Drop Off (quedate en auto, recogemos)",
+          "Gira la Ruleta y Gana despues de 3 sellos",
+          "Regalos sorpresa y ofertas especiales"
         ],
-        "bestFor": "Pedidos recurrentes del hogar"
+        "bestFor": "Clientes regulares de lavado y doblado"
       },
       {
-        "name": "Plan Airbnb",
-        "description": "Ciclos de sabanas y toallas para alquileres temporales.",
-        "sessions": 8,
-        "totalPrice": "$480",
-        "perSessionPrice": "$60",
-        "regularPrice": "$560",
-        "savings": "$80",
-        "popular": false,
-        "includes": [
-          "Ventanas quincenales",
-          "Prioridad para ropa de cama",
-          "Soporte de cuenta"
-        ],
-        "bestFor": "Hosts y administradores"
-      },
-      {
-        "name": "Programa comercial",
-        "description": "Plan por contrato con SLA y rutas fijas.",
-        "sessions": 12,
-        "totalPrice": "Segun cotizacion",
-        "perSessionPrice": "Por volumen",
+        "name": "Membresia Zona Infantil",
+        "description": "Mantén a los ninos entretenidos mientras lavas.",
+        "sessions": 1,
+        "totalPrice": "Gratis unirse",
+        "perSessionPrice": "N/A",
         "regularPrice": "N/A",
-        "savings": "Personalizado",
+        "savings": "Recompensas divertidas",
         "popular": false,
         "includes": [
-          "Configuracion de cuenta dedicada",
-          "Opciones de SLA",
-          "Reporte mensual"
+          "Acceso a Zona Creativa para Ninos",
+          "Colecta sellos en cada visita",
+          "Gira la Ruleta y Gana despues de 3 sellos",
+          "Regalos sorpresa para ninos"
         ],
-        "bestFor": "Restaurantes, salones, gimnasios, clinicas"
+        "bestFor": "Padres con ninos pequenos"
+      },
+      {
+        "name": "Promociones Bonus",
+        "description": "Bonos e incentivos regulares durante el ano.",
+        "sessions": 1,
+        "totalPrice": "Varios",
+        "perSessionPrice": "Varia",
+        "regularPrice": "N/A",
+        "savings": "Hasta $2 por $20",
+        "popular": false,
+        "includes": [
+          "$2 credito gratis por cada $20 cargado (cuando activo)",
+          "Sorteos y regalos en dias festivos",
+          "Recompensas por resena en Google (gira ruleta)",
+          "Descuentos en eventos comunitarios"
+        ],
+        "bestFor": "Todos los clientes"
       }
     ]
   },
