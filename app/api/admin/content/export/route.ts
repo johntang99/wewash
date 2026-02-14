@@ -36,23 +36,27 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'No DB entries to export' }, { status: 400 });
   }
 
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const exportRoot = path.join(
-    process.cwd(),
-    'content',
-    '_export',
-    siteId,
-    locale,
-    timestamp
-  );
+  const contentRoot = path.join(process.cwd(), 'content', siteId, locale);
+  const themeEntries = entries.filter((e) => e.path === 'theme.json');
+  const localeEntries = entries.filter((e) => e.path !== 'theme.json');
 
   await Promise.all(
-    entries.map(async (entry) => {
-      const targetPath = path.join(exportRoot, entry.path);
+    localeEntries.map(async (entry) => {
+      const targetPath = path.join(contentRoot, entry.path);
       await fs.mkdir(path.dirname(targetPath), { recursive: true });
       await fs.writeFile(targetPath, JSON.stringify(entry.data, null, 2));
     })
   );
 
-  return NextResponse.json({ success: true, exportPath: exportRoot });
+  // Export theme to site-level (not locale)
+  if (themeEntries.length > 0) {
+    const themePath = path.join(process.cwd(), 'content', siteId, 'theme.json');
+    await fs.writeFile(themePath, JSON.stringify(themeEntries[0].data, null, 2));
+  }
+
+  return NextResponse.json({ 
+    success: true, 
+    exported: localeEntries.length + (themeEntries.length > 0 ? 1 : 0),
+    message: `Exported ${localeEntries.length} content files to content/${siteId}/${locale}/`
+  });
 }

@@ -1,39 +1,71 @@
 {
-  "topbar": {
-    "phone": "(845) 394-0158",
-    "phoneHref": "tel:+18453940158",
-    "address": "87 North Street, Middletown, NY 10940",
-    "addressHref": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
-    "hours": "Abierto 7:30am - Ultimo lavado 7:30pm",
-    "badge": "Servicio el mismo dia disponible"
+  "cta": {
+    "link": "/es/contact",
+    "text": "Programar recogida"
   },
   "menu": {
     "logo": {
-      "emoji": "🧺",
       "text": "WeWash",
-      "subtext": "Lavanderia local limpia y amigable",
+      "emoji": "🧺",
       "image": {
-        "src": "",
-        "alt": ""
-      }
+        "alt": "Logo de WeWash",
+        "src": ""
+      },
+      "subtext": "Lavanderia para hogar y negocios"
     },
     "items": [
-      { "text": "Inicio", "url": "/es" },
-      { "text": "Servicios", "url": "/es/services" },
-      { "text": "Precios", "url": "/es/pricing" },
-      { "text": "Comercial", "url": "/es/case-studies" },
-      { "text": "Nosotros", "url": "/es/about" },
-      { "text": "Galeria", "url": "/es/gallery" },
-      { "text": "Blog", "url": "/es/blog" },
-      { "text": "Contacto", "url": "/es/contact" }
+      {
+        "url": "/es",
+        "text": "Inicio"
+      },
+      {
+        "url": "/es/services",
+        "text": "Servicios"
+      },
+      {
+        "url": "/es/pricing",
+        "text": "Precios"
+      },
+      {
+        "url": "/es/case-studies",
+        "text": "Comercial"
+      },
+      {
+        "url": "/es/about",
+        "text": "Nosotros"
+      },
+      {
+        "url": "/es/gallery",
+        "text": "Galeria"
+      },
+      {
+        "url": "/es/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/es/contact",
+        "text": "Contacto"
+      }
     ]
   },
+  "topbar": {
+    "badge": "Servicio urgente el mismo dia",
+    "hours": "Recogida y entrega 7 dias",
+    "phone": "(845) 394-0158",
+    "address": "87 North Street, Middletown, NY 10940",
+    "phoneHref": "tel:+18453940158",
+    "addressHref": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940"
+  },
   "languages": [
-    { "label": "English", "locale": "en", "url": "/en" },
-    { "label": "Español", "locale": "es", "url": "/es" }
-  ],
-  "cta": {
-    "text": "Programar recogida",
-    "link": "/es/contact"
-  }
+    {
+      "url": "/en",
+      "label": "English",
+      "locale": "en"
+    },
+    {
+      "url": "/es",
+      "label": "Español",
+      "locale": "es"
+    }
+  ]
 }

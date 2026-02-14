@@ -1,17 +1,17 @@
 {
-  "clinicName": "WeWash Laundromat",
-  "tagline": "Lavanderia local limpia y amigable",
-  "description": "Lavanderia moderna con autoservicio y lavado profesional. Abierto 7:30am - Ultimo lavado 7:30pm diario en Middletown, NY.",
-  "address": "87 North Street",
-  "city": "Middletown",
-  "state": "NY",
   "zip": "10940",
+  "city": "Middletown",
+  "email": "hello@wewash99.com",
   "phone": "(845) 394-0158",
-  "email": "northstreetlaundromat@gmail.com",
-  "addressMapUrl": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
+  "state": "NY",
   "social": {
     "facebook": "https://facebook.com/wewash99",
     "instagram": "https://instagram.com/wewash99"
   },
+  "address": "87 North Street",
+  "tagline": "Recogida, entrega y servicio comercial",
+  "clinicName": "WeWash Lavanderia",
+  "description": "Servicios completos de lavanderia para hogares y negocios en Middletown, NY.",
+  "addressMapUrl": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
   "headerVariant": "stacked"
 }

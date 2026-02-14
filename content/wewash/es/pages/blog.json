@@ -1,12 +1,22 @@
 {
-  "hero": {
+  "cta": {
+    "title": "¿Necesitas ayuda ahora?",
     "variant": "centered",
+    "primaryCta": {
+      "link": "/es/book",
+      "text": "Reservar recogida"
+    },
+    "description": "Contacta a WeWash para soporte y reservas.",
+    "secondaryCta": {
+      "link": "/es/contact",
+      "text": "Contactar soporte"
+    }
+  },
+  "hero": {
     "title": "Blog en desarrollo",
+    "variant": "centered",
     "subtitle": "Estamos preparando articulos y recursos de lavanderia.",
     "backgroundImage": "/uploads/wewash/blog/dr-huang-lecture-20.png"
-  },
-  "introduction": {
-    "text": "El contenido del blog esta actualmente en desarrollo."
   },
   "categories": [
     {
@@ -45,17 +55,7 @@
       "slug": "seasonal"
     }
   ],
-  "cta": {
-    "variant": "centered",
-    "title": "¿Necesitas ayuda ahora?",
-    "description": "Contacta a WeWash para soporte y reservas.",
-    "primaryCta": {
-      "text": "Reservar recogida",
-      "link": "/es/book"
-    },
-    "secondaryCta": {
-      "text": "Contactar soporte",
-      "link": "/es/contact"
-    }
+  "introduction": {
+    "text": "El contenido del blog esta actualmente en desarrollo."
   }
 }

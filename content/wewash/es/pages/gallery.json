@@ -1,147 +1,100 @@
 {
-  "hero": {
+  "cta": {
+    "title": "¿Listo para visitar?",
     "variant": "centered",
-    "title": "Our Clinic and Historic Photos",
-    "subtitle": "Take a virtual tour of our peaceful, welcoming healing space",
-    "backgroundImage": "/uploads/wewash/gallery/gallery-0.jpg"
+    "primaryCta": {
+      "link": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
+      "text": "Obtener direcciones"
+    },
+    "description": "Pasa hoy y descubre por que WeWash es la lavanderia favorita de Middletown",
+    "secondaryCta": {
+      "link": "tel:+18453940158",
+      "text": "Llamanos"
+    }
   },
-  "introduction": {
-    "text": "Our clinic is designed to be a sanctuary for healing - a peaceful, comfortable environment where you can relax and focus on your wellness. Browse our gallery to get a feel for our space before your first visit."
+  "hero": {
+    "title": "Dentro de WeWash Laundromat",
+    "variant": "centered",
+    "subtitle": "Haz un recorrido virtual de nuestras instalaciones limpias y modernas",
+    "backgroundImage": "/uploads/wewash/general/home-hero-2.jpg"
+  },
+  "images": [
+    {
+      "id": "wash-machines",
+      "alt": "Lavadoras de gran capacidad",
+      "src": "/uploads/wewash/general/wash-machine-2.jpg",
+      "order": 1,
+      "title": "Lavadoras de gran capacidad",
+      "category": "machines",
+      "featured": true,
+      "description": "Lavadoras de ultima generacion para limpieza eficiente"
+    },
+    {
+      "id": "facility-interior",
+      "alt": "Interior limpio y moderno",
+      "src": "/uploads/wewash/general/home-hero-1.jpg",
+      "order": 2,
+      "title": "Instalacion moderna",
+      "category": "facility",
+      "featured": true,
+      "description": "Ambiente brillante y limpio con asientos comodos"
+    },
+    {
+      "id": "wash-fold-service",
+      "alt": "Servicio profesional de lavado y doblado",
+      "src": "/uploads/wewash/general/wash-fold.jpg",
+      "order": 3,
+      "title": "Servicio de lavado y doblado",
+      "category": "services",
+      "featured": true,
+      "description": "Doblado profesional con cuidado y atencion"
+    },
+    {
+      "id": "alterations",
+      "alt": "Servicios de alteracion",
+      "src": "/uploads/wewash/general/alternation.jpg",
+      "order": 4,
+      "title": "Alteraciones profesionales",
+      "category": "services",
+      "description": "Costura y dobladillos expertos en el local"
+    }
+  ],
+  "gallery": {
+    "variant": "grid-uniform"
   },
   "categories": [
     {
       "id": "all",
-      "name": "All Photos",
       "icon": "LayoutGrid",
-      "description": "View all clinic photos"
+      "name": "Todas las fotos",
+      "description": "Ver todas las fotos de la instalacion"
     },
     {
-      "id": "clinic",
-      "name": "Clinic",
-      "icon": "LayoutGrid",
-      "description": "Where your healing journey begins"
+      "id": "machines",
+      "icon": "WashingMachine",
+      "name": "Maquinas",
+      "description": "Nuestras lavadoras de gran capacidad y secadoras eficientes"
     },
     {
-      "id": "doctors",
-      "name": "Doctors",
-      "icon": "person",
-      "description": "Doctors treat patients, lecture, others"
+      "id": "facility",
+      "icon": "Building",
+      "name": "Instalaciones",
+      "description": "Estaciones para doblar, asientos y amenidades"
     },
     {
-      "id": "equipment",
-      "name": "Equipment & Tools",
-      "icon": "Syringe",
-      "description": "The tools of our trade"
-    },
-    {
-      "id": "details",
-      "name": "Details",
-      "icon": "Sparkles",
-      "description": "The little touches that make our clinic special"
-    }
-  ],
-  "images": [
-    {
-      "id": "exterior-1",
-      "src": "/uploads/wewash/about/dr-huang-11.png",
-      "alt": "Dr. Huang ",
-      "title": "Doctor Huang",
-      "category": "doctors",
-      "description": "Our welcoming entrance at 71 East Main Street, Middletown",
-      "featured": true,
-      "order": 1
-    },
-    {
-      "id": "exterior-2",
-      "src": "/uploads/wewash/about/dr-huang-lecture-20.png",
-      "alt": "Doctor Huang is Lecturing",
-      "title": "Doctor Huang is Lecturing",
-      "category": "doctors",
-      "description": "Doctor Huang is Lecturing",
-      "order": 2
-    },
-    {
-      "id": "exterior-3",
-      "src": "/uploads/wewash/blog/gua-sha-22.png",
-      "alt": "Gua Sha",
-      "title": "Gua Sha",
-      "category": "equipment",
-      "description": "Gua Sha is a service",
-      "order": 3
-    },
-    {
-      "id": "reception-1",
-      "src": "/uploads/wewash/gallery/gallery-0.jpg",
-      "alt": "Reception desk area",
-      "title": "Reception Desk",
-      "category": "clinic",
-      "description": "Our friendly front desk where you'll be greeted",
-      "featured": true,
-      "order": 4
-    },
-    {
-      "id": "reception-2",
-      "src": "/uploads/wewash/about/dr-huang-14.jpg",
-      "alt": "praises",
-      "title": "Praises from patients when Doctor Huang was in China",
-      "category": "doctors",
-      "description": "Praises from patients when Doctor Huang was in China",
-      "order": 5
-    },
-    {
-      "id": "reception-3",
-      "src": "/uploads/wewash/general/acupuncture-10.jpeg",
-      "alt": "Acupuncture",
-      "title": "Acupuncture ",
-      "category": "equipment",
-      "description": "Acupuncture",
-      "order": 6
-    },
-    {
-      "id": "reception-4",
-      "src": "/uploads/wewash/general/acupuncture-12.jpeg",
-      "alt": "Acupuncture for headache",
-      "title": "Acupuncture for headache",
-      "category": "equipment",
-      "description": "Acupuncture for headache",
-      "order": 7
-    },
-    {
-      "id": "treatment-1",
-      "src": "/uploads/wewash/general/acupuncture-16.webp",
-      "alt": "Acupuncture points",
-      "title": "Acupuncture points",
-      "category": "equipment",
-      "description": "Acupuncture points",
-      "featured": true,
-      "order": 8
-    },
-    {
-      "id": "treatment-2",
-      "src": "/uploads/wewash/general/cupping-10.jpg",
-      "alt": "Cupping",
-      "title": "Cupping",
-      "category": "equipment",
-      "description": "Cupping",
-      "order": 9
+      "id": "services",
+      "icon": "Shirt",
+      "name": "Servicios",
+      "description": "Area de lavado y doblado y alteraciones"
     }
   ],
   "virtualTour": {
+    "title": "Visitanos en persona",
     "available": false,
-    "title": "360° Virtual Tour Coming Soon",
-    "description": "We're working on a full virtual tour so you can explore our clinic from the comfort of your home."
+    "description": "Pasa durante nuestro horario de apertura para ver nuestras instalaciones. Abierto 7:30am - Ultimo lavado 7:30pm diario."
   },
-  "cta": {
-    "variant": "centered",
-    "title": "Ready to Visit in Person?",
-    "description": "Schedule your appointment and experience our welcoming environment firsthand",
-    "primaryCta": {
-      "text": "Book Your Visit",
-      "link": "/en/contact"
-    },
-    "secondaryCta": {
-      "text": "Get Directions",
-      "link": "https://maps.google.com/?q=71+East+Main+Street+Middletown+NY+10940"
-    }
+  "introduction": {
+    "text": "WeWash esta diseñado para hacer el dia de lavanderia comodo y eficiente. Explora nuestra galeria para ver nuestras maquinas de gran capacidad, areas amplias para doblar y amenidades para familias.",
+    "variant": "centered"
   }
 }

@@ -7,6 +7,7 @@ import { buildPageMetadata } from '@/lib/seo';
 import { ServicesPage, Locale } from '@/lib/types';
 import { Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon, Accordion } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
+import ServicesSection from '@/components/sections/ServicesSection';
 import { Award, Users, Shield } from 'lucide-react';
 
 interface ServicesPageProps {
@@ -55,7 +56,8 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
     notFound();
   }
 
-  const { hero, overview, services, faq, cta } = content;
+  const { hero, overview, servicesList, services: servicesLegacy, faq, cta } = content;
+  const services = servicesList?.items || servicesLegacy || [];
   const blogBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
   const preferredSlugs = [
     'laundry-turnaround-planning',
@@ -219,8 +221,21 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
         </section>
       )}
 
-      {/* Services Grid */}
-      {isEnabled('services') && (
+      {/* Services Section - Variant-aware */}
+      {isEnabled('services') && content.servicesList && (
+        <div style={sectionStyle('services')}>
+          <ServicesSection
+            variant={content.servicesList.variant || 'grid-cards'}
+            badge={locale === 'en' ? 'OUR SERVICES' : 'NUESTROS SERVICIOS'}
+            title={content.servicesList.title || (locale === 'en' ? 'Our Laundry Services' : 'Nuestros servicios')}
+            subtitle={content.servicesList.subtitle || ''}
+            services={services}
+          />
+        </div>
+      )}
+
+      {/* Fallback: Legacy services array rendering */}
+      {isEnabled('services') && !content.servicesList && services.length > 0 && (
         <section
           className="py-16 lg:py-24 bg-gradient-to-br from-backdrop-secondary to-white"
           style={sectionStyle('services')}
@@ -265,7 +280,7 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
                         <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                           <Icon name={service.icon as any} className="text-primary" />
                         </div>
-                        <Badge variant="primary">{`Modality ${service.order}`}</Badge>
+                        <Badge variant="primary">{`Service ${service.order}`}</Badge>
                       </div>
 
                       <h2 className="text-heading font-bold text-gray-900 mb-4">

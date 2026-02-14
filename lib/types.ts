@@ -204,15 +204,18 @@ export interface Service {
   subtitle?: string;
   shortDescription: string;
   fullDescription?: string;
+  price?: string;
+  durationMinutes?: number;
   benefits?: string[];
   whatToExpect?: string;
   image?: string;
   link?: string;
   order?: number;
+  featured?: boolean;
 }
 
 export interface ServicesSection {
-  variant?: 'grid-cards' | 'featured-large' | 'list-horizontal' | 'accordion' | 'tabs';
+  variant?: 'grid-cards' | 'featured-large' | 'list-horizontal' | 'accordion' | 'tabs' | 'detail-alternating';
   badge: string;
   title: string;
   subtitle: string;
@@ -489,11 +492,25 @@ export interface ServicesPage {
     backgroundImage?: string;
   };
   overview: {
+    variant?: 'centered' | 'left';
     introduction: string;
     benefits: string[];
   };
-  services: Service[];
+  servicesList?: {
+    variant?:
+      | 'grid-cards'
+      | 'featured-large'
+      | 'list-horizontal'
+      | 'accordion'
+      | 'tabs'
+      | 'detail-alternating';
+    title?: string;
+    subtitle?: string;
+    items: Service[];
+  };
+  services?: Service[];
   faq: {
+    variant?: 'accordion' | 'simple' | 'card';
     title: string;
     faqs: Array<{
       question: string;

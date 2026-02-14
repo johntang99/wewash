@@ -1,40 +1,40 @@
 {
+  "cta": {
+    "link": "/es/contact",
+    "text": "Programar recogida"
+  },
   "main": [
     {
-      "text": "Inicio",
-      "url": "/es"
+      "url": "/es",
+      "text": "Inicio"
     },
     {
-      "text": "Servicios",
-      "url": "/es/services"
+      "url": "/es/services",
+      "text": "Servicios"
     },
     {
-      "text": "Precios",
-      "url": "/es/pricing"
+      "url": "/es/pricing",
+      "text": "Precios"
     },
     {
-      "text": "Comercial",
-      "url": "/es/case-studies"
+      "url": "/es/case-studies",
+      "text": "Comercial"
     },
     {
-      "text": "Nosotros",
-      "url": "/es/about"
+      "url": "/es/about",
+      "text": "Nosotros"
     },
     {
-      "text": "Galeria",
-      "url": "/es/gallery"
+      "url": "/es/gallery",
+      "text": "Galeria"
     },
     {
-      "text": "Blog",
-      "url": "/es/blog"
+      "url": "/es/blog",
+      "text": "Blog"
     },
     {
-      "text": "Contacto",
-      "url": "/es/contact"
+      "url": "/es/contact",
+      "text": "Contacto"
     }
-  ],
-  "cta": {
-    "text": "Programar recogida",
-    "link": "/es/contact"
-  }
+  ]
 }

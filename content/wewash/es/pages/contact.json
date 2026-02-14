@@ -1,177 +1,180 @@
 {
+  "faq": {
+    "items": [
+      {
+        "answer": "Abierto diario de 7:30am a 7:30pm. El ultimo lavado debe comenzar a las 7:30pm para garantizar que las maquinas terminen antes del cierre.",
+        "question": "¿Cual es su horario?"
+      },
+      {
+        "answer": "Deja tu ropa antes del mediodia para servicio el mismo dia ($1.50/lb) o en cualquier momento para servicio al dia siguiente ($1.35/lb). Clasificamos, lavamos, secamos y doblamos cuidadosamente tu ropa. Te enviaremos mensaje cuando este lista.",
+        "question": "¿Como funciona el lavado y doblado?"
+      },
+      {
+        "answer": "Unete gratis y colecta 1 sello por cada 25lb de lavanderia. Gana servicio exclusivo Speed Drop Off (recogida en la acera), gira la ruleta para premios despues de 3 sellos y recibe ofertas especiales para miembros.",
+        "question": "¿Que es el Club de Lavado?"
+      },
+      {
+        "answer": "¡Si! Trae tus prendas para medicion y cotizacion. Nuestro sastre experimentado maneja dobladillos, cambios de talla y todo tipo de alteraciones con entrega rapida.",
+        "question": "¿Ofrecen alteraciones?"
+      }
+    ],
+    "title": "Respuestas rapidas",
+    "variant": "accordion"
+  },
+  "map": {
+    "title": "Encuentranos",
+    "showMap": true,
+    "embedUrl": "https://www.google.com/maps?q=87+North+Street,+Middletown,+NY+10940&output=embed",
+    "directions": "Estamos ubicados en North Street en Middletown, facilmente accesible desde el centro. Estacionamiento gratuito en la calle y en el lote disponible."
+  },
+  "form": {
+    "title": "Envianos un mensaje",
+    "fields": {
+      "name": {
+        "label": "Nombre completo",
+        "required": true,
+        "placeholder": "Juan Perez"
+      },
+      "email": {
+        "label": "Correo electronico",
+        "required": true,
+        "placeholder": "juan@example.com"
+      },
+      "phone": {
+        "label": "Numero de telefono",
+        "required": true,
+        "placeholder": "(555) 123-4567"
+      },
+      "reason": {
+        "label": "Razon del contacto",
+        "options": [
+          "Pregunta sobre servicio de lavado y doblado",
+          "Pregunta sobre precios",
+          "Solicitud de cotizacion de alteracion",
+          "Unirse al Club de Lavado",
+          "Pregunta sobre instalaciones",
+          "Otro"
+        ],
+        "required": true,
+        "placeholder": "Selecciona una razon"
+      },
+      "message": {
+        "label": "Mensaje",
+        "required": true,
+        "placeholder": "Dinos como podemos ayudarte..."
+      }
+    },
+    "variant": "single-column",
+    "subtitle": "Completa el formulario a continuacion y te responderemos lo antes posible",
+    "errorMessage": "Lo sentimos, hubo un error al enviar tu mensaje. Por favor llamanos directamente al (845) 394-0158.",
+    "submitButton": {
+      "text": "Enviar mensaje"
+    },
+    "successMessage": "¡Gracias por contactarnos! Te responderemos dentro de 24 horas."
+  },
   "hero": {
+    "title": "Ponte en contacto",
     "variant": "centered",
-    "title": "Get in Touch",
-    "subtitle": "Estamos aqui para ayudarte con recogidas, tarifas y planes comerciales.",
-    "backgroundImage": "/uploads/wewash/contact/hero-bg.jpg"
+    "subtitle": "¿Preguntas sobre nuestros servicios, horarios o precios? Estamos aqui para ayudar.",
+    "backgroundImage": "/uploads/wewash/general/home-hero-2.jpg"
+  },
+  "hours": {
+    "note": "El ultimo lavado debe comenzar a las 7:30pm para garantizar la finalizacion antes del cierre.",
+    "title": "Horario de operacion",
+    "variant": "grid",
+    "schedule": [
+      {
+        "day": "Lunes",
+        "note": "Ultimo lavado a las 7:30pm",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Martes",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Miercoles",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Jueves",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Viernes",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Sabado",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Domingo",
+        "time": "7:30 AM - 7:30 PM",
+        "isOpen": true
+      }
+    ]
+  },
+  "emergency": {
+    "phone": "(845) 394-0158",
+    "title": "¿Necesitas ayuda?",
+    "message": "Nuestro equipo esta aqui para ayudar con cualquier pregunta de lavanderia durante el horario comercial.",
+    "visible": false
   },
   "introduction": {
-    "text": "Contacta a WeWash para programar recogida, consultar cobertura por ZIP o activar una cuenta comercial."
+    "text": "Contacta a WeWash para preguntas sobre autoservicio, lavado y doblado, alteraciones o nuestros programas de lealtad.",
+    "variant": "centered"
   },
   "contactMethods": [
     {
       "icon": "Phone",
-      "title": "Call Us",
-      "primary": "(845) 381-1106",
-      "secondary": null,
-      "description": "Mon-Fri: 9am-6pm, Sat: 9am-2pm",
+      "title": "Llamanos",
       "action": {
-        "text": "Call Now",
-        "link": "tel:+18453811106"
-      }
+        "link": "tel:+18453940158",
+        "text": "Llamar ahora"
+      },
+      "primary": "(845) 394-0158",
+      "secondary": null,
+      "description": "Abierto diario 7:30am - 7:30pm (ultimo lavado)"
     },
     {
       "icon": "Mail",
-      "title": "Email",
-      "primary": "sancai.acu@gmail.com",
-      "secondary": null,
-      "description": "We typically respond within 24 hours",
+      "title": "Correo",
       "action": {
-        "text": "Send Email",
-        "link": "mailto:sancai.acu@gmail.com"
-      }
+        "link": "mailto:northstreetlaundromat@gmail.com",
+        "text": "Enviar correo"
+      },
+      "primary": "northstreetlaundromat@gmail.com",
+      "secondary": null,
+      "description": "Respondemos tipicamente dentro de 24 horas"
     },
     {
       "icon": "MapPin",
-      "title": "Visit Us",
-      "primary": "71 East Main Street",
-      "secondary": "Middletown, NY 10940",
-      "description": "Free parking available",
+      "title": "Visitanos",
       "action": {
-        "text": "Get Directions",
-        "link": "https://maps.google.com/?q=71+East+Main+Street+Middletown+NY+10940"
-      }
+        "link": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
+        "text": "Obtener direcciones"
+      },
+      "primary": "87 North Street",
+      "secondary": "Middletown, NY 10940",
+      "description": "Estacionamiento gratuito disponible"
     },
     {
-      "icon": "CalendarCheck",
-      "title": "Book Online",
-      "primary": "Book an appointment",
-      "secondary": null,
-      "description": "Pick a service and time that works for you",
+      "icon": "Gift",
+      "title": "Unete a nuestro club",
       "action": {
-        "text": "Book Now",
-        "link": "/en/book"
-      }
+        "link": "/es/pricing",
+        "text": "Saber mas"
+      },
+      "primary": "Club de lavado",
+      "secondary": null,
+      "description": "Gana sellos, obtén Speed Drop Off, gana premios"
     }
-  ],
-  "hours": {
-    "title": "Hours of Operation",
-    "schedule": [
-      {
-        "day": "Monday",
-        "time": "9:00 AM - 6:00 PM",
-        "isOpen": true
-      },
-      {
-        "day": "Tuesday",
-        "time": "9:00 AM - 6:00 PM",
-        "isOpen": true
-      },
-      {
-        "day": "Wednesday",
-        "time": "9:00 AM - 7:00 PM",
-        "isOpen": true,
-        "note": "Community Acupuncture Day"
-      },
-      {
-        "day": "Thursday",
-        "time": "9:00 AM - 6:00 PM",
-        "isOpen": true
-      },
-      {
-        "day": "Friday",
-        "time": "9:00 AM - 6:00 PM",
-        "isOpen": true
-      },
-      {
-        "day": "Saturday",
-        "time": "9:00 AM - 2:00 PM",
-        "isOpen": true
-      },
-      {
-        "day": "Sunday",
-        "time": "Closed",
-        "isOpen": false
-      }
-    ],
-    "note": "Last appointment starts 1 hour before closing. Please call ahead for same-day appointments."
-  },
-  "form": {
-    "variant": "single-column",
-    "title": "Send Us a Message",
-    "subtitle": "Fill out the form below and we'll get back to you as soon as possible",
-    "fields": {
-      "name": {
-        "label": "Full Name",
-        "placeholder": "John Smith",
-        "required": true
-      },
-      "email": {
-        "label": "Email Address",
-        "placeholder": "john@example.com",
-        "required": true
-      },
-      "phone": {
-        "label": "Phone Number",
-        "placeholder": "(555) 123-4567",
-        "required": true
-      },
-      "reason": {
-        "label": "Reason for Contact",
-        "placeholder": "Select a reason",
-        "required": true,
-        "options": [
-          "Schedule New Patient Appointment",
-          "Schedule Follow-up Appointment",
-          "Question About Treatment",
-          "Question About Pricing/Insurance",
-          "Request Information",
-          "Other"
-        ]
-      },
-      "message": {
-        "label": "Message",
-        "placeholder": "Tell us how we can help you...",
-        "required": true
-      }
-    },
-    "submitButton": {
-      "text": "Send Message"
-    },
-    "successMessage": "Thank you for contacting us! We'll get back to you within 24 hours.",
-    "errorMessage": "Sorry, there was an error sending your message. Please try calling us directly at (845) 381-1106."
-  },
-  "map": {
-    "title": "Find Us",
-    "embedUrl": "https://www.google.com/maps?q=71+East+Main+Street,+Middletown,+NY+10940&output=embed",
-    "showMap": true,
-    "directions": "We're located on East Main Street in downtown Middletown, easily accessible from Route 211 and I-84. Free street parking is available, as well as a public parking lot behind our building."
-  },
-  "emergency": {
-    "title": "Medical Emergency?",
-    "message": "If you're experiencing a medical emergency, please call 911 or visit your nearest emergency room immediately.",
-    "phone": "911",
-    "visible": true
-  },
-  "faq": {
-    "title": "Quick Answers",
-    "items": [
-      {
-        "question": "Do I need an appointment?",
-        "answer": "Yes, we see patients by appointment only. This ensures you receive our full attention and there's minimal wait time. Call us or use the form above to schedule."
-      },
-      {
-        "question": "Do you accept walk-ins?",
-        "answer": "We occasionally have same-day appointments available. Please call ahead to check availability rather than walking in."
-      },
-      {
-        "question": "How do I prepare for my first visit?",
-        "answer": "Please arrive 10 minutes early to complete paperwork (or download forms from our New Patients page). Eat a light meal 1-2 hours before, wear comfortable clothing, and bring a list of any medications you're taking."
-      },
-      {
-        "question": "Do you offer free consultations?",
-        "answer": "We offer a brief phone consultation (10-15 minutes) at no charge to answer questions and determine if TCM is right for you. Full in-person consultations include treatment and are billed at our initial visit rate."
-      }
-    ]
-  }
+  ]
 }

@@ -1,45 +1,94 @@
 {
-  "topBar": {
-    "address": "87 North Street, Middletown, NY 10940",
-    "addressMapUrl": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940",
-    "phone": "(845) 394-0158",
-    "email": "hello@wewash99.com",
-    "badge": {
-      "text": "Recogida y entrega 7 dias",
-      "visible": true
+  "cta": {
+    "title": "Activa tu flujo semanal de lavanderia",
+    "variant": "centered",
+    "subtitle": "Planes para hogar y negocio disponibles hoy.",
+    "primaryCta": {
+      "link": "/es/book",
+      "text": "Reservar recogida"
+    },
+    "contactInfo": "Llama al (845) 394-0158 para soporte.",
+    "secondaryCta": {
+      "link": "/es/contact",
+      "text": "Hablar con ventas"
     }
   },
-  "menu": {
-    "variant": "transparent",
-    "items": [
-      { "text": "Inicio", "url": "/es" },
-      { "text": "Servicios", "url": "/es/services" },
-      { "text": "Precios", "url": "/es/pricing" },
-      { "text": "Comercial", "url": "/es/case-studies" },
-      { "text": "Nosotros", "url": "/es/about" },
-      { "text": "Galeria", "url": "/es/gallery" },
-      { "text": "Blog", "url": "/es/blog" },
-      { "text": "Contacto", "url": "/es/contact" }
+  "blog": {
+    "badge": "GUIAS Y OPERACION",
+    "posts": [
+      {
+        "slug": "spring-seasonal-reset",
+        "type": "article",
+        "image": "/uploads/wewash/blog/spring-health.jpg",
+        "title": "Como organizar una rutina semanal de lavanderia",
+        "excerpt": "Metodo practico para separar, programar y mantener consistencia.",
+        "category": "Tips",
+        "readTime": "5 min"
+      },
+      {
+        "slug": "acupuncture-pain-relief-science",
+        "type": "article",
+        "image": "/uploads/wewash/blog/stress-management.jpg",
+        "title": "Planificacion de rutas y tiempos para equipos pequenos",
+        "excerpt": "Mejora puntualidad y rendimiento con ventanas bien definidas.",
+        "category": "Operacion comercial",
+        "readTime": "7 min"
+      },
+      {
+        "slug": "chinese-herbal-formulas",
+        "type": "article",
+        "image": "/uploads/wewash/blog/herbal-medicine.jpg",
+        "title": "Cuando usar tintoreria vs lavado y doblado",
+        "excerpt": "Guia simple segun tipo de tela y nivel de suciedad.",
+        "category": "Cuidado de prendas",
+        "readTime": "6 min"
+      }
     ],
-    "cta": {
-      "text": "Reservar recogida",
-      "link": "/es/book"
-    }
+    "title": "Guias de cuidado y operacion",
+    "variant": "cards-grid",
+    "moreLink": {
+      "url": "/es/blog",
+      "text": "Leer todos los articulos"
+    },
+    "subtitle": "Consejos para prendas, tiempos de entrega y flujo de lavanderia."
   },
   "hero": {
-    "variant": "split-photo-right",
     "image": "/uploads/wewash/home/hero-bg.jpg",
-    "clinicName": "WeWash Laundry",
+    "stats": [
+      {
+        "icon": "Truck",
+        "label": "Dias de servicio",
+        "number": "7"
+      },
+      {
+        "icon": "Clock3",
+        "label": "Entrega promedio",
+        "number": "24-48h"
+      },
+      {
+        "icon": "Building2",
+        "label": "Clientes negocio",
+        "number": "100+"
+      },
+      {
+        "icon": "MapPinned",
+        "label": "ZIP principales",
+        "number": "5"
+      }
+    ],
     "tagline": "Recogida, drop-off, autoservicio y cuentas comerciales",
-    "description": "Plataforma de lavanderia para hogares y negocios. Programa recogidas recurrentes, reserva autoservicio o activa un plan comercial.",
+    "variant": "split-photo-right",
+    "clinicName": "WeWash Laundry in Middletown, NY",
     "primaryCta": {
-      "text": "Reservar recogida",
-      "link": "/es/book"
+      "link": "/es/book",
+      "text": "Reservar recogida"
     },
-    "secondaryCta": {
-      "text": "Solicitar cotizacion comercial",
-      "link": "/es/contact"
-    },
+    "description": "Plataforma de lavanderia para hogares y negocios. Programa recogidas recurrentes, reserva autoservicio o activa un plan comercial.",
+    "trustBadges": [
+      "Entregas por ruta",
+      "Control de calidad",
+      "Opciones SLA comercial"
+    ],
     "floatingTags": [
       "Lavado y doblado",
       "Tintoreria",
@@ -47,244 +96,276 @@
       "Autoservicio",
       "Cuentas comerciales"
     ],
-    "stats": [
-      { "icon": "Truck", "number": "7", "label": "Dias de servicio" },
-      { "icon": "Clock3", "number": "24-48h", "label": "Entrega promedio" },
-      { "icon": "Building2", "number": "100+", "label": "Clientes negocio" },
-      { "icon": "MapPinned", "number": "5", "label": "ZIP principales" }
-    ],
-    "trustBadges": [
-      "Entregas por ruta",
-      "Control de calidad",
-      "Opciones SLA comercial"
-    ]
-  },
-  "testimonials": {
-    "variant": "grid",
-    "badge": "OPINIONES",
-    "title": "Confiado por familias y negocios locales",
-    "subtitle": "Operacion estable y calidad consistente cada semana.",
-    "testimonials": [
-      {
-        "quote": "Con WeWash mejoramos la puntualidad de entrega de lenceria en nuestro restaurante.",
-        "name": "Marco R.",
-        "condition": "Operacion restaurante"
-      },
-      {
-        "quote": "La recogida y entrega nos ahorra varias horas cada semana.",
-        "name": "Angela T.",
-        "condition": "Plan hogar"
-      },
-      {
-        "quote": "Nuestro plan recurrente para alquileres temporales es muy estable.",
-        "name": "Brian K.",
-        "condition": "Host Airbnb"
-      }
-    ],
-    "moreLink": {
-      "text": "Ver casos comerciales",
-      "url": "/es/case-studies"
+    "secondaryCta": {
+      "link": "/es/contact",
+      "text": "Solicitar cotizacion comercial"
     }
   },
-  "howItWorks": {
-    "variant": "vertical-image-right",
-    "title": "Como funciona WeWash",
-    "subtitle": "Flujo simple desde reserva hasta entrega.",
-    "image": "/uploads/wewash/home/welcome-section.jpg",
-    "imageAlt": "Flujo operativo de lavanderia",
-    "steps": [
+  "menu": {
+    "cta": {
+      "link": "/es/book",
+      "text": "Reservar recogida"
+    },
+    "items": [
       {
-        "number": 1,
-        "icon": "CalendarDays",
-        "title": "Reserva servicio",
-        "description": "Elige recogida/entrega, drop-off, autoservicio o cotizacion comercial."
+        "url": "/es",
+        "text": "Inicio"
       },
       {
-        "number": 2,
-        "icon": "PackageCheck",
-        "title": "Procesamiento",
-        "description": "Clasificamos, limpiamos y revisamos cada pedido por tipo de servicio."
+        "url": "/es/services",
+        "text": "Servicios"
       },
       {
-        "number": 3,
-        "icon": "Truck",
-        "title": "Entrega y seguimiento",
-        "description": "Recibe tu pedido con ventana ETA y soporte."
-      }
-    ]
-  },
-  "conditions": {
-    "variant": "grid-cards",
-    "title": "Soluciones por necesidad",
-    "subtitle": "Disenado para cargas reales de lavanderia recurrente.",
-    "conditions": [
-      {
-        "id": "family-weekly",
-        "icon": "Home",
-        "title": "Lavanderia semanal familiar",
-        "category": "Residencial",
-        "description": "Plan recurrente para familias con volumen constante.",
-        "symptoms": ["Volumen semanal", "Poco tiempo", "Prendas mixtas"],
-        "link": "/es/services#wash-fold"
+        "url": "/es/pricing",
+        "text": "Precios"
       },
       {
-        "id": "rush-orders",
-        "icon": "Zap",
-        "title": "Pedidos urgentes",
-        "category": "Residencial",
-        "description": "Ventanas prioritarias para cargas urgentes.",
-        "symptoms": ["Eventos", "Viajes", "Carga inesperada"],
-        "link": "/es/services#pickup-delivery"
+        "url": "/es/case-studies",
+        "text": "Comercial"
       },
       {
-        "id": "hospitality-linen",
-        "icon": "BedDouble",
-        "title": "Lenceria hoteleria",
-        "category": "Comercial",
-        "description": "Entrega estructurada para alquileres y hoteles pequenos.",
-        "symptoms": ["Alta rotacion", "Volumen de lenceria", "Presion de horario"],
-        "link": "/es/services#commercial"
+        "url": "/es/about",
+        "text": "Nosotros"
       },
       {
-        "id": "restaurant-linen",
-        "icon": "UtensilsCrossed",
-        "title": "Textiles restaurante",
-        "category": "Comercial",
-        "description": "Ciclos de delantales y toallas con ventanas de entrega.",
-        "symptoms": ["Demanda diaria", "Estandares de limpieza", "Necesidad SLA"],
-        "link": "/es/services#commercial"
+        "url": "/es/gallery",
+        "text": "Galeria"
+      },
+      {
+        "url": "/es/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/es/contact",
+        "text": "Contacto"
       }
     ],
+    "variant": "transparent"
+  },
+  "topBar": {
+    "badge": {
+      "text": "Recogida y entrega 7 dias",
+      "visible": true
+    },
+    "email": "hello@wewash99.com",
+    "phone": "(845) 394-0158",
+    "address": "87 North Street, Middletown, NY 10940",
+    "addressMapUrl": "https://maps.google.com/?q=87+North+Street+Middletown+NY+10940"
+  },
+  "gallery": {
+    "badge": "RECORRIDO",
+    "title": "Dentro de WeWash",
+    "images": [
+      {
+        "alt": "Recepcion",
+        "src": "/uploads/wewash/gallery/reception-area.jpg",
+        "label": "Recepcion"
+      },
+      {
+        "alt": "Procesamiento",
+        "src": "/uploads/wewash/gallery/treatment-room-1.jpg",
+        "label": "Procesamiento"
+      },
+      {
+        "alt": "Exterior",
+        "src": "/uploads/wewash/gallery/exterior.jpg",
+        "label": "Sucursal"
+      },
+      {
+        "alt": "Area clientes",
+        "src": "/uploads/wewash/gallery/waiting-area.jpg",
+        "label": "Area clientes"
+      }
+    ],
+    "variant": "grid-uniform",
     "moreLink": {
-      "text": "Explorar servicios",
-      "url": "/es/services"
-    }
+      "url": "/es/gallery",
+      "text": "Ver galeria"
+    },
+    "subtitle": "Conoce donde procesamos y preparamos pedidos."
   },
   "services": {
-    "variant": "featured-large",
     "badge": "TIPOS DE SERVICIO",
     "title": "Opciones flexibles de lavanderia",
-    "subtitle": "Elige el modo operativo segun tu horario y volumen.",
+    "variant": "featured-large",
     "featured": {
       "id": "pickup-delivery",
       "icon": "Truck",
+      "link": "/es/services#pickup-delivery",
+      "image": "/uploads/wewash/home/why-tcm.jpg",
       "title": "Recogida y entrega",
       "subtitle": "Comodidad puerta a puerta",
-      "shortDescription": "Reserva unica o recurrente con ventanas por ruta.",
       "fullDescription": "Ideal para hogares y equipos comerciales ligeros que necesitan servicio semanal confiable.",
-      "image": "/uploads/wewash/home/why-tcm.jpg",
-      "link": "/es/services#pickup-delivery"
+      "shortDescription": "Reserva unica o recurrente con ventanas por ruta."
+    },
+    "moreLink": {
+      "url": "/es/services",
+      "text": "Ver catalogo completo"
     },
     "services": [
       {
         "id": "wash-fold",
         "icon": "Shirt",
+        "link": "/es/services#wash-fold",
         "title": "Lavado y doblado",
-        "shortDescription": "Procesamiento por peso con control de calidad.",
-        "link": "/es/services#wash-fold"
+        "shortDescription": "Procesamiento por peso con control de calidad."
       },
       {
         "id": "dry-cleaning",
         "icon": "Sparkles",
+        "link": "/es/services#dry-cleaning",
         "title": "Tintoreria",
-        "shortDescription": "Cuidado por prenda para ropa delicada y formal.",
-        "link": "/es/services#dry-cleaning"
+        "shortDescription": "Cuidado por prenda para ropa delicada y formal."
       },
       {
         "id": "self-service",
         "icon": "Timer",
+        "link": "/es/services#self-service",
         "title": "Autoservicio",
-        "shortDescription": "Reserva horarios de maquinas para evitar espera.",
-        "link": "/es/services#self-service"
+        "shortDescription": "Reserva horarios de maquinas para evitar espera."
       },
       {
         "id": "commercial",
         "icon": "Building2",
+        "link": "/es/services#commercial",
         "title": "Programas comerciales",
-        "shortDescription": "Planes por contrato para operaciones de negocio.",
-        "link": "/es/services#commercial"
+        "shortDescription": "Planes por contrato para operaciones de negocio."
       }
     ],
-    "moreLink": {
-      "text": "Ver catalogo completo",
-      "url": "/es/services"
-    }
+    "subtitle": "Elige el modo operativo segun tu horario y volumen."
   },
-  "blog": {
-    "variant": "cards-grid",
-    "badge": "GUIAS Y OPERACION",
-    "title": "Guias de cuidado y operacion",
-    "subtitle": "Consejos para prendas, tiempos de entrega y flujo de lavanderia.",
-    "posts": [
+  "conditions": {
+    "title": "Soluciones por necesidad",
+    "variant": "grid-cards",
+    "moreLink": {
+      "url": "/es/services",
+      "text": "Explorar servicios"
+    },
+    "subtitle": "Disenado para cargas reales de lavanderia recurrente.",
+    "conditions": [
       {
-        "slug": "spring-seasonal-reset",
-        "type": "article",
-        "image": "/uploads/wewash/blog/spring-health.jpg",
-        "category": "Tips",
-        "readTime": "5 min",
-        "title": "Como organizar una rutina semanal de lavanderia",
-        "excerpt": "Metodo practico para separar, programar y mantener consistencia."
+        "id": "family-weekly",
+        "icon": "Home",
+        "link": "/es/services#wash-fold",
+        "title": "Lavanderia semanal familiar",
+        "category": "Residencial",
+        "symptoms": [
+          "Volumen semanal",
+          "Poco tiempo",
+          "Prendas mixtas"
+        ],
+        "description": "Plan recurrente para familias con volumen constante."
       },
       {
-        "slug": "acupuncture-pain-relief-science",
-        "type": "article",
-        "image": "/uploads/wewash/blog/stress-management.jpg",
-        "category": "Operacion comercial",
-        "readTime": "7 min",
-        "title": "Planificacion de rutas y tiempos para equipos pequenos",
-        "excerpt": "Mejora puntualidad y rendimiento con ventanas bien definidas."
+        "id": "rush-orders",
+        "icon": "Zap",
+        "link": "/es/services#pickup-delivery",
+        "title": "Pedidos urgentes",
+        "category": "Residencial",
+        "symptoms": [
+          "Eventos",
+          "Viajes",
+          "Carga inesperada"
+        ],
+        "description": "Ventanas prioritarias para cargas urgentes."
       },
       {
-        "slug": "chinese-herbal-formulas",
-        "type": "article",
-        "image": "/uploads/wewash/blog/herbal-medicine.jpg",
-        "category": "Cuidado de prendas",
-        "readTime": "6 min",
-        "title": "Cuando usar tintoreria vs lavado y doblado",
-        "excerpt": "Guia simple segun tipo de tela y nivel de suciedad."
+        "id": "hospitality-linen",
+        "icon": "BedDouble",
+        "link": "/es/services#commercial",
+        "title": "Lenceria hoteleria",
+        "category": "Comercial",
+        "symptoms": [
+          "Alta rotacion",
+          "Volumen de lenceria",
+          "Presion de horario"
+        ],
+        "description": "Entrega estructurada para alquileres y hoteles pequenos."
+      },
+      {
+        "id": "restaurant-linen",
+        "icon": "UtensilsCrossed",
+        "link": "/es/services#commercial",
+        "title": "Textiles restaurante",
+        "category": "Comercial",
+        "symptoms": [
+          "Demanda diaria",
+          "Estandares de limpieza",
+          "Necesidad SLA"
+        ],
+        "description": "Ciclos de delantales y toallas con ventanas de entrega."
       }
-    ],
-    "moreLink": {
-      "text": "Leer todos los articulos",
-      "url": "/es/blog"
-    }
-  },
-  "gallery": {
-    "variant": "grid-uniform",
-    "badge": "RECORRIDO",
-    "title": "Dentro de WeWash",
-    "subtitle": "Conoce donde procesamos y preparamos pedidos.",
-    "images": [
-      { "src": "/uploads/wewash/gallery/reception-area.jpg", "alt": "Recepcion", "label": "Recepcion" },
-      { "src": "/uploads/wewash/gallery/treatment-room-1.jpg", "alt": "Procesamiento", "label": "Procesamiento" },
-      { "src": "/uploads/wewash/gallery/exterior.jpg", "alt": "Exterior", "label": "Sucursal" },
-      { "src": "/uploads/wewash/gallery/waiting-area.jpg", "alt": "Area clientes", "label": "Area clientes" }
-    ],
-    "moreLink": {
-      "text": "Ver galeria",
-      "url": "/es/gallery"
-    }
+    ]
   },
   "firstVisit": {
-    "badge": "PRIMER PEDIDO",
-    "title": "Que preparar",
-    "subtitle": "Activa tu servicio de forma rapida.",
-    "steps": [
-      { "number": 1, "title": "Elige tipo de servicio", "duration": "1 min", "description": "Recogida, drop-off, autoservicio o comercial." },
-      { "number": 2, "title": "Configura direccion y ZIP", "duration": "2 min", "description": "Necesario para rutas de recogida y entrega." },
-      { "number": 3, "title": "Selecciona horario", "duration": "1 min", "description": "Escoge fecha y franja disponible." },
-      { "number": 4, "title": "Confirma pedido", "duration": "1 min", "description": "Recibe confirmacion y estado del pedido." }
-    ],
     "cta": {
+      "link": {
+        "url": "/es/book",
+        "text": "Reservar ahora"
+      },
       "title": "¿Listo para comenzar?",
-      "description": "Reserva tu primer servicio en minutos.",
-      "link": { "text": "Reservar ahora", "url": "/es/book" }
-    }
+      "description": "Reserva tu primer servicio en minutos."
+    },
+    "badge": "PRIMER PEDIDO",
+    "steps": [
+      {
+        "title": "Elige tipo de servicio",
+        "number": 1,
+        "duration": "1 min",
+        "description": "Recogida, drop-off, autoservicio o comercial."
+      },
+      {
+        "title": "Configura direccion y ZIP",
+        "number": 2,
+        "duration": "2 min",
+        "description": "Necesario para rutas de recogida y entrega."
+      },
+      {
+        "title": "Selecciona horario",
+        "number": 3,
+        "duration": "1 min",
+        "description": "Escoge fecha y franja disponible."
+      },
+      {
+        "title": "Confirma pedido",
+        "number": 4,
+        "duration": "1 min",
+        "description": "Recibe confirmacion y estado del pedido."
+      }
+    ],
+    "title": "Que preparar",
+    "subtitle": "Activa tu servicio de forma rapida."
+  },
+  "howItWorks": {
+    "image": "/uploads/wewash/home/welcome-section.jpg",
+    "steps": [
+      {
+        "icon": "CalendarDays",
+        "title": "Reserva servicio",
+        "number": 1,
+        "description": "Elige recogida/entrega, drop-off, autoservicio o cotizacion comercial."
+      },
+      {
+        "icon": "PackageCheck",
+        "title": "Procesamiento",
+        "number": 2,
+        "description": "Clasificamos, limpiamos y revisamos cada pedido por tipo de servicio."
+      },
+      {
+        "icon": "Truck",
+        "title": "Entrega y seguimiento",
+        "number": 3,
+        "description": "Recibe tu pedido con ventana ETA y soporte."
+      }
+    ],
+    "title": "Como funciona WeWash",
+    "variant": "vertical-image-right",
+    "imageAlt": "Flujo operativo de lavanderia",
+    "subtitle": "Flujo simple desde reserva hasta entrega."
   },
   "whyChooseUs": {
     "badge": "POR QUE WEWASH",
     "title": "Disenado para confiabilidad",
-    "subtitle": "Estandares de calidad y operacion repetible.",
     "features": [
       {
         "icon": "ShieldCheck",
@@ -301,20 +382,34 @@
         "title": "Listo para negocios",
         "description": "Planes con enfoque SLA para equipos y ubicaciones."
       }
-    ]
+    ],
+    "subtitle": "Estandares de calidad y operacion repetible."
   },
-  "cta": {
-    "variant": "centered",
-    "title": "Activa tu flujo semanal de lavanderia",
-    "subtitle": "Planes para hogar y negocio disponibles hoy.",
-    "primaryCta": {
-      "text": "Reservar recogida",
-      "link": "/es/book"
+  "testimonials": {
+    "badge": "OPINIONES",
+    "title": "Confiado por familias y negocios locales",
+    "variant": "grid",
+    "moreLink": {
+      "url": "/es/case-studies",
+      "text": "Ver casos comerciales"
     },
-    "secondaryCta": {
-      "text": "Hablar con ventas",
-      "link": "/es/contact"
-    },
-    "contactInfo": "Llama al (845) 394-0158 para soporte."
+    "subtitle": "Operacion estable y calidad consistente cada semana.",
+    "testimonials": [
+      {
+        "name": "Marco R.",
+        "quote": "Con WeWash mejoramos la puntualidad de entrega de lenceria en nuestro restaurante.",
+        "condition": "Operacion restaurante"
+      },
+      {
+        "name": "Angela T.",
+        "quote": "La recogida y entrega nos ahorra varias horas cada semana.",
+        "condition": "Plan hogar"
+      },
+      {
+        "name": "Brian K.",
+        "quote": "Nuestro plan recurrente para alquileres temporales es muy estable.",
+        "condition": "Host Airbnb"
+      }
+    ]
   }
 }

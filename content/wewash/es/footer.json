@@ -1,35 +1,80 @@
 {
   "brand": {
-    "logoText": "WW",
     "name": "WeWash",
+    "logoText": "WW",
     "description": "Servicio integral de lavanderia para familias y negocios. Recogida, entrega y cuentas comerciales."
   },
-  "quickLinks": [
-    { "text": "Inicio", "url": "/es" },
-    { "text": "Servicios", "url": "/es/services" },
-    { "text": "Precios", "url": "/es/pricing" },
-    { "text": "Comercial", "url": "/es/case-studies" },
-    { "text": "Nosotros", "url": "/es/about" },
-    { "text": "Blog", "url": "/es/blog" },
-    { "text": "Contacto", "url": "/es/contact" }
-  ],
-  "services": [
-    { "text": "Lavado y doblado", "url": "/es/services#wash-fold" },
-    { "text": "Tintoreria", "url": "/es/services#dry-cleaning" },
-    { "text": "Recogida y entrega", "url": "/es/services#pickup-delivery" },
-    { "text": "Lavanderia comercial", "url": "/es/services#commercial" }
+  "hours": [
+    "Lun-Vie: 8:00 AM - 8:00 PM",
+    "Sab-Dom: 9:00 AM - 6:00 PM"
   ],
   "contact": {
-    "addressLines": ["87 North Street", "Middletown, NY 10940"],
-    "phone": "(845) 394-0158",
-    "phoneLink": "tel:+18453940158",
     "email": "hello@wewash99.com",
-    "emailLink": "mailto:hello@wewash99.com"
+    "phone": "(845) 394-0158",
+    "emailLink": "mailto:hello@wewash99.com",
+    "phoneLink": "tel:+18453940158",
+    "addressLines": [
+      "87 North Street",
+      "Middletown, NY 10940"
+    ]
   },
-  "hours": ["Lun-Vie: 8:00 AM - 8:00 PM", "Sab-Dom: 9:00 AM - 6:00 PM"],
-  "legalLinks": [
-    { "text": "Politica de privacidad", "url": "/es/privacy" },
-    { "text": "Terminos de servicio", "url": "/es/terms" }
+  "services": [
+    {
+      "url": "/es/services#wash-fold",
+      "text": "Lavado y doblado"
+    },
+    {
+      "url": "/es/services#dry-cleaning",
+      "text": "Tintoreria"
+    },
+    {
+      "url": "/es/services#pickup-delivery",
+      "text": "Recogida y entrega"
+    },
+    {
+      "url": "/es/services#commercial",
+      "text": "Lavanderia comercial"
+    }
   ],
-  "copyright": "© {year} WeWash. Todos los derechos reservados."
+  "copyright": "© {year} WeWash. Todos los derechos reservados.",
+  "legalLinks": [
+    {
+      "url": "/es/privacy",
+      "text": "Politica de privacidad"
+    },
+    {
+      "url": "/es/terms",
+      "text": "Terminos de servicio"
+    }
+  ],
+  "quickLinks": [
+    {
+      "url": "/es",
+      "text": "Inicio"
+    },
+    {
+      "url": "/es/services",
+      "text": "Servicios"
+    },
+    {
+      "url": "/es/pricing",
+      "text": "Precios"
+    },
+    {
+      "url": "/es/case-studies",
+      "text": "Comercial"
+    },
+    {
+      "url": "/es/about",
+      "text": "Nosotros"
+    },
+    {
+      "url": "/es/blog",
+      "text": "Blog"
+    },
+    {
+      "url": "/es/contact",
+      "text": "Contacto"
+    }
+  ]
 }
